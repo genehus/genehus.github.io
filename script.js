@@ -2,8 +2,10 @@
   const header = document.querySelector('.site-header');
   const navLinks = document.querySelector('.nav-main');
   const menuToggle = document.querySelector('.menu-toggle');
-  const sections = document.querySelectorAll('section[id], .cta-band[id]');
   const navAnchors = document.querySelectorAll('.nav-main a');
+  const sections = [...navAnchors]
+    .map((a) => document.getElementById(a.getAttribute('href').slice(1)))
+    .filter(Boolean);
 
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 8);
