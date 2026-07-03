@@ -15,7 +15,7 @@ This repository hosts the GeneHus marketing website, deployed via [GitHub Pages]
 - `index.html` — page markup
 - `style.css` — styles
 - `script.js` — navigation and scroll behavior
-- `assets/` — images and logos
+- `assets/` — images, logos, and section artwork (`man_1.png`–`man_12.png`)
 
 ## Local development
 
