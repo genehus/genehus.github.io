@@ -977,17 +977,42 @@ footer .col p {
 
 footer .col a:hover { color: var(--magenta); }
 
+footer .col p:has(.contact-icon) {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+footer .col p:has(.contact-icon) a {
+  display: inline;
+  margin-bottom: 0;
+  color: inherit;
+}
+
+footer .col p.contact-line--indent {
+  padding-left: 22px;
+}
+
 .contact-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 4px;
-  vertical-align: -2px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
   line-height: 1;
 }
 
 .contact-icon--svg {
-  width: 1em;
+  width: 16px;
+  height: 16px;
+}
+
+.contact-icon svg {
+  display: block;
+  width: 14px;
+  height: 14px;
 }
 
 footer .col p .contact-icon--partners,
