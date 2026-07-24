@@ -977,19 +977,58 @@ footer .col p {
 
 footer .col a:hover { color: var(--magenta); }
 
-.contact-icon--svg {
+.contact-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1em;
+  margin-right: 4px;
   vertical-align: -2px;
-  margin-right: 2px;
+  line-height: 1;
 }
 
-.contact-icon--partners { color: #e91e8c; }
-.contact-icon--investors { color: #6a1b9a; }
-.contact-icon--founder { color: #0088cc; }
-.contact-icon--ceo { color: #c45a11; }
+.contact-icon--svg {
+  width: 1em;
+}
+
+footer .col p .contact-icon--partners,
+footer .col .contact-icon--partners {
+  color: #e91e8c !important;
+}
+
+footer .col p .contact-icon--investors,
+footer .col .contact-icon--investors {
+  color: #6a1b9a !important;
+}
+
+footer .col p .contact-icon--founder,
+footer .col .contact-icon--founder {
+  color: #0088cc !important;
+}
+
+footer .col p .contact-icon--ceo,
+footer .col .contact-icon--ceo {
+  color: #c45a11 !important;
+}
+
+footer .col p .contact-icon--phone,
+footer .col .contact-icon--phone {
+  color: #16a34a !important;
+}
+
+footer .col p .contact-icon--mail,
+footer .col .contact-icon--mail {
+  color: #2563eb !important;
+}
+
+footer .col p .contact-icon--web,
+footer .col .contact-icon--web {
+  color: #0891b2 !important;
+}
+
+footer .col p .contact-icon--pin,
+footer .col .contact-icon--pin {
+  color: #dc2626 !important;
+}
 
 .mt { margin-top: 16px; }
 
