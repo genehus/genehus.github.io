@@ -982,10 +982,14 @@ footer .col a:hover { color: var(--magenta); }
   align-items: center;
   justify-content: center;
   width: 1em;
-  color: var(--ink-soft);
   vertical-align: -2px;
   margin-right: 2px;
 }
+
+.contact-icon--partners { color: #e91e8c; }
+.contact-icon--investors { color: #6a1b9a; }
+.contact-icon--founder { color: #0088cc; }
+.contact-icon--ceo { color: #c45a11; }
 
 .mt { margin-top: 16px; }
 
