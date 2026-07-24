@@ -161,13 +161,15 @@ h1, h2, h3 {
   height: 84px;
   object-fit: contain;
   border-radius: 10px;
-  background: #000;
+  background: #1f1f1f;
   box-shadow: 0 4px 14px rgba(26, 26, 75, 0.16);
 }
 
 .logo--footer .logo-full {
   height: 96px;
-  box-shadow: 0 6px 20px rgba(26, 26, 75, 0.2);
+  box-shadow: none;
+  border-radius: 0;
+  background: #1f1f1f;
 }
 
 .logo-icon {
@@ -920,20 +922,24 @@ h1, h2, h3 {
 }
 
 /* ===== FOOTER ===== */
-footer { padding: 48px 0 28px; }
+footer {
+  padding: 48px 0 28px;
+  background: #1f1f1f;
+  color: #d4d0e8;
+}
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.7fr 0.8fr 1.05fr 0.95fr 1.15fr;
   gap: 22px;
   padding-bottom: 28px;
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   align-items: start;
 }
 
 .footer-logo .tag {
   font-size: 11px;
-  color: #8b87ab;
+  color: #a39fbf;
   margin-bottom: 14px;
 }
 
@@ -946,13 +952,13 @@ footer { padding: 48px 0 28px; }
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--bg-section);
+  background: #2a2a2a;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   font-weight: 700;
-  color: var(--ink-soft);
+  color: #cfc8ef;
   transition: background 0.15s, color 0.15s;
 }
 
@@ -965,13 +971,14 @@ footer h5 {
   font-size: 13.5px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: #fff;
 }
 
 footer .col a,
 footer .col p {
   display: block;
   font-size: 13px;
-  color: var(--ink-soft);
+  color: #b8b3d4;
   margin-bottom: 8px;
 }
 
@@ -1060,14 +1067,15 @@ footer .col .contact-icon--pin {
 .newsletter-note {
   font-size: 12px;
   margin-bottom: 8px;
+  color: #a39fbf;
 }
 
 .newsletter-input {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid var(--border-soft);
-  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #2a2a2a;
 }
 
 .newsletter-input input {
@@ -1077,9 +1085,16 @@ footer .col .contact-icon--pin {
   font-size: 12.5px;
   flex: 1;
   font-family: inherit;
+  background: transparent;
+  color: #fff;
 }
 
-.newsletter-input button {
+.newsletter-input input::placeholder {
+  color: #8b87ab;
+}
+
+.newsletter-input button,
+.newsletter-submit {
   background: var(--violet);
   color: #fff;
   border: none;
@@ -1094,7 +1109,7 @@ footer .col .contact-icon--pin {
   align-items: center;
   padding-top: 20px;
   font-size: 12px;
-  color: #9893b5;
+  color: #8b87ab;
   flex-wrap: wrap;
   gap: 10px;
 }
