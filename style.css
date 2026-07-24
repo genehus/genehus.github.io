@@ -153,24 +153,17 @@ h1, h2, h3 {
 }
 
 .logo-full {
-  width: 96px;
-  height: 96px;
-  object-fit: cover;
-  border-radius: 50%;
+  width: auto;
+  height: 84px;
+  object-fit: contain;
+  border-radius: 10px;
   background: #000;
-  box-shadow:
-    0 0 0 2px #fff,
-    0 0 0 3px rgba(106, 27, 154, 0.22),
-    0 6px 18px rgba(26, 26, 75, 0.18);
+  box-shadow: 0 4px 14px rgba(26, 26, 75, 0.16);
 }
 
 .logo--footer .logo-full {
-  width: 120px;
-  height: 120px;
-  box-shadow:
-    0 0 0 2px #fff,
-    0 0 0 3px rgba(106, 27, 154, 0.18),
-    0 8px 24px rgba(26, 26, 75, 0.2);
+  height: 96px;
+  box-shadow: 0 6px 20px rgba(26, 26, 75, 0.2);
 }
 
 .logo-icon {
@@ -1030,8 +1023,7 @@ footer .col a:hover { color: var(--magenta); }
   .header-inner { flex-wrap: wrap; min-height: 84px; }
 
   .logo-full {
-    width: 84px;
-    height: 84px;
+    height: 72px;
   }
 
   .nav-main {
@@ -1086,8 +1078,7 @@ footer .col a:hover { color: var(--magenta); }
   .header-inner { padding: 0 18px; min-height: 76px; }
 
   .logo-full {
-    width: 76px;
-    height: 76px;
+    height: 58px;
   }
 
   .card-grid-4,
