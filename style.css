@@ -150,6 +150,9 @@ h1, h2, h3 {
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+}
+
+.site-header .logo {
   margin-left: 64px;
 }
 
@@ -1023,7 +1026,7 @@ footer .col a:hover { color: var(--magenta); }
 @media (max-width: 1024px) {
   .header-inner { flex-wrap: wrap; min-height: 84px; }
 
-  .logo { margin-left: 0; }
+  .site-header .logo { margin-left: 0; }
 
   .logo-full {
     height: 72px;
