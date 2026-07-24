@@ -976,6 +976,16 @@ footer .col p {
 
 footer .col a:hover { color: var(--magenta); }
 
+.contact-icon--svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  color: var(--ink-soft);
+  vertical-align: -2px;
+  margin-right: 2px;
+}
+
 .mt { margin-top: 16px; }
 
 .newsletter-note {
