@@ -722,21 +722,19 @@ h1, h2, h3 {
 }
 
 .info-card {
-  background: transparent;
+  background: #fff;
   border-radius: var(--radius);
-  padding: 0;
-  border: none;
-  box-shadow: none;
+  padding: 14px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .card-figure {
-  margin: 0;
-  border-radius: var(--radius);
+  margin: 0 0 14px;
+  border-radius: 10px;
   overflow: hidden;
-  background: #fff;
 }
 
 .card-figure img {
@@ -760,7 +758,7 @@ h1, h2, h3 {
 
 /* About card */
 .about-card {
-  background: transparent;
+  background: #f8f9ff;
   position: relative;
   overflow: hidden;
 }
@@ -804,13 +802,13 @@ h1, h2, h3 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 1.5px solid #d48cff;
-  color: #d48cff;
+  border: 1.5px solid var(--violet);
+  color: var(--violet);
   border-radius: 10px;
   padding: 9px 16px;
   font-size: 12.5px;
   font-weight: 700;
-  background: transparent;
+  background: #fff;
   align-self: flex-start;
   transition: background 0.15s, color 0.15s;
 }
@@ -818,7 +816,6 @@ h1, h2, h3 {
 .pill-btn:hover {
   background: var(--violet);
   color: #fff;
-  border-color: var(--violet);
 }
 
 /* Partners */
