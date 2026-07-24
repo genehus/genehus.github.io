@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --ink: #1a1a4b;
   --ink-soft: #3d3d6b;
   --magenta: #e91e8c;
@@ -161,7 +161,7 @@ h1, h2, h3 {
   height: 84px;
   object-fit: contain;
   border-radius: 10px;
-  background: #1f1f1f;
+  background: #121212;
   box-shadow: 0 4px 14px rgba(26, 26, 75, 0.16);
 }
 
@@ -169,7 +169,7 @@ h1, h2, h3 {
   height: 96px;
   box-shadow: none;
   border-radius: 0;
-  background: #1f1f1f;
+  background: #121212;
 }
 
 .logo-icon {
@@ -711,7 +711,7 @@ h1, h2, h3 {
 
 /* ===== INFO CARDS ===== */
 .info-band {
-  background: #1f1f1f;
+  background: #121212;
   padding: 56px 0;
 }
 
@@ -875,7 +875,7 @@ h1, h2, h3 {
 
 /* ===== CTA ===== */
 .cta-wrap-outer {
-  background: #1f1f1f;
+  background: #121212;
   padding: 48px 0;
 }
 
@@ -928,7 +928,7 @@ h1, h2, h3 {
 /* ===== FOOTER ===== */
 footer {
   padding: 48px 0 28px;
-  background: #1f1f1f;
+  background: #121212;
   color: #d4d0e8;
 }
 
