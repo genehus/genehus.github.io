@@ -375,10 +375,10 @@
       <div class="col col--newsletter">
         <h5>Stay Connected</h5>
         <p class="newsletter-note">Join our newsletter for updates on our progress and impact.</p>
-        <form class="newsletter-input" action="mailto:info@genehus.bio" method="get" enctype="text/plain">
-          <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" required>
-          <button type="submit" aria-label="Subscribe">&rarr;</button>
-        </form>
+        <div class="newsletter-input">
+          <input type="email" id="newsletter-email" placeholder="Enter your email" aria-label="Email address" autocomplete="email">
+          <button type="button" class="newsletter-submit" aria-label="Subscribe">&rarr;</button>
+        </div>
       </div>
     </div>
     <div class="bottom-bar">

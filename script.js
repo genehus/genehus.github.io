@@ -51,6 +51,28 @@
     });
   });
 
+  const newsletterInput = document.querySelector('#newsletter-email');
+  const newsletterSubmit = document.querySelector('.newsletter-submit');
+
+  if (newsletterInput && newsletterSubmit) {
+    const subscribe = () => {
+      const email = newsletterInput.value.trim();
+      if (!newsletterInput.checkValidity() || !email) {
+        newsletterInput.focus();
+        return;
+      }
+      const subject = encodeURIComponent('Newsletter subscription');
+      const body = encodeURIComponent(`Please add ${email} to the GeneHus newsletter.`);
+      window.location.href = `mailto:info@genehus.bio?subject=${subject}&body=${body}`;
+      newsletterInput.value = '';
+    };
+
+    newsletterSubmit.addEventListener('click', subscribe);
+    newsletterInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') subscribe();
+    });
+  }
+
   document.querySelectorAll('.btn-grad, .btn-white').forEach((btn) => {
     if (btn.textContent.trim() === 'Learn More') {
       btn.addEventListener('click', () => {
