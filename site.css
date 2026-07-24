@@ -924,15 +924,11 @@ footer { padding: 48px 0 28px; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  grid-template-columns: 1.15fr 0.7fr 0.8fr 1.05fr 0.95fr 1.15fr;
   gap: 22px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--border-soft);
   align-items: start;
-}
-
-.footer-logo {
-  grid-column: 1 / -1;
 }
 
 .footer-logo .tag {
@@ -1164,12 +1160,8 @@ footer .col .contact-icon--pin {
   }
 
   .footer-grid {
-    grid-template-columns: repeat(5, minmax(140px, 1fr));
+    grid-template-columns: 156px repeat(5, minmax(125px, 1fr));
     overflow-x: auto;
-  }
-
-  .footer-logo {
-    grid-column: 1 / -1;
   }
 
   .footer-grid .col a {
