@@ -1087,9 +1087,21 @@ footer .col a:hover { color: var(--magenta); }
 
   .features-row,
   .impact-grid,
-  .info-grid,
-  .footer-grid {
+  .info-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(4, minmax(130px, 1fr));
+    overflow-x: auto;
+  }
+
+  .footer-logo {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid .col a {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -1107,7 +1119,6 @@ footer .col a:hover { color: var(--magenta); }
   .why-grid,
   .impact-grid,
   .info-grid,
-  .footer-grid,
   .features-row,
   .partner-grid {
     grid-template-columns: 1fr;
