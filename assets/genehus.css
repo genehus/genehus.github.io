@@ -143,8 +143,8 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 26px;
-  padding: 0 32px;
+  gap: 16px;
+  padding: 0 24px;
   max-width: 1440px;
   margin: 0 auto;
   min-height: 106px;
@@ -158,12 +158,12 @@ h1, h2, h3 {
 }
 
 .site-header .logo {
-  margin-left: 64px;
+  margin-left: 0;
 }
 
 .logo-full {
   width: auto;
-  height: 84px;
+  height: 72px;
   object-fit: contain;
   border-radius: 10px;
   background: var(--bg-darker);
@@ -208,16 +208,13 @@ h1, h2, h3 {
 .nav-main {
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   justify-content: center;
-  gap: 22px;
+  gap: 12px;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  overflow: visible;
 }
-
-.nav-main::-webkit-scrollbar { display: none; }
 
 .nav-main a {
   font-size: 15.7px;
@@ -231,7 +228,12 @@ h1, h2, h3 {
 .nav-main a.active { color: var(--magenta); }
 .nav-main a:hover { color: #fff; }
 
-.nav-cta { flex-shrink: 0; margin-left: auto; }
+.nav-cta {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 9px 18px;
+  font-size: 13px;
+}
 
 .menu-toggle {
   display: none;
@@ -1143,8 +1145,8 @@ footer .col .contact-icon--pin {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
-  .nav-main { gap: 15.4px; }
-  .nav-main a { font-size: 14.5px; }
+  .nav-main { gap: 10px; }
+  .nav-main a { font-size: 13.5px; }
   .logo-tagline { display: none; }
 }
 
