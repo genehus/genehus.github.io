@@ -512,6 +512,7 @@ h1, h2, h3 {
   margin: 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  background: #0a0a0a;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-dark);
 }
@@ -520,12 +521,13 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   display: block;
+  border: none;
   border-radius: 0;
   object-fit: cover;
-  object-position: center top;
-  aspect-ratio: 4 / 3;
+  object-position: center center;
+  aspect-ratio: 16 / 10;
   box-shadow: none;
-  border: none;
+  background: #0a0a0a;
 }
 
 .stat-strip {
