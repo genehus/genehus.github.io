@@ -747,7 +747,7 @@ h1, h2, h3 {
 
 .impact p.sub {
   text-align: center;
-  color: var(--magenta);
+  color: #d9d3f5;
   font-size: 15.95px;
   margin-bottom: 40px;
 }
@@ -778,7 +778,7 @@ h1, h2, h3 {
 
 .impact-item p {
   font-size: 13.75px;
-  color: var(--magenta);
+  color: #cfc8ef;
   line-height: 1.45;
 }
 
