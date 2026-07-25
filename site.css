@@ -220,7 +220,7 @@ h1, h2, h3 {
 .nav-main::-webkit-scrollbar { display: none; }
 
 .nav-main a {
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.88);
   white-space: nowrap;
@@ -993,7 +993,7 @@ footer {
 }
 
 footer h5 {
-  font-size: 17.5px;
+  font-size: 15.75px;
   font-weight: 700;
   margin-bottom: 12px;
   color: #fff;
@@ -1002,7 +1002,7 @@ footer h5 {
 footer .col a,
 footer .col p {
   display: block;
-  font-size: 16.9px;
+  font-size: 15.2px;
   color: #b8b3d4;
   margin-bottom: 8px;
 }
@@ -1090,7 +1090,7 @@ footer .col .contact-icon--pin {
 .mt { margin-top: 16px; }
 
 .newsletter-note {
-  font-size: 15.6px;
+  font-size: 14px;
   margin-bottom: 8px;
   color: #a39fbf;
 }
@@ -1142,7 +1142,7 @@ footer .col .contact-icon--pin {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
   .nav-main { gap: 14px; }
-  .nav-main a { font-size: 12px; }
+  .nav-main a { font-size: 13.2px; }
   .logo-tagline { display: none; }
 }
 
