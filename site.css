@@ -444,7 +444,7 @@ h1, h2, h3 {
 }
 
 .problem .wrap {
-  background: #25242a;
+  background: var(--bg-darker);
   border-radius: var(--radius-lg);
   padding: 48px 40px;
   border: 1px solid var(--border-dark);
@@ -456,7 +456,6 @@ h1, h2, h3 {
   grid-template-columns: 1fr 1.05fr;
   gap: 48px;
   align-items: center;
-  padding-bottom: 28px;
 }
 
 .problem h2 {
@@ -503,23 +502,22 @@ h1, h2, h3 {
   object-fit: cover;
   aspect-ratio: 4 / 3;
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-dark);
+  border: 10px solid #fdfdfd;
 }
 
 .stat-strip {
   position: absolute;
-  bottom: -28px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 94%;
-  background: #111111;
+  width: 90%;
+  background: var(--bg-darker);
   border-radius: var(--radius);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 18px 10px;
-  border: 1px solid var(--border-dark);
+  padding: 16px 10px;
 }
 
 .stat-strip .stat {
