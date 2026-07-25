@@ -174,7 +174,7 @@ h1, h2, h3 {
   height: 96px;
   box-shadow: none;
   border-radius: 0;
-  background: #121212;
+  background: #1e3e49;
 }
 
 .logo-icon {
@@ -951,7 +951,7 @@ h1, h2, h3 {
 /* ===== FOOTER ===== */
 footer {
   padding: 96px 0 70px;
-  background: #443f27;
+  background: #1e3e49;
   color: #d4d0e8;
 }
 
@@ -998,7 +998,7 @@ footer h5 {
   font-size: 15.75px;
   font-weight: 700;
   margin-bottom: 18px;
-  color: #fff;
+  color: #d6c76c;
 }
 
 footer .col a,
