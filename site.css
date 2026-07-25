@@ -742,15 +742,14 @@ h1, h2, h3 {
   text-align: center;
   font-size: 30.8px;
   margin-bottom: 8px;
-  color: var(--magenta);
+  color: #fff;
 }
 
 .impact p.sub {
   text-align: center;
-  color: var(--magenta);
+  color: #d9d3f5;
   font-size: 15.95px;
   margin-bottom: 40px;
-  opacity: 0.85;
 }
 
 .impact-grid {
@@ -774,13 +773,12 @@ h1, h2, h3 {
   font-size: 15.4px;
   font-weight: 700;
   margin-bottom: 4px;
-  color: var(--magenta);
+  color: #fff;
 }
 
 .impact-item p {
   font-size: 13.75px;
-  color: var(--magenta);
-  opacity: 0.8;
+  color: #cfc8ef;
   line-height: 1.45;
 }
 
