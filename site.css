@@ -871,7 +871,7 @@ h1, h2, h3 {
 
 /* ===== CTA ===== */
 .cta-wrap-outer {
-  background: #1f1f1f;
+  background: var(--bg-section);
   padding: 48px 0;
 }
 
