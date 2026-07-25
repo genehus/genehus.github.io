@@ -723,7 +723,7 @@ h1, h2, h3 {
 
 /* ===== IMPACT ===== */
 .impact {
-  background: var(--bg-dark);
+  background: var(--bg-darker);
   padding: 56px 0;
   color: #fff;
   overflow: hidden;
