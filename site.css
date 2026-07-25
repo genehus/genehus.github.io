@@ -952,7 +952,7 @@ h1, h2, h3 {
 footer {
   padding: 82px 0 60px;
   background: #1e3e49;
-  color: #d4d0e8;
+  color: #f5f5f5;
 }
 
 .footer-grid {
@@ -966,7 +966,7 @@ footer {
 
 .footer-logo .tag {
   font-size: 11px;
-  color: #a39fbf;
+  color: #eeeeee;
   margin-bottom: 12px;
 }
 
@@ -1009,7 +1009,7 @@ footer .col a,
 footer .col p {
   display: block;
   font-size: 15.2px;
-  color: #b8b3d4;
+  color: #ffffff;
   margin-bottom: 12px;
   line-height: 1.55;
 }
