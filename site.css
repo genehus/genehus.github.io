@@ -999,10 +999,6 @@ footer h5 {
   font-weight: 700;
   margin-bottom: 15px;
   color: #c9a227;
-  text-shadow:
-    0 1px 0 rgba(255, 236, 170, 0.45),
-    0 2px 3px rgba(0, 0, 0, 0.35),
-    0 -1px 0 rgba(80, 55, 0, 0.35);
 }
 
 footer .col a,
@@ -1099,7 +1095,7 @@ footer .col .contact-icon--pin {
 .newsletter-note {
   font-size: 14px;
   margin-bottom: 12px;
-  color: #a39fbf;
+  color: #f0f0f0;
   line-height: 1.55;
 }
 
@@ -1142,7 +1138,7 @@ footer .col .contact-icon--pin {
   align-items: center;
   padding-top: 17px;
   font-size: 12px;
-  color: #8b87ab;
+  color: #e8e8e8;
   flex-wrap: wrap;
   gap: 10px;
 }
