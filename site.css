@@ -66,7 +66,7 @@ img {
 }
 
 .wrap {
-  max-width: 1520px;
+  max-width: 1368px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -145,7 +145,7 @@ h1, h2, h3 {
   justify-content: flex-start;
   gap: 24px;
   padding: 0 32px;
-  max-width: 1600px;
+  max-width: 1440px;
   margin: 0 auto;
   min-height: 96px;
 }
