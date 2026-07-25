@@ -957,8 +957,8 @@ footer {
   display: grid;
   grid-template-columns: 1.15fr 0.7fr 0.8fr 1.05fr 0.95fr 1.15fr;
   gap: 28px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 28px;
+  border-bottom: none;
   align-items: start;
 }
 
@@ -995,7 +995,7 @@ footer {
 footer h5 {
   font-size: 15.75px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   color: #fff;
 }
 
@@ -1004,7 +1004,8 @@ footer .col p {
   display: block;
   font-size: 15.2px;
   color: #b8b3d4;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
+  line-height: 1.55;
 }
 
 footer .col a:hover { color: var(--magenta); }
@@ -1091,8 +1092,9 @@ footer .col .contact-icon--pin {
 
 .newsletter-note {
   font-size: 14px;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   color: #a39fbf;
+  line-height: 1.55;
 }
 
 .newsletter-input {
