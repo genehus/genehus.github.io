@@ -723,8 +723,8 @@ h1, h2, h3 {
 
 /* ===== IMPACT ===== */
 .impact {
-  background: var(--bg-darker);
-  padding: 56px 0;
+  background: var(--bg-dark);
+  padding: 64px 0;
   color: #fff;
   overflow: hidden;
 }
@@ -739,12 +739,11 @@ h1, h2, h3 {
 .impact .wrap {
   position: relative;
   z-index: 2;
-  width: 70%;
-  max-width: 1368px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
+  background: var(--bg-darker);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  padding: 48px 40px;
 }
 
 .impact h2 {
