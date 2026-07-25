@@ -164,17 +164,18 @@ h1, h2, h3 {
 .logo-full {
   width: auto;
   height: 84px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #443f27;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background: transparent;
   box-shadow: none;
 }
 
 .logo--footer .logo-full {
-  height: 82px;
+  height: 96px;
   box-shadow: none;
-  border-radius: 0;
-  background: #1e3e49;
+  border-radius: 50%;
+  background: transparent;
 }
 
 .logo-icon {
