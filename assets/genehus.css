@@ -169,7 +169,7 @@ h1, h2, h3 {
   height: 96px;
   box-shadow: none;
   border-radius: 0;
-  background: #1f1f1f;
+  background: #121212;
 }
 
 .logo-icon {
@@ -711,7 +711,7 @@ h1, h2, h3 {
 
 /* ===== INFO CARDS ===== */
 .info-band {
-  background: var(--bg-section);
+  background: #232228;
   padding: 56px 0;
 }
 
@@ -871,7 +871,7 @@ h1, h2, h3 {
 
 /* ===== CTA ===== */
 .cta-wrap-outer {
-  background: var(--bg-section);
+  background: #232228;
   padding: 48px 0;
 }
 
@@ -924,7 +924,7 @@ h1, h2, h3 {
 /* ===== FOOTER ===== */
 footer {
   padding: 48px 0 28px;
-  background: #1f1f1f;
+  background: #121212;
   color: #d4d0e8;
 }
 
