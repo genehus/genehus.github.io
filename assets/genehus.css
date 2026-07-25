@@ -830,8 +830,8 @@ h1, h2, h3 {
 
 /* About card */
 .about-card {
-  background: var(--bg-darker);
-  border: 1px solid var(--border-dark);
+  background: #1e3e49;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
   overflow: hidden;
   color: #fff;
