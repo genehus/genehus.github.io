@@ -949,7 +949,8 @@ h1, h2, h3 {
 }
 
 .cta-band {
-  background: var(--grad);
+  background: var(--bg-darker);
+  border: 1px solid var(--border-dark);
   border-radius: var(--radius-lg);
   padding: 16px 32px;
   display: flex;
@@ -957,7 +958,7 @@ h1, h2, h3 {
   justify-content: space-between;
   gap: 20px;
   color: #fff;
-  box-shadow: 0 12px 40px rgba(233, 30, 140, 0.28);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
 .cta-band .left {
