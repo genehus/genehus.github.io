@@ -739,8 +739,12 @@ h1, h2, h3 {
 .impact .wrap {
   position: relative;
   z-index: 2;
-  padding-left: 15%;
-  padding-right: 15%;
+  width: 70%;
+  max-width: 1368px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .impact h2 {
@@ -761,6 +765,7 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
+  width: 100%;
 }
 
 .impact-item {
