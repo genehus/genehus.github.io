@@ -130,7 +130,7 @@ h1, h2, h3 {
   top: 0;
   z-index: 200;
   width: 100%;
-  background: #948a54;
+  background: #766e43;
   border-bottom: 1px solid transparent;
 }
 
@@ -166,7 +166,7 @@ h1, h2, h3 {
   height: 84px;
   object-fit: contain;
   border-radius: 10px;
-  background: #948a54;
+  background: #766e43;
   box-shadow: none;
 }
 
