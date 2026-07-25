@@ -723,7 +723,7 @@ h1, h2, h3 {
 
 /* ===== IMPACT ===== */
 .impact {
-  background: var(--grad-dark);
+  background: var(--bg-dark);
   padding: 56px 0;
   color: #fff;
   overflow: hidden;
@@ -732,7 +732,7 @@ h1, h2, h3 {
 .impact-bg {
   position: absolute;
   inset: 0;
-  opacity: 0.4;
+  opacity: 0.22;
   pointer-events: none;
 }
 
