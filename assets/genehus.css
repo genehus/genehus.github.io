@@ -998,7 +998,11 @@ footer h5 {
   font-size: 15.75px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #d6c76c;
+  color: #c9a227;
+  text-shadow:
+    0 1px 0 rgba(255, 236, 170, 0.45),
+    0 2px 3px rgba(0, 0, 0, 0.35),
+    0 -1px 0 rgba(80, 55, 0, 0.35);
 }
 
 footer .col a,
