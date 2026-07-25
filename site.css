@@ -171,7 +171,7 @@ h1, h2, h3 {
 }
 
 .logo--footer .logo-full {
-  height: 96px;
+  height: 82px;
   box-shadow: none;
   border-radius: 0;
   background: #1e3e49;
@@ -950,7 +950,7 @@ h1, h2, h3 {
 
 /* ===== FOOTER ===== */
 footer {
-  padding: 96px 0 70px;
+  padding: 82px 0 60px;
   background: #1e3e49;
   color: #d4d0e8;
 }
@@ -958,8 +958,8 @@ footer {
 .footer-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.7fr 0.8fr 1.05fr 0.95fr 1.15fr;
-  gap: 28px;
-  padding-bottom: 56px;
+  gap: 24px;
+  padding-bottom: 48px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   align-items: start;
 }
@@ -967,7 +967,7 @@ footer {
 .footer-logo .tag {
   font-size: 11px;
   color: #a39fbf;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .social-row {
@@ -997,7 +997,7 @@ footer {
 footer h5 {
   font-size: 15.75px;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   color: #d6c76c;
 }
 
@@ -1006,7 +1006,7 @@ footer .col p {
   display: block;
   font-size: 15.2px;
   color: #b8b3d4;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   line-height: 1.55;
 }
 
@@ -1094,7 +1094,7 @@ footer .col .contact-icon--pin {
 
 .newsletter-note {
   font-size: 14px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: #a39fbf;
   line-height: 1.55;
 }
@@ -1136,7 +1136,7 @@ footer .col .contact-icon--pin {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 17px;
   font-size: 12px;
   color: #8b87ab;
   flex-wrap: wrap;
