@@ -1255,6 +1255,9 @@ ol {
   text-transform: none;
   letter-spacing: 0.02em;
   color: #0a0a0a;
+  margin-bottom: 20px;
+  text-shadow: none;
+}
 
 .site-footer .footer-top a {
   display: block;
