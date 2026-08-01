@@ -894,7 +894,7 @@ ol {
 
 .person-card {
   background: var(--white);
-  border: 1px solid transparent;
+  border: 1px solid var(--line);
   padding: 25px 20px 22px;
   text-align: center;
   display: flex;
@@ -913,11 +913,6 @@ ol {
   background: #ffffff;
   flex-shrink: 0;
   overflow: hidden;
-}
-
-.person-photo--empty {
-  border-color: transparent;
-  background: #f3f3f3;
 }
 
 .person-card h3 {
@@ -970,7 +965,7 @@ ol {
 
 .advisor-card {
   background: var(--white);
-  border: 1px solid transparent;
+  border: 1px solid var(--line);
   padding: 24px 16px;
   min-height: 128px;
   height: 100%;
