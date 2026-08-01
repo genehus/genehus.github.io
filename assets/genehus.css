@@ -1254,10 +1254,7 @@ ol {
   font-weight: 700;
   text-transform: none;
   letter-spacing: 0.02em;
-  color: #1e3e49;
-  margin-bottom: 20px;
-  text-shadow: none;
-}
+  color: #0a0a0a;
 
 .site-footer .footer-top a {
   display: block;
