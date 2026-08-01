@@ -903,11 +903,11 @@ ol {
 }
 
 .person-photo {
-  width: 98px;
-  height: 98px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 22%;
   margin-bottom: 14px;
   border: 2px solid var(--gold);
   background: #ffffff;
