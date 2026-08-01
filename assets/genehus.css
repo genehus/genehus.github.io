@@ -1084,10 +1084,10 @@ ol {
   font-size: 0.81rem;
 }
 
-/* ——— Footer: pure black ——— */
+/* ——— Footer ——— */
 .site-footer {
-  background: var(--black);
-  color: rgba(255, 255, 255, 0.85);
+  background: var(--white);
+  color: var(--ink);
 }
 
 .footer-top {
@@ -1104,14 +1104,14 @@ ol {
   gap: 12px;
   margin-bottom: 14px;
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(17, 17, 17, 0.85);
 }
 
 .footer-contact a,
 .footer-founder a {
   display: inline;
   margin: 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(17, 17, 17, 0.85);
 }
 
 .footer-contact a:hover,
@@ -1128,7 +1128,7 @@ ol {
 .footer-founder .founder-name {
   font-weight: 500;
   font-size: 1.25rem;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 16px;
 }
 
@@ -1145,7 +1145,7 @@ ol {
 
 .footer-brand p {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
   max-width: 28ch;
   line-height: 1.55;
 }
@@ -1156,7 +1156,7 @@ ol {
   font-weight: 600;
   text-transform: none;
   letter-spacing: 0.02em;
-  color: #4ec8dc;
+  color: #284752;
   margin-bottom: 20px;
   text-shadow: none;
 }
@@ -1165,7 +1165,7 @@ ol {
   display: block;
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(17, 17, 17, 0.7);
   transition: color 0.2s;
 }
 
@@ -1176,7 +1176,7 @@ ol {
 .footer-subscribe p {
   font-size: 0.9rem;
   margin-bottom: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--muted);
 }
 
 .newsletter {
@@ -1188,9 +1188,9 @@ ol {
   flex: 1;
   min-width: 0;
   padding: 12px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: #111;
-  color: var(--white);
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--ink);
   font: inherit;
   border-radius: 2px;
 }
@@ -1201,10 +1201,10 @@ ol {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--line);
   padding: 24px 0;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--muted);
 }
 
 .footer-bottom .wrap {
