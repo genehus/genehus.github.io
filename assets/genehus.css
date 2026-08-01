@@ -1098,7 +1098,7 @@ ol {
 }
 
 .site-footer {
-  background: #efe9e0;
+  background: #ffffff;
   color: #0d0d0d;
 }
 
@@ -1260,8 +1260,8 @@ ol {
 }
 
 .footer-bottom {
-  background: #efe9e0;
-  border-top: 1px solid #ddd6cb;
+  background: #ffffff;
+  border-top: 1px solid #e5e5e5;
   padding: 24px 0;
   font-size: 0.82rem;
   color: #2a2a2a;
