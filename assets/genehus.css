@@ -114,11 +114,6 @@ ol {
   transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
-.site-header.is-open {
-  height: auto;
-  min-height: var(--header-h);
-}
-
 .site-header.is-scrolled,
 .site-header.is-open {
   background: rgba(0, 0, 0, 0.92);
