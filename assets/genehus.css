@@ -1015,11 +1015,12 @@ ol {
 /* ——— Contact ——— */
 .contact {
   padding: 48px 0 40px;
-  background: var(--white);
+  background: #121212;
 }
 
 .contact .section-title {
   margin-bottom: 16px;
+  color: var(--white);
 }
 
 .contact-form {
@@ -1042,7 +1043,7 @@ ol {
   gap: 6px;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--ink);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .contact-form input,
@@ -1052,10 +1053,10 @@ ol {
   font-weight: 400;
   font-size: 1rem;
   padding: 11px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 2px;
-  background: var(--bg-soft);
-  color: var(--ink);
+  background: #1a1a1a;
+  color: var(--white);
 }
 
 .contact-form input:focus,
@@ -1066,9 +1067,14 @@ ol {
   box-shadow: 0 0 0 3px rgba(248, 136, 32, 0.2);
 }
 
+.contact-form option {
+  background: #1a1a1a;
+  color: var(--white);
+}
+
 .required-note {
   font-size: 0.95rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .contact-form .btn {
