@@ -1020,8 +1020,9 @@ ol {
 
 .contact .section-title {
   margin-bottom: 14px;
-  color: var(--white);
+  color: #000000;
   font-size: clamp(1.62rem, 2.88vw, 2.25rem);
+  font-weight: 700;
 }
 
 .contact-form {
@@ -1054,8 +1055,8 @@ ol {
   flex-direction: column;
   gap: 5px;
   font-size: 0.855rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.88);
+  font-weight: 700;
+  color: #000000;
 }
 
 .contact-form input,
@@ -1065,10 +1066,10 @@ ol {
   font-weight: 400;
   font-size: 0.9rem;
   padding: 10px 11px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.22);
   border-radius: 2px;
   background: #8a8a8a;
-  color: var(--white);
+  color: #000000;
 }
 
 .contact-form input:focus,
@@ -1081,12 +1082,13 @@ ol {
 
 .contact-form option {
   background: #8a8a8a;
-  color: var(--white);
+  color: #000000;
 }
 
 .required-note {
   font-size: 0.855rem;
-  color: rgba(255, 255, 255, 0.45);
+  font-weight: 700;
+  color: #000000;
 }
 
 .contact-form .btn {
