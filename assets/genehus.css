@@ -1015,7 +1015,7 @@ ol {
 /* ——— Contact ——— */
 .contact {
   padding: 43px 0 36px;
-  background: #7a7a7a;
+  background: #ffffff;
 }
 
 .contact .section-title {
@@ -1066,9 +1066,9 @@ ol {
   font-weight: 400;
   font-size: 0.9rem;
   padding: 10px 11px;
-  border: 1px solid rgba(0, 0, 0, 0.22);
+  border: 1px solid #dddddd;
   border-radius: 2px;
-  background: #8a8a8a;
+  background: #f5f5f5;
   color: #000000;
 }
 
@@ -1081,7 +1081,7 @@ ol {
 }
 
 .contact-form option {
-  background: #8a8a8a;
+  background: #ffffff;
   color: #000000;
 }
 
