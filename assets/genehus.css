@@ -1238,6 +1238,10 @@ ol {
   flex-shrink: 0;
 }
 
+.site-footer .fi {
+  color: #000000;
+}
+
 .footer-brand img {
   width: 168px;
   margin-bottom: 16px;
