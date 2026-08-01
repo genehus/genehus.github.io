@@ -889,10 +889,12 @@ ol {
   height: 98px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 20%;
   margin-bottom: 14px;
   border: 2px solid var(--gold);
-  background: #eee;
+  background: #ffffff;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .person-card h3 {
