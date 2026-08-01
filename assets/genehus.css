@@ -6,8 +6,8 @@
   --ink-soft: #222222;
   --muted: #666666;
   --line: #e5e5e5;
-  --bg: #f6f4f0;
-  --bg-soft: #efebe5;
+  --bg: #ebe6df;
+  --bg-soft: #e3ddd4;
   --white: #ffffff;
   --gold: #f88820;
   --gold-dark: #d96f12;
@@ -319,7 +319,7 @@ ol {
 /* ——— Intro ——— */
 .intro {
   padding: 88px 0;
-  background: var(--bg);
+  background: var(--white);
 }
 
 .intro-grid {
@@ -1019,7 +1019,7 @@ ol {
 /* ——— Contact ——— */
 .contact {
   padding: 43px 0 36px;
-  background: #ffffff;
+  background: var(--white);
 }
 
 .contact .section-title {
@@ -1122,7 +1122,7 @@ ol {
 }
 
 .site-footer {
-  background: #ffffff;
+  background: var(--white);
   color: #0d0d0d;
 }
 
