@@ -909,10 +909,11 @@ ol {
   object-fit: cover;
   object-position: center center;
   margin-bottom: 14px;
-  border: none;
+  border: 2px solid #000000;
   background: #ffffff;
   flex-shrink: 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .person-card h3 {
