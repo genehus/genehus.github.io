@@ -850,12 +850,16 @@ ol {
 /* ——— Team ——— */
 .team {
   padding: 88px 0;
-  background: var(--white);
+  background: #2c2c2c;
+}
+
+.team .section-title {
+  color: var(--white);
 }
 
 .team-title {
   padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   margin-bottom: 32px;
 }
 
