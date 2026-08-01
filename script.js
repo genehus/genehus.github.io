@@ -1,55 +1,104 @@
 (function () {
   const header = document.querySelector('.site-header');
-  const navLinks = document.querySelector('.nav-main');
+  const nav = document.querySelector('.nav-main');
   const menuToggle = document.querySelector('.menu-toggle');
   const navAnchors = document.querySelectorAll('.nav-main a');
-  const sections = [...navAnchors]
-    .map((a) => document.getElementById(a.getAttribute('href').slice(1)))
-    .filter(Boolean);
 
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 8);
-  });
+  const onScroll = () => {
+    header?.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-  if (menuToggle && navLinks) {
+  if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', open);
+      const open = nav.classList.toggle('open');
+      header?.classList.toggle('is-open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
     });
 
-    navLinks.querySelectorAll('a').forEach((link) => {
+    nav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
+        nav.classList.remove('open');
+        header?.classList.remove('is-open');
         menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        navAnchors.forEach((a) => {
-          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-        });
-      });
-    },
-    { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
-  );
+  const sectionIds = [...navAnchors]
+    .map((a) => a.getAttribute('href'))
+    .filter((href) => href && href.startsWith('#'))
+    .map((href) => document.querySelector(href))
+    .filter(Boolean);
 
-  sections.forEach((section) => {
-    if (section.id) observer.observe(section);
-  });
+  if (sectionIds.length && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const id = '#' + entry.target.id;
+          navAnchors.forEach((a) => {
+            a.classList.toggle('active', a.getAttribute('href') === id);
+          });
+        });
+      },
+      { rootMargin: '-35% 0px -55% 0px', threshold: 0 }
+    );
+    sectionIds.forEach((el) => observer.observe(el));
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  const revealEls = document.querySelectorAll(
+    '.platform, .problem, .process, .technology, .paths, .partners, .pipeline, .about, .team, .contact, .intro, .interest, .indications'
+  );
+  revealEls.forEach((el) => el.classList.add('reveal'));
+
+  const brand = document.querySelector('.about-brand');
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          if (entry.target.classList.contains('about') || entry.target.contains(brand)) {
+            brand?.classList.add('is-animated');
+          }
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+
+    if (brand) {
+      const brandObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            brand.classList.add('is-animated');
+            brandObserver.unobserve(brand);
+          });
+        },
+        { threshold: 0.35 }
+      );
+      brandObserver.observe(brand);
+    }
+  } else {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+    brand?.classList.add('is-animated');
+  }
 
   const newsletterInput = document.querySelector('#newsletter-email');
   const newsletterSubmit = document.querySelector('.newsletter-submit');
@@ -73,11 +122,17 @@
     });
   }
 
-  document.querySelectorAll('.btn-grad, .btn-white').forEach((btn) => {
-    if (btn.textContent.trim() === 'Learn More') {
-      btn.addEventListener('click', () => {
-        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-  });
+  const form = document.querySelector('#contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const lines = [...data.entries()]
+        .map(([key, value]) => `${key}: ${value}`)
+        .join('\n');
+      const subject = encodeURIComponent('GeneHus website inquiry');
+      const body = encodeURIComponent(lines);
+      window.location.href = `mailto:partnerships@genehus.bio?subject=${subject}&body=${body}`;
+    });
+  }
 })();

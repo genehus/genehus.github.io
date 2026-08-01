@@ -8,14 +8,14 @@ GeneHus combines artificial intelligence and genomics to identify biomarkers and
 
 ## Site
 
-This repository hosts the GeneHus marketing website, deployed via [GitHub Pages](https://genehus.github.io/).
+This repository hosts the GeneHus marketing website, deployed via GitHub Pages.
 
 ## Structure
 
 - `index.html` — page markup
-- `style.css` — styles
-- `script.js` — navigation and scroll behavior
-- `assets/` — images, logos, and section artwork (`man_1.png`–`man_12.png`)
+- `assets/genehus.css` — styles (navy · crimson · gold brand system)
+- `script.js` — navigation, reveal motion, contact/newsletter
+- `assets/` — imagery, partner marks, wordmarks
 
 ## Local development
 

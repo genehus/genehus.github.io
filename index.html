@@ -3,428 +3,395 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GeneHus — AI-powered genomic diagnostics for earlier cancer detection across Africa.">
-  <title>GeneHus | AI-Powered Genomic Diagnostics</title>
-  <link rel="icon" href="assets/GeneHus_3D_Logo.png" type="image/png">
+  <meta name="description" content="GeneHus — AI-powered genomic diagnostics matching African men to earlier cancer care.">
+  <title>GeneHus – Predictive Genomic Diagnostics</title>
+  <link rel="icon" href="assets/logo-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/genehus.css?v=68">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/genehus.css?v=112">
 </head>
 <body>
 
-<svg width="0" height="0" aria-hidden="true" style="position:absolute">
-  <defs>
-    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#e91e8c"/>
-      <stop offset="100%" stop-color="#6a1b9a"/>
-    </linearGradient>
-    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e91e8c"/>
-      <stop offset="100%" stop-color="#6a1b9a"/>
-    </linearGradient>
-  </defs>
-</svg>
-
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo logo--full" href="#hero">
-      <img src="assets/GeneHus_3D_Logo.png" alt="GeneHus — AI that combines genomic and clinical data to catch aggressive prostate cancer earlier in African men" class="logo-full" width="108" height="108">
+    <a class="logo" href="#top" aria-label="GeneHus home">
+      <img class="logo-dark" src="assets/genehus-logo-b5.png" alt="GeneHus" width="168" height="43">
+      <img class="logo-light" src="assets/genehus-logo-b5-white.png" alt="" width="168" height="43" aria-hidden="true">
     </a>
-
-    <nav class="nav-main" aria-label="Main navigation">
-      <a class="active" href="#hero">Home</a>
-      <a href="#problem">Problem</a>
-      <a href="#solution">Our Solution</a>
+    <nav class="nav-main" aria-label="Main">
       <a href="#technology">Technology</a>
-      <a href="#why-it-matters">Why It Matters</a>
-      <a href="#about">About GeneHus</a>
-      <a href="#team">Team</a>
-      <a href="#advisors">Advisors</a>
-      <a href="#partners">Partners &amp; Affiliations</a>
+      <a href="#platform">Platform</a>
+      <a href="#about">About Us</a>
       <a href="#contact">Contact</a>
     </nav>
-
-    <button type="button" class="btn btn-grad nav-cta">Learn More</button>
-    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
-    <img src="assets/man_1.png" alt="" class="nav-reference" aria-hidden="true" width="1" height="1">
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<section class="hero" id="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow eyebrow-badge">AI-POWERED GENOMIC DIAGNOSTICS</span>
-        <h1>AI-Powered<br>Cancer Insights,<br><span class="accent">Earlier</span></h1>
-        <p class="lead">GeneHus combines artificial intelligence and genomics to identify biomarkers and stratify cancer risk earlier and more accurately—empowering clinicians and researchers across Africa.</p>
-        <button type="button" class="btn btn-grad">Learn More</button>
-      </div>
-      <figure class="hero-visual">
-        <img src="assets/man_3.png" alt="AI Analysis dashboard showing Biomarker Insights, Genomic Signature, Risk Stratification, and Treatment Insight" width="800" height="500" loading="eager" decoding="async">
-        <figcaption class="hero-caption">
-          <strong>Focused on Africa</strong>
-          Building solutions relevant to African populations.
-        </figcaption>
-      </figure>
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/hero-african-clinic.jpg" alt="" width="1600" height="900" fetchpriority="high">
     </div>
-
-    <div class="features-row">
-      <div class="feature-item">
-        <div class="feature-icon feature-icon--target" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d6188a" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <div>
-          <h4>AI-Powered Analysis</h4>
-          <p>Advanced machine learning for genomic insights.</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon feature-icon--dna" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b1fc9" stroke-width="2"><path d="M4 4c4 0 4 4 8 4s4-4 8-4M4 12c4 0 4 4 8 4s4-4 8-4M4 20c4 0 4-4 8-4s4 4 8 4"/></svg>
-        </div>
-        <div>
-          <h4>Genomic Data Intelligence</h4>
-          <p>Analyzing genomic data to identify meaningful biomarkers.</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon feature-icon--shield" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="2"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg>
-        </div>
-        <div>
-          <h4>Focused on Africa</h4>
-          <p>Building solutions relevant to African populations.</p>
-        </div>
-      </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap hero-copy">
+      <h1><span class="hero-line1">Predictive Diagnostics:</span><br><span class="hero-line2">Matching African men to earlier care</span></h1>
+      <p class="hero-sub">Next-generation tools using the power of AI and genomics<br>to stratify aggressive prostate cancer risk</p>
     </div>
-  </div>
-</section>
+    <nav class="hero-tabs" aria-label="Page sections">
+      <a class="is-active" href="#platform"><span>Platform</span></a>
+      <a href="#partners"><span>Partners</span></a>
+      <a href="#indications"><span>Indication</span></a>
+      <a href="#pipeline"><span>Pipeline</span></a>
+      <a href="#contact"><span>Contact</span></a>
+    </nav>
+  </section>
 
-<section class="why-band" id="why-it-matters">
-  <div class="wrap">
-    <div class="why-panel">
-      <h2>Why It Matters</h2>
-      <div class="why-grid">
-
-        <article class="why-item">
-          <div class="why-icon" aria-hidden="true">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="url(#iconGrad)"><circle cx="8" cy="8" r="2.6"/><circle cx="16" cy="8" r="2.6"/><circle cx="12" cy="6.4" r="3"/><path d="M2.5 18.5c0-2.9 2.5-4.6 5.5-4.6s5.5 1.7 5.5 4.6z"/><path d="M10.5 18.5c0-2.9 2.5-4.6 5.5-4.6s5.5 1.7 5.5 4.6z"/></svg>
-          </div>
-          <div>
-            <h4>Early Detection</h4>
-            <p>Supporting research into earlier cancer insights.</p>
-          </div>
-        </article>
-
-        <article class="why-item">
-          <div class="why-icon" aria-hidden="true">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 1.6v3.2M12 19.2v3.2M1.6 12h3.2M19.2 12h3.2"/><path d="M13.6 13.4a1.9 1.9 0 1 0-2.6-2.6z" fill="url(#iconGrad)" stroke="none"/></svg>
-          </div>
-          <div>
-            <h4>Precision Insights</h4>
-            <p>Using genomic data analysis to identify meaningful biomarkers.</p>
-          </div>
-        </article>
-
-        <article class="why-item">
-          <div class="why-icon" aria-hidden="true">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="url(#iconGrad)"><rect x="3.5" y="13" width="4" height="7.5" rx="1"/><rect x="10" y="8.5" width="4" height="12" rx="1"/><rect x="16.5" y="4" width="4" height="16.5" rx="1"/></svg>
-          </div>
-          <div>
-            <h4>Better Outcomes</h4>
-            <p>Supporting future precision medicine approaches.</p>
-          </div>
-        </article>
-
-        <article class="why-item">
-          <div class="why-icon" aria-hidden="true">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/><path d="M5 6.6c2 1.2 4.4 1.8 7 1.8s5-.6 7-1.8"/><path d="M5 17.4c2-1.2 4.4-1.8 7-1.8s5 .6 7 1.8"/></svg>
-          </div>
-          <div>
-            <h4>Accessible Solutions</h4>
-            <p>Developing solutions relevant to African populations.</p>
-          </div>
-        </article>
-
+  <!-- NEXT GENERATION -->
+  <section class="intro" id="platform">
+    <div class="wrap intro-grid">
+      <div class="intro-text">
+        <h2>The next generation of<br>predictive diagnostics</h2>
+        <p>GeneHus is building African-trained genomic risk stratification that helps clinicians identify men at highest risk of aggressive prostate cancer before late-stage presentation.</p>
+        <p>Our Clinical Intelligence Platform combines genomic and clinical signals so oncologists can prioritise intervention earlier, inside hospital workflows designed for African healthcare systems.</p>
+        <a class="btn btn-gold" href="#contact">Join a hospital pilot</a>
       </div>
+      <blockquote class="intro-quote">
+        <p>“Better tools are needed to provide clinicians and patients with a more accurate understanding of tumor risk ahead of treatment decisions. Multidimensional biomarkers rather than PSA alone represent a promising new approach for African oncology.”</p>
+        <cite>GeneHus clinical thesis · Ghana tertiary oncology systems</cite>
+      </blockquote>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="problem" id="problem">
-  <div class="wrap">
-    <div class="problem-grid">
-      <div class="problem-copy">
-        <span class="eyebrow">THE PROBLEM</span>
-        <h2>Prostate Cancer Outcomes in Africa Are Disproportionately Poor</h2>
-        <ul>
-          <li>Late-stage diagnosis remains common</li>
-          <li>Limited genomic diagnostics access</li>
-          <li>PSA testing alone has low specificity</li>
-          <li>Existing AI/genomic tools underrepresent African populations</li>
-        </ul>
-        <p class="footnote">African men experience some of the highest prostate cancer mortality rates globally.</p>
-      </div>
-      <figure class="problem-image">
-        <img src="assets/man_5.png?v=2" alt="Scientist examining samples through a microscope in a laboratory" width="600" height="450" loading="lazy" decoding="async">
-        <div class="stat-strip">
-          <div class="stat">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
-            <span>Late Diagnosis</span>
+  <!-- INTEREST CARDS -->
+  <section class="interest" aria-label="Explore">
+    <div class="wrap">
+      <h2 class="section-title">You might also be interested in</h2>
+      <div class="interest-grid">
+        <a class="interest-card" href="mailto:investors@genehus.bio">
+          <div class="interest-media" style="background-image:url('assets/card-investors.jpg')"></div>
+          <div class="interest-body">
+            <h3>Investors</h3>
+            <p>Help us write the next chapter in African precision oncology.</p>
           </div>
-          <span class="stat-arrow" aria-hidden="true">&rarr;</span>
-          <div class="stat">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
-            <span>Delayed Intervention</span>
-          </div>
-          <span class="stat-arrow" aria-hidden="true">&rarr;</span>
-          <div class="stat">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="13" width="3.4" height="7" rx="0.6" fill="url(#iconGrad)"/><rect x="9.3" y="9" width="3.4" height="11" rx="0.6" fill="url(#iconGrad)"/><rect x="15.6" y="4" width="3.4" height="16" rx="0.6" fill="url(#iconGrad)"/></svg>
-            <span>High Mortality</span>
-          </div>
-        </div>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="solution" id="solution">
-  <div class="wrap">
-    <div class="solution-grid">
-      <div>
-        <span class="eyebrow">OUR SOLUTION</span>
-        <h2>GeneHus Clinical Intelligence Platform</h2>
-        <p class="sub">AI-powered genomic risk stratification for African oncology systems.</p>
-        <div class="card-grid-4">
-          <article class="feature-card">
-            <div class="ic" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.6 3.6 3 8 3s8-1.4 8-3V6"/><path d="M4 12v6c0 1.6 3.6 3 8 3s8-1.4 8-3v-6"/></svg>
-            </div>
-            <h4>Integrates Genomic + Clinical Data</h4>
-            <p>Combines genomic, clinical, and pathology data for deeper insights.</p>
-          </article>
-          <article class="feature-card">
-            <div class="ic" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="M9 3a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h0V3z"/><path d="M15 3a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h0V3z"/></svg>
-            </div>
-            <h4>AI Risk Stratification</h4>
-            <p>Proprietary AI models predict cancer risk and prognosis with greater accuracy.</p>
-          </article>
-          <article class="feature-card">
-            <div class="ic" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 13l3-3 2 2 4-5"/></svg>
-            </div>
-            <h4>Clinician Dashboard</h4>
-            <p>Actionable insights in an intuitive dashboard designed for real-world workflows.</p>
-          </article>
-          <article class="feature-card">
-            <div class="ic" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-            </div>
-            <h4>Improved Outcomes, Lower Costs</h4>
-            <p>Enables earlier intervention, better outcomes, and more efficient use of resources.</p>
-          </article>
-        </div>
-      </div>
-      <figure class="solution-image">
-        <img src="assets/man_7.png?v=3" alt="Scientist using a pipette in a genomics laboratory" width="500" height="520" loading="lazy" decoding="async">
-      </figure>
-    </div>
-
-    <div class="tech-grid" id="technology">
-      <div>
-        <span class="eyebrow">TECHNOLOGY</span>
-        <h2>Built for African Healthcare Ecosystems</h2>
-        <p class="sub">GeneHus is a cloud-native platform that brings together genomics, AI, and clinical data to deliver precision oncology insights—designed for low-resource settings.</p>
-        <div class="tech-list">
-          <article class="tech-item">
-            <div class="tech-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8"><path d="M7 18a4 4 0 0 1-.2-8 5.2 5.2 0 0 1 10.1-1.2A4.6 4.6 0 0 1 20 16.8 4.2 4.2 0 0 1 17 18z"/></svg>
-            </div>
-            <div><h4>Cloud-Native Architecture</h4><p>Secure, scalable, and built for reliability.</p></div>
-          </article>
-          <article class="tech-item">
-            <div class="tech-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M12 7v3M10.3 10.3l-3.3 1.2M13.7 10.3l3.3 1.2M10.5 14.5l-1.2 2.8M13.5 14.5l1.2 2.8M7 12h10"/></svg>
-            </div>
-            <div><h4>AI &amp; Machine Learning</h4><p>Advanced models for risk prediction and biomarker identification.</p></div>
-          </article>
-          <article class="tech-item">
-            <div class="tech-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="12" cy="17" r="2.5"/><path d="M8.2 8.5l2.6 6M15.8 8.5l-2.6 6M8.5 7h7"/></svg>
-            </div>
-            <div><h4>Interoperable Systems</h4><p>Seamless integration with hospital systems and laboratory workflows.</p></div>
-          </article>
-          <article class="tech-item">
-            <div class="tech-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-            </div>
-            <div><h4>Privacy &amp; Security by Design</h4><p>Patient data protection and compliance at the core.</p></div>
-          </article>
-        </div>
-      </div>
-      <figure class="tech-image">
-        <img src="assets/man_8.png?v=4" alt="Developer analyzing cancer genomics data with UMAP gene expression visualization on a laptop" width="1536" height="1024" loading="lazy" decoding="async">
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT -->
-<section class="impact" id="impact">
-  <svg class="impact-bg" viewBox="0 0 1180 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g stroke="url(#iconGrad)" stroke-width="2" fill="none" opacity="0.5">
-      <path d="M40 0 C 90 50, 10 90, 60 140 C 110 190, 10 230, 60 320"/>
-      <path d="M110 0 C 60 50, 140 90, 90 140 C 40 190, 140 230, 90 320"/>
-    </g>
-  </svg>
-  <div class="wrap">
-    <h2>Our Impact</h2>
-    <p class="sub">Building the foundation for precision oncology across Africa.</p>
-    <div class="impact-grid">
-      <article class="impact-item">
-        <div class="impact-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 11h6M11 8v6"/></svg>
-        </div>
-        <div><h4>Earlier Detection</h4><p>Enabling earlier cancer risk identification.</p></div>
-      </article>
-      <article class="impact-item">
-        <div class="impact-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="2.2"/><circle cx="5.5" cy="7" r="1.6"/><circle cx="18.5" cy="7" r="1.6"/><circle cx="5.5" cy="17" r="1.6"/><circle cx="18.5" cy="17" r="1.6"/><path d="M10.2 10.8L7 8.2M13.8 10.8L17 8.2M10.2 13.2L7 15.8M13.8 13.2L17 15.8"/></svg>
-        </div>
-        <div><h4>Data for Africans</h4><p>Building African genomic datasets for better accuracy.</p></div>
-      </article>
-      <article class="impact-item">
-        <div class="impact-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3.2-4 2.6 2.4L18 8"/><path d="M14.5 8H18v3.5"/></svg>
-        </div>
-        <div><h4>Better Outcomes</h4><p>Supporting clinicians to make more informed decisions.</p></div>
-      </article>
-      <article class="impact-item">
-        <div class="impact-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.8 3.8 5.8 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-5.8-3.8-9S9.5 5.8 12 3z"/></svg>
-        </div>
-        <div><h4>Equitable Access</h4><p>Bridging the gap in precision oncology across the continent.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="info-band">
-  <div class="wrap">
-    <div class="info-grid">
-
-      <article class="info-card about-card" id="about">
-        <div class="about-inner">
-          <div class="about-text">
-            <h3>About GeneHus</h3>
-            <p>GeneHus is an African-focused biotechnology company building AI-powered genomic infrastructure to transform cancer care through earlier detection, better risk stratification, and improved clinical outcomes.</p>
-          </div>
-          <img src="assets/GeneHus_3D_Logo.png" alt="GeneHus logo" class="about-logo" width="96" height="96">
-        </div>
-      </article>
-
-      <article class="info-card" id="team">
-        <figure class="card-figure">
-          <img src="assets/man_10.png" alt="Our Team — A passionate team of scientists, engineers, and innovators committed to advancing precision medicine in Africa." loading="lazy" decoding="async">
-        </figure>
-        <a class="pill-btn" href="#team">Meet the Team &rarr;</a>
-      </article>
-
-      <article class="info-card" id="advisors">
-        <figure class="card-figure">
-          <img src="assets/man_11.png" alt="Advisors — Guided by experts in genomics, oncology, AI, and healthcare." loading="lazy" decoding="async">
-        </figure>
-        <a class="pill-btn" href="#advisors">Meet Our Advisors &rarr;</a>
-      </article>
-
-      <article class="info-card partners-card" id="partners">
-        <figure class="card-figure">
-          <img src="assets/man_12.png" alt="Partners &amp; Affiliations — Collaborating with UG, KCCR, NMIMR, and AORTIC." loading="lazy" decoding="async">
-        </figure>
-        <a class="pill-btn" href="#partners">Our Partners &rarr;</a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-wrap-outer" id="contact">
-  <div class="wrap">
-    <div class="cta-band">
-      <div class="left">
-        <div class="cta-icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
-        </div>
-        <div>
-          <h3>Ready to Transform Cancer Care in Africa?</h3>
-          <p>Partner with GeneHus to build a future of earlier detection, personalized treatment, and better outcomes.</p>
-        </div>
-      </div>
-      <a class="btn btn-white" href="mailto:partnerships@genehus.bio">Partner With Us</a>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-logo">
-        <a class="logo logo--full logo--footer" href="#hero">
-          <img src="assets/GeneHus_3D_Logo.png" alt="GeneHus — AI that combines genomic and clinical data to catch aggressive prostate cancer earlier in African men" class="logo-full" width="140" height="140">
         </a>
-        <p class="tag">AI-Powered Genomic Diagnostics for Africa.</p>
-        <div class="social-row">
-          <a class="social-dot" href="https://linkedin.com" aria-label="LinkedIn">in</a>
-          <a class="social-dot" href="https://twitter.com" aria-label="Twitter">X</a>
-          <a class="social-dot" href="mailto:info@genehus.bio" aria-label="Email">@</a>
+        <a class="interest-card" href="#technology">
+          <div class="interest-media" style="background-image:url('assets/card-technology.jpg')"></div>
+          <div class="interest-body">
+            <h3>Our Technology</h3>
+            <p>Achieving true precision medicine requires African-trained multidimensional models.</p>
+          </div>
+        </a>
+        <a class="interest-card" href="#about">
+          <div class="interest-media" style="background-image:url('assets/card-about.jpg')"></div>
+          <div class="interest-body">
+            <h3>About GeneHus</h3>
+            <p>Get the latest on how we’re changing cancer care across Africa.</p>
+          </div>
+        </a>
+        <a class="interest-card" href="#partners">
+          <div class="interest-media" style="background-image:url('assets/card-partners.jpg')"></div>
+          <div class="interest-body">
+            <h3>Clients &amp; Partners</h3>
+            <p>Research institutes and oncology networks building with us.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners" id="partners">
+    <div class="wrap">
+      <h2 class="section-title">Working with &amp; supported by</h2>
+      <ul class="partner-row">
+        <li><img src="assets/partner-ug.png" alt="University of Ghana" width="150" height="60" loading="lazy"></li>
+        <li><img src="assets/partner-kccr.png" alt="KCCR" width="150" height="60" loading="lazy"></li>
+        <li><img src="assets/partner-nmimr.png" alt="NMIMR" width="150" height="60" loading="lazy"></li>
+        <li><img src="assets/partner-aortic.png" alt="AORTIC" width="150" height="60" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="technology" id="technology">
+    <div class="wrap">
+      <h2 class="section-title light">We looked beyond PSA to find the signals that matter</h2>
+      <p class="tech-lead">African genomic features and clinical multiparametric models power GeneHus predictions of aggressive prostate cancer risk.</p>
+      <ol class="tech-steps">
+        <li>
+          <span class="num">1</span>
+          <h3>Hospital-ready clinical inputs</h3>
+          <p>PSA, Gleason, staging, age, family history, and related clinical signals captured inside existing workflows.</p>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <h3>African genomic profiling</h3>
+          <p>MADCaP polygenic risk, ancestry-relevant loci, and African allele frequencies not European-ancestry models alone.</p>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <h3>Multidimensional risk engine</h3>
+          <p>Machine learning brings genomic and clinical signals together into a predictive risk score for aggressive disease.</p>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <h3>Clinician decision support</h3>
+          <p>Results surface in a hospital dashboard so oncologists can prioritise staging intensity and intervention earlier.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- INDICATION — beachhead only (not yet multi-cancer) -->
+  <section class="indications" id="indications">
+    <div class="wrap">
+      <h2 class="section-title">Our current indication focus</h2>
+      <p class="ind-lead">GeneHus is concentrated on one beachhead where the clinical need and African data advantage are clearest. Multi-cancer expansion comes after hospital validation not before.</p>
+      <article class="ind-focus">
+        <div class="ind-focus-main">
+          <p class="eyebrow-gold">Beachhead indication</p>
+          <h3>Aggressive prostate cancer</h3>
+          <p>Risk stratification for African men combining genomic and clinical signals so clinicians can prioritise intervention before late-stage presentation.</p>
+          <ul class="ind-facts">
+            <li>Leading lethal male malignancy in Ghana (~2,395 new cases / year)</li>
+            <li>At Korle Bu, more than 80% present with metastatic disease</li>
+            <li>PSA alone has weak specificity for aggressive disease</li>
+            <li>Models trained on MADCaP African cohorts + clinical multiparametrics</li>
+          </ul>
+          <a class="btn btn-gold" href="#contact">Discuss a clinical study</a>
         </div>
-      </div>
-      <div class="col">
-        <h5>Quick Links</h5>
-        <a href="#hero">Hero</a>
-        <a href="#problem">Problem</a>
-        <a href="#solution">Our Solution</a>
-        <a href="#technology">Technology</a>
-        <a href="#why-it-matters">Why It Matters</a>
-      </div>
-      <div class="col">
-        <h5>About GeneHus</h5>
-        <a href="#team">Team</a>
-        <a href="#advisors">Advisors</a>
-        <a href="#partners">Partners &amp; Affiliations</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="col col--contact">
-        <h5>Contact Us</h5>
-        <p><span class="contact-icon contact-icon--svg contact-icon--phone" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6.5 3.5l3 1.2-1.4 3.4a12 12 0 0 0 5.8 5.8l3.4-1.4 1.2 3a2 2 0 0 1-1.1 2.4A15 15 0 0 1 4.1 4.6a2 2 0 0 1 2.4-1.1z"/></svg></span> <a href="tel:+233242337086">+233 24 233 7086</a></p>
-        <p><span class="contact-icon contact-icon--svg contact-icon--phone" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6.5 3.5l3 1.2-1.4 3.4a12 12 0 0 0 5.8 5.8l3.4-1.4 1.2 3a2 2 0 0 1-1.1 2.4A15 15 0 0 1 4.1 4.6a2 2 0 0 1 2.4-1.1z"/></svg></span> <a href="tel:+233540811219">+233 54 081 1219</a></p>
-        <p><span class="contact-icon contact-icon--svg contact-icon--mail" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg></span> <a href="mailto:info@genehus.bio">info@genehus.bio</a></p>
-        <p><span class="contact-icon contact-icon--svg contact-icon--partners" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 14c-2.2 0-4-1.6-4-3.5S5.8 7 8 7c.7 0 1.3.1 1.9.4"/><path d="M16 14c2.2 0 4-1.6 4-3.5S18.2 7 16 7c-.7 0-1.3.1-1.9.4"/><path d="M9.5 14.5c.7 1.2 1.9 2 3.5 2s2.8-.8 3.5-2"/><path d="M8 17c-1.8.6-3 1.8-3 3.2V21h6"/><path d="M16 17c1.8.6 3 1.8 3 3.2V21h-6"/></svg></span> <a href="mailto:partnerships@genehus.bio">partnerships@genehus.bio</a></p>
-        <p><span class="contact-icon contact-icon--svg contact-icon--investors" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-3 2.5 2.5L18 8"/><path d="M14 8h4v4"/></svg></span> <a href="mailto:investors@genehus.bio">investors@genehus.bio</a></p>
-        <p><span class="contact-icon contact-icon--svg contact-icon--pin" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span> Accra, Ghana</p>
-      </div>
-      <div class="col col--leadership">
-        <h5>Founder | CEO</h5>
-        <p class="newsletter-note">Nana Safo Duker</p>
-        <p><span class="contact-icon contact-icon--svg contact-icon--founder" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19a6.5 6.5 0 0 1 13 0"/></svg></span> <a href="mailto:safoduker@genehus.bio">safoduker@genehus.bio</a></p>
-        <p><span class="contact-icon contact-icon--svg contact-icon--ceo" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M8 7V5.8A2.8 2.8 0 0 1 10.8 3h2.4A2.8 2.8 0 0 1 16 5.8V7"/><path d="M4 12h16"/></svg></span> <a href="mailto:ceo@genehus.bio">ceo@genehus.bio</a></p>
-      </div>
-      <div class="col col--newsletter">
-        <h5>Stay Connected</h5>
-        <p class="newsletter-note">Join our newsletter for updates on our progress and impact.</p>
-        <div class="newsletter-input">
-          <input type="email" id="newsletter-email" placeholder="Enter your email" aria-label="Email address" autocomplete="email">
-          <button type="button" class="newsletter-submit" aria-label="Subscribe">&rarr;</button>
+        <aside class="ind-focus-aside">
+          <p class="aside-label">Where we are</p>
+          <p class="aside-status">Validation underway</p>
+          <div class="aside-rule" aria-hidden="true"></div>
+          <p class="aside-note">Hospital pilots and West African network scale follow successful model validation.</p>
+          <p class="aside-note aside-note--muted">Broader solid-tumor indications are on the roadmap — we are not there yet.</p>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- PIPELINE — comprehensive -->
+  <section class="pipeline" id="pipeline">
+    <div class="wrap">
+      <h2 class="section-title">Our diagnostic pipeline</h2>
+      <p class="pipe-lead">From feasibility to platform a clear path for GeneHus Clinical Intelligence. Contact us to join a clinical study or hospital pilot.</p>
+
+      <ol class="pipe-stages">
+        <li class="done">
+          <span class="stage-num">01</span>
+          <h3>Feasibility</h3>
+          <p>Problem framing, Ghana clinical burden, and African genomic data access (MADCaP, local cohorts).</p>
+        </li>
+        <li class="done">
+          <span class="stage-num">02</span>
+          <h3>Model build</h3>
+          <p>African-trained risk engine integrating clinical inputs with ancestry-relevant genomic features.</p>
+        </li>
+        <li class="current">
+          <span class="stage-num">03</span>
+          <h3>Validation</h3>
+          <p>Benchmarking against PSA-alone and published Ghana multiparametric models; refining performance.</p>
+        </li>
+        <li>
+          <span class="stage-num">04</span>
+          <h3>Hospital pilot</h3>
+          <p>Deploy clinician dashboard at tertiary sites (Korle Bu, Komfo Anokye, 37 Military, UGMC).</p>
+        </li>
+        <li>
+          <span class="stage-num">05</span>
+          <h3>Network scale</h3>
+          <p>Expand across West African oncology centres with procurement-aligned SaaS pricing.</p>
+        </li>
+        <li>
+          <span class="stage-num">06</span>
+          <h3>Multi-cancer</h3>
+          <p>Extend the platform beyond prostate cancer once the beachhead is clinically proven.</p>
+        </li>
+        <li>
+          <span class="stage-num">07</span>
+          <h3>Platform</h3>
+          <p>African precision-oncology infrastructure spanning genomic risk, workflow, and decision support.</p>
+        </li>
+      </ol>
+
+      <div class="pipe-tracks">
+        <div class="pipe-track-row">
+          <div class="pipe-track-label">
+            <strong>Prostate Cancer</strong>
+            <span>Active programme · currently in Validation</span>
+          </div>
+          <div class="pipe-track-bar" aria-hidden="true">
+            <span class="seg done"></span>
+            <span class="seg done"></span>
+            <span class="seg current"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+          </div>
+        </div>
+        <div class="pipe-track-row muted">
+          <div class="pipe-track-label">
+            <strong>Multi-cancer SSA</strong>
+            <span>Roadmap · not started</span>
+          </div>
+          <div class="pipe-track-bar" aria-hidden="true">
+            <span class="seg"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+            <span class="seg"></span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="bottom-bar">
-      <span>&copy; 2026 GeneHus. All rights reserved.</span>
-      <span>Building precision oncology infrastructure for African healthcare systems.</span>
+  </section>
+
+  <!-- ABOUT — animated logo brand panel -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2 class="section-title">About GeneHus</h2>
+        <p>GeneHus is an African-focused biotechnology company building AI-powered genomic infrastructure so clinicians can identify men at highest risk of aggressive prostate cancer before late-stage presentation.</p>
+        <p>We are pre-seed and validating building the science, the hospital workflow, and the partnerships required for a first pilot.</p>
+        <a class="btn btn-gold" href="#team">Meet the team</a>
+      </div>
+      <div class="about-brand" aria-hidden="true">
+        <div class="about-brand-frame">
+          <img class="about-brand-logo" src="assets/genehus-logo-b5-white.png" alt="" width="420" height="100">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM — layout from screenshot; GeneHus co-founders + advisors from pitch deck -->
+  <section class="team" id="team">
+    <div class="wrap">
+      <h2 class="section-title team-title">A strong, interdisciplinary team</h2>
+
+      <p class="team-label" id="founders">Founders</p>
+      <div class="founder-grid">
+        <article class="person-card">
+          <img class="person-photo" src="assets/founder-nana.png" alt="Nana Safo Duker" width="180" height="180" loading="lazy">
+          <h3>Nana Safo Duker</h3>
+          <p class="person-role">Co-Founder &amp; CEO</p>
+          <p class="person-meta">AI/ML, Computational Research, Precision Medicine</p>
+          <a class="person-link" href="https://nana-safo-duker.github.io/" target="_blank" rel="noopener">Website</a>
+        </article>
+        <article class="person-card">
+          <div class="person-photo" role="img" aria-label="Photo coming soon"></div>
+          <h3>Dr. Pandam Salifu, PhD</h3>
+          <p class="person-role">Co-Founder</p>
+          <p class="person-meta">Bioinformatics &amp; computational genomics · MADCaP</p>
+          <a class="person-link" href="mailto:partnerships@genehus.bio">Email</a>
+        </article>
+      </div>
+
+      <p class="team-label" id="advisors">Advisors</p>
+      <div class="advisor-grid">
+        <article class="advisor-card">
+          <h3>Prof. Dr. Samuel Nana Fordjour, MD, PhD</h3>
+          <p>Clinical Oncology</p>
+        </article>
+        <article class="advisor-card">
+          <h3>Dr. Baffour Awuah, MD</h3>
+          <p>Urological Oncology</p>
+        </article>
+        <article class="advisor-card">
+          <h3>Dr. Yaw Badiako, PhD</h3>
+          <p>Genomics</p>
+        </article>
+        <article class="advisor-card">
+          <h3>Dr. Ernest Baawuah Osei-Bonsu, MD</h3>
+          <p>Health Systems / Workflow</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="section-title">Contact Us</h2>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <label>First Name*<input type="text" name="first_name" required autocomplete="given-name"></label>
+          <label>Last Name*<input type="text" name="last_name" required autocomplete="family-name"></label>
+        </div>
+        <label>Email*<input type="email" name="email" required autocomplete="email"></label>
+        <label>Organization/Company/Institution<input type="text" name="organization" autocomplete="organization"></label>
+        <label>Phone Number*<input type="tel" name="phone" required autocomplete="tel"></label>
+        <label>Interest*
+          <select name="indication" required>
+            <option value="">Select…</option>
+            <option>Prostate Cancer — clinical study / pilot</option>
+            <option>Partnership</option>
+            <option>Investment</option>
+            <option>Research collaboration</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Additional Information<textarea name="message" rows="3"></textarea></label>
+        <p class="required-note">*Required</p>
+        <button class="btn btn-gold" type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <img src="assets/genehus-logo-b5-white.png" alt="GeneHus" width="168" height="43">
+      <p>The leaders in AI-powered genomic diagnostics for Africa.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#platform">Platform</a>
+      <a href="#technology">Technology</a>
+      <a href="#indications">Indication</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#about">About Us</a>
+    </div>
+    <div>
+      <h4>About GeneHus</h4>
+      <a href="#about">About GeneHus</a>
+      <a href="#founders">Founders</a>
+      <a href="#advisors">Advisors</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M6.5 3.5l3 1.2-1.4 3.4a12 12 0 0 0 5.8 5.8l3.4-1.4 1.2 3a2 2 0 0 1-1.1 2.4A15 15 0 0 1 4.1 4.6a2 2 0 0 1 2.4-1.1z"/></svg></span><a href="tel:+233242337086">+233 24 233 7086</a></p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M6.5 3.5l3 1.2-1.4 3.4a12 12 0 0 0 5.8 5.8l3.4-1.4 1.2 3a2 2 0 0 1-1.1 2.4A15 15 0 0 1 4.1 4.6a2 2 0 0 1 2.4-1.1z"/></svg></span><a href="tel:+233540811219">+233 54 081 1219</a></p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg></span><a href="mailto:info@genehus.bio">info@genehus.bio</a></p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 14c-2.2 0-4-1.6-4-3.5S5.8 7 8 7c.7 0 1.3.1 1.9.4"/><path d="M16 14c2.2 0 4-1.6 4-3.5S18.2 7 16 7c-.7 0-1.3.1-1.9.4"/><path d="M9.5 14.5c.7 1.2 1.9 2 3.5 2s2.8-.8 3.5-2"/></svg></span><a href="mailto:partnerships@genehus.bio">partnerships@genehus.bio</a></p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-3 2.5 2.5L18 8"/></svg></span><a href="mailto:investors@genehus.bio">investors@genehus.bio</a></p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span>Kumasi, Ghana</p>
+    </div>
+    <div class="footer-founder">
+      <h4>Founder | CEO</h4>
+      <p class="founder-name">Nana Safo Duker</p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19a6.5 6.5 0 0 1 13 0"/></svg></span><a href="mailto:safoduker@genehus.bio">safoduker@genehus.bio</a></p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M8 7V5.8A2.8 2.8 0 0 1 10.8 3h2.4A2.8 2.8 0 0 1 16 5.8V7"/></svg></span><a href="mailto:ceo@genehus.bio">ceo@genehus.bio</a></p>
+      <p><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M2.5 12h19"/><path d="M12 2.5c2.5 2.7 3.8 5.7 3.8 9.5s-1.3 6.8-3.8 9.5c-2.5-2.7-3.8-5.7-3.8-9.5S9.5 5.2 12 2.5z"/></svg></span><a href="https://nana-safo-duker.github.io/" target="_blank" rel="noopener">nana-safo-duker.github.io</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">
+      <span>&copy; 2026 GeneHus. All Rights Reserved.</span>
+      <span>Kumasi, Ghana · <a href="mailto:info@genehus.bio">info@genehus.bio</a></span>
     </div>
   </div>
 </footer>
