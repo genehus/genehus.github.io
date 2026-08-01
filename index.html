@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/genehus.css?v=126">
+  <link rel="stylesheet" href="assets/genehus.css?v=127">
 </head>
 <body>
 
@@ -323,26 +323,32 @@
     <div class="wrap">
       <h2 class="section-title">Contact Us</h2>
       <form class="contact-form" id="contact-form">
-        <div class="form-row">
-          <label>First Name*<input type="text" name="first_name" required autocomplete="given-name"></label>
-          <label>Last Name*<input type="text" name="last_name" required autocomplete="family-name"></label>
+        <div class="contact-cols">
+          <div class="contact-col">
+            <div class="form-row">
+              <label>First Name*<input type="text" name="first_name" required autocomplete="given-name"></label>
+              <label>Last Name*<input type="text" name="last_name" required autocomplete="family-name"></label>
+            </div>
+            <label>Email*<input type="email" name="email" required autocomplete="email"></label>
+            <label>Organization/Company/Institution<input type="text" name="organization" autocomplete="organization"></label>
+            <label>Phone Number*<input type="tel" name="phone" required autocomplete="tel"></label>
+          </div>
+          <div class="contact-col">
+            <label>Interest*
+              <select name="indication" required>
+                <option value="">Select…</option>
+                <option>Prostate Cancer — clinical study / pilot</option>
+                <option>Partnership</option>
+                <option>Investment</option>
+                <option>Research collaboration</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Additional Information<textarea name="message" rows="6"></textarea></label>
+            <p class="required-note">*Required</p>
+            <button class="btn btn-gold" type="submit">Submit</button>
+          </div>
         </div>
-        <label>Email*<input type="email" name="email" required autocomplete="email"></label>
-        <label>Organization/Company/Institution<input type="text" name="organization" autocomplete="organization"></label>
-        <label>Phone Number*<input type="tel" name="phone" required autocomplete="tel"></label>
-        <label>Interest*
-          <select name="indication" required>
-            <option value="">Select…</option>
-            <option>Prostate Cancer — clinical study / pilot</option>
-            <option>Partnership</option>
-            <option>Investment</option>
-            <option>Research collaboration</option>
-            <option>Other</option>
-          </select>
-        </label>
-        <label>Additional Information<textarea name="message" rows="3"></textarea></label>
-        <p class="required-note">*Required</p>
-        <button class="btn btn-gold" type="submit">Submit</button>
       </form>
     </div>
   </section>

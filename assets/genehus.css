@@ -1025,11 +1025,22 @@ ol {
 }
 
 .contact-form {
-  max-width: 378px;
+  max-width: none;
+  display: block;
+  margin-top: 0;
+}
+
+.contact-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 48px;
+  align-items: start;
+}
+
+.contact-col {
   display: flex;
   flex-direction: column;
   gap: 9px;
-  margin-top: 0;
 }
 
 .form-row {
@@ -1082,6 +1093,13 @@ ol {
   align-self: flex-start;
   padding: 11px 20px;
   font-size: 0.81rem;
+}
+
+@media (max-width: 720px) {
+  .contact-cols {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
 }
 
 /* ——— Footer: newsletter band + GeneHus columns ——— */
