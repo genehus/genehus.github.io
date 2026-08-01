@@ -792,8 +792,9 @@ ol {
 .about-brand-logo {
   width: min(70%, 420px);
   height: auto;
-  opacity: 0;
-  transform: scale(0.86) translateY(12px);
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: drop-shadow(0 0 24px rgba(248, 136, 32, 0.25));
 }
 
 .about-brand.is-animated .about-brand-frame::before {
@@ -805,7 +806,7 @@ ol {
 }
 
 .about-brand.is-animated .about-brand-logo {
-  animation: brand-logo-in 0.9s 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: brand-logo-in 0.9s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes brand-rule-y {
@@ -817,10 +818,30 @@ ol {
 }
 
 @keyframes brand-logo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.86) translateY(12px);
+    filter: none;
+  }
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
     filter: drop-shadow(0 0 24px rgba(248, 136, 32, 0.25));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-brand.is-animated .about-brand-logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-brand.is-animated .about-brand-frame::before,
+  .about-brand.is-animated .about-brand-frame::after {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 

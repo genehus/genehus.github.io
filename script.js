@@ -65,6 +65,12 @@
   revealEls.forEach((el) => el.classList.add('reveal'));
 
   const brand = document.querySelector('.about-brand');
+  const aboutSection = document.querySelector('#about');
+
+  const playBrandAnimation = () => {
+    if (!brand || brand.classList.contains('is-animated')) return;
+    brand.classList.add('is-animated');
+  };
 
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(
@@ -72,8 +78,8 @@
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add('is-visible');
-          if (entry.target.classList.contains('about') || entry.target.contains(brand)) {
-            brand?.classList.add('is-animated');
+          if (entry.target.id === 'about' || (brand && entry.target.contains(brand))) {
+            playBrandAnimation();
           }
           revealObserver.unobserve(entry.target);
         });
@@ -87,18 +93,35 @@
         (entries) => {
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
-            brand.classList.add('is-animated');
+            playBrandAnimation();
             brandObserver.unobserve(brand);
           });
         },
-        { threshold: 0.35 }
+        { rootMargin: '0px 0px -5% 0px', threshold: 0.2 }
       );
       brandObserver.observe(brand);
     }
+
+    if (aboutSection) {
+      const aboutObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            playBrandAnimation();
+            aboutObserver.unobserve(aboutSection);
+          });
+        },
+        { threshold: 0.15 }
+      );
+      aboutObserver.observe(aboutSection);
+    }
   } else {
     revealEls.forEach((el) => el.classList.add('is-visible'));
-    brand?.classList.add('is-animated');
+    playBrandAnimation();
   }
+
+  // Fallback so the panel never stays empty if observers miss
+  window.setTimeout(playBrandAnimation, 1800);
 
   const newsletterInput = document.querySelector('#newsletter-email');
   const newsletterSubmit = document.querySelector('.newsletter-submit');
