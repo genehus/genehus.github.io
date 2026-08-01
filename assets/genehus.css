@@ -880,7 +880,7 @@ ol {
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #4a8a9a;
+  color: var(--gold);
   margin: 0 0 18px;
 }
 
