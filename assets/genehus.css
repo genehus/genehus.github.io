@@ -850,7 +850,7 @@ ol {
 /* ——— Team ——— */
 .team {
   padding: 88px 0;
-  background: var(--bg-soft);
+  background: var(--white);
 }
 
 .team-title {
