@@ -1251,10 +1251,10 @@ ol {
 .site-footer h4 {
   font-family: var(--sans);
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: none;
   letter-spacing: 0.02em;
-  color: #0a0a0a;
+  color: #000000;
   margin-bottom: 20px;
   text-shadow: none;
 }
