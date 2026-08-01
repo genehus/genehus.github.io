@@ -123,11 +123,13 @@
   // Fallback so the panel never stays empty if observers miss
   window.setTimeout(playBrandAnimation, 1800);
 
+  const newsletterForm = document.querySelector('#newsletter-form');
   const newsletterInput = document.querySelector('#newsletter-email');
   const newsletterSubmit = document.querySelector('.newsletter-submit');
 
   if (newsletterInput && newsletterSubmit) {
-    const subscribe = () => {
+    const subscribe = (e) => {
+      e?.preventDefault?.();
       const email = newsletterInput.value.trim();
       if (!newsletterInput.checkValidity() || !email) {
         newsletterInput.focus();
@@ -140,8 +142,9 @@
     };
 
     newsletterSubmit.addEventListener('click', subscribe);
+    newsletterForm?.addEventListener('submit', subscribe);
     newsletterInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') subscribe();
+      if (e.key === 'Enter') subscribe(e);
     });
   }
 
