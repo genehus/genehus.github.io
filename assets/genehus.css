@@ -887,9 +887,9 @@ ol {
 .founder-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 16px;
   margin-bottom: 48px;
-  max-width: 920px;
+  max-width: 70%;
 }
 
 .person-card {
@@ -903,8 +903,8 @@ ol {
 }
 
 .person-photo {
-  width: 400px;
-  height: 400px;
+  width: 290px;
+  height: 290px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;
