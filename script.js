@@ -59,11 +59,6 @@
     });
   });
 
-  const revealEls = document.querySelectorAll(
-    '.platform, .problem, .process, .technology, .paths, .partners, .pipeline, .about, .team, .contact, .intro, .interest, .indications'
-  );
-  revealEls.forEach((el) => el.classList.add('reveal'));
-
   const brand = document.querySelector('.about-brand');
   const aboutSection = document.querySelector('#about');
 
@@ -73,21 +68,6 @@
   };
 
   if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-visible');
-          if (entry.target.id === 'about' || (brand && entry.target.contains(brand))) {
-            playBrandAnimation();
-          }
-          revealObserver.unobserve(entry.target);
-        });
-      },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
-    );
-    revealEls.forEach((el) => revealObserver.observe(el));
-
     if (brand) {
       const brandObserver = new IntersectionObserver(
         (entries) => {
@@ -97,7 +77,7 @@
             brandObserver.unobserve(brand);
           });
         },
-        { rootMargin: '0px 0px -5% 0px', threshold: 0.2 }
+        { rootMargin: '0px 0px -5% 0px', threshold: 0.15 }
       );
       brandObserver.observe(brand);
     }
@@ -111,12 +91,11 @@
             aboutObserver.unobserve(aboutSection);
           });
         },
-        { threshold: 0.15 }
+        { threshold: 0.1 }
       );
       aboutObserver.observe(aboutSection);
     }
   } else {
-    revealEls.forEach((el) => el.classList.add('is-visible'));
     playBrandAnimation();
   }
 
