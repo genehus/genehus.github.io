@@ -905,11 +905,11 @@ ol {
 .person-photo {
   width: 290px;
   height: 290px;
-  border-radius: 50%;
+  border-radius: 0;
   object-fit: cover;
   object-position: center center;
   margin-bottom: 14px;
-  border: 2px solid var(--gold);
+  border: none;
   background: #ffffff;
   flex-shrink: 0;
   overflow: hidden;
