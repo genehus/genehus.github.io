@@ -903,8 +903,8 @@ ol {
 }
 
 .person-photo {
-  width: 108px;
-  height: 108px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 22%;
