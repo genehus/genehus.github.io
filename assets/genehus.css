@@ -1285,6 +1285,10 @@ ol {
   text-shadow: none;
 }
 
+.site-footer h4.footer-label {
+  color: var(--gold);
+}
+
 .site-footer .footer-top a {
   display: block;
   font-size: 1.1rem;
