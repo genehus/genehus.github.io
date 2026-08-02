@@ -888,7 +888,7 @@ ol {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 0;
+  margin-bottom: 48px;
   max-width: 70%;
 }
 
@@ -1004,7 +1004,7 @@ ol {
   font-weight: 500;
   color: #0b3d91;
   line-height: 1.5;
-  margin: 8px 0 0;
+  margin: 0;
 }
 
 @media (max-width: 1200px) {
