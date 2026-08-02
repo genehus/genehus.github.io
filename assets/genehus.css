@@ -877,7 +877,7 @@ ol {
 
 .team-label {
   font-size: 0.95rem;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
@@ -922,7 +922,7 @@ ol {
 .person-card h3 {
   font-family: var(--sans);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--ink);
   margin-bottom: 0;
   line-height: 1.2;
@@ -930,7 +930,7 @@ ol {
 
 .person-role {
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
@@ -988,7 +988,7 @@ ol {
 .advisor-card h3 {
   font-family: var(--sans);
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--ink);
   margin: 0;
   line-height: 1.35;
@@ -1001,7 +1001,7 @@ ol {
 
 .advisor-card p {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #0b3d91;
   line-height: 1.5;
   margin: 8px 0 0;
