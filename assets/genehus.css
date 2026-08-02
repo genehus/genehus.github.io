@@ -1002,7 +1002,7 @@ ol {
 .advisor-card p {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--muted);
+  color: #0b3d91;
   line-height: 1.5;
   margin: 8px 0 0;
 }
