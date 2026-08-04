@@ -921,7 +921,7 @@ ol {
 
 .person-card h3 {
   font-family: var(--sans);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--ink);
   margin-bottom: 0;
@@ -929,9 +929,9 @@ ol {
 }
 
 .person-role {
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 2px;
@@ -940,7 +940,7 @@ ol {
 }
 
 .person-meta {
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   color: var(--muted);
   margin: 2px 0 0;
   max-width: 28ch;
@@ -948,7 +948,7 @@ ol {
 }
 
 .person-link {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
