@@ -974,9 +974,10 @@ ol {
 .advisor-card {
   background: var(--white);
   border: 1px solid var(--line);
-  padding: 24px 16px;
-  min-height: 128px;
-  height: 100%;
+  padding: 12px 16px;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  height: auto;
   display: grid;
   place-content: center;
   place-items: center;
@@ -1645,11 +1646,11 @@ ol {
 
   .advisor-card {
     min-height: 0;
-    padding: 18px 14px;
+    padding: 12px 14px;
   }
 
   .person-card {
-    padding: 22px 16px;
+    padding: 12px 16px 10px;
   }
 
   .site-footer .footer-top a,
