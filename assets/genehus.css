@@ -889,7 +889,7 @@ ol {
   grid-template-columns: 1fr 1fr;
   gap: 11px;
   margin-bottom: 48px;
-  max-width: 58%;
+  max-width: 60.9%;
 }
 
 .person-card {
@@ -905,8 +905,8 @@ ol {
 
 .person-photo {
   width: 100%;
-  max-width: 202px;
-  aspect-ratio: 4 / 5.25;
+  max-width: 212px;
+  aspect-ratio: 4.2 / 5.25;
   height: auto;
   border-radius: 0;
   object-fit: cover;
@@ -971,7 +971,7 @@ ol {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 13px;
-  max-width: 83.4%;
+  max-width: 87.6%;
   align-items: start;
 }
 
@@ -980,7 +980,7 @@ ol {
   border: 1px solid var(--line);
   padding: 8px 11px;
   min-height: 0;
-  aspect-ratio: 4 / 5.25;
+  aspect-ratio: 4.2 / 5.25;
   height: auto;
   display: grid;
   place-content: center;
@@ -1009,7 +1009,7 @@ ol {
   flex: 0 0 auto;
   min-height: 0;
   height: auto;
-  aspect-ratio: 4 / 5.25;
+  aspect-ratio: 4.2 / 5.25;
   margin-bottom: 5px;
   border: 2px solid #000000;
   object-fit: cover;
