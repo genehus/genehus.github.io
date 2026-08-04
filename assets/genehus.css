@@ -989,18 +989,47 @@ ol {
   box-sizing: border-box;
 }
 
+.advisor-card--filled {
+  aspect-ratio: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  place-content: unset;
+  place-items: center;
+  padding: 8px 10px 10px;
+  gap: 0;
+}
+
+.advisor-card--filled .person-photo {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
 .advisor-card h3 {
   font-family: var(--sans);
-  font-size: 1.15rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--ink);
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.3;
   white-space: normal;
   letter-spacing: -0.01em;
   max-width: 100%;
   overflow: visible;
   padding: 0;
+}
+
+.advisor-card--filled .person-meta {
+  font-size: 0.62rem;
+  white-space: normal;
+  max-width: 100%;
+  margin-top: 3px;
+}
+
+.advisor-card--filled .person-role {
+  margin-top: 3px;
 }
 
 .advisor-card p {
