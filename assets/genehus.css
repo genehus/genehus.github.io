@@ -889,7 +889,7 @@ ol {
   grid-template-columns: 1fr 1fr;
   gap: 11px;
   margin-bottom: 48px;
-  max-width: 50.5%;
+  max-width: 58%;
 }
 
 .person-card {
@@ -940,12 +940,13 @@ ol {
 }
 
 .person-meta {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 600;
   color: var(--ink-soft);
   margin: 2px 0 0;
-  max-width: 28ch;
+  max-width: none;
   line-height: 1.35;
+  white-space: nowrap;
 }
 
 .person-link {
