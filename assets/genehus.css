@@ -990,21 +990,28 @@ ol {
 }
 
 .advisor-card--filled {
-  aspect-ratio: auto;
+  aspect-ratio: 4 / 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   place-content: unset;
   place-items: center;
-  padding: 8px 10px 10px;
+  padding: 6px 6px 7px;
   gap: 0;
+  overflow: hidden;
 }
 
 .advisor-card--filled .person-photo {
-  max-width: 100%;
   width: 100%;
-  margin-bottom: 6px;
+  max-width: none;
+  flex: 1 1 0;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: unset;
+  margin-bottom: 4px;
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 .advisor-card h3 {
@@ -1021,11 +1028,33 @@ ol {
   padding: 0;
 }
 
+.advisor-card--filled h3 {
+  flex: 0 0 auto;
+  font-size: 0.58rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0 2px;
+}
+
+.advisor-card--filled .advisor-creds {
+  flex: 0 0 auto;
+  font-size: 0.54rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  line-height: 1.2;
+  margin: 1px 0 0;
+  padding: 0 2px;
+}
+
 .advisor-card--filled .person-meta {
-  font-size: 0.62rem;
+  flex: 0 0 auto;
+  font-size: 0.52rem;
+  font-weight: 600;
   white-space: normal;
   max-width: 100%;
-  margin-top: 3px;
+  margin-top: 2px;
+  line-height: 1.2;
+  padding: 0 2px;
 }
 
 .advisor-card--filled .person-role {
@@ -1044,6 +1073,10 @@ ol {
   .advisor-card h3 {
     font-size: 1.05rem;
   }
+
+  .advisor-card--filled h3 {
+    font-size: 0.58rem;
+  }
 }
 
 @media (max-width: 980px) {
@@ -1054,6 +1087,10 @@ ol {
   .advisor-card h3 {
     font-size: 1.1rem;
     white-space: normal;
+  }
+
+  .advisor-card--filled h3 {
+    font-size: 0.58rem;
   }
 
   .founder-grid {
@@ -1528,6 +1565,10 @@ ol {
   .advisor-card h3 {
     white-space: normal !important;
     font-size: 1.1rem;
+  }
+
+  .advisor-card--filled h3 {
+    font-size: 0.58rem !important;
   }
 
   .partner-row {
