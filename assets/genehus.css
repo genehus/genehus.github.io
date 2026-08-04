@@ -906,7 +906,7 @@ ol {
 .person-photo {
   width: 100%;
   max-width: 202px;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5.25;
   height: auto;
   border-radius: 0;
   object-fit: cover;
@@ -980,7 +980,7 @@ ol {
   border: 1px solid var(--line);
   padding: 8px 11px;
   min-height: 0;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5.25;
   height: auto;
   display: grid;
   place-content: center;
@@ -1009,7 +1009,7 @@ ol {
   flex: 0 0 auto;
   min-height: 0;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5.25;
   margin-bottom: 5px;
   border: 2px solid #000000;
   object-fit: cover;
