@@ -970,8 +970,8 @@ ol {
 .advisor-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 13px;
-  max-width: 92%;
+  gap: 12px;
+  max-width: 87.4%;
   align-items: stretch;
 }
 
