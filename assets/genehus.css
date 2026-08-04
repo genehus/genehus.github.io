@@ -972,7 +972,7 @@ ol {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 13px;
   max-width: 92%;
-  align-items: start;
+  align-items: stretch;
 }
 
 .advisor-card {
@@ -980,7 +980,7 @@ ol {
   border: 1px solid var(--line);
   padding: 8px 11px;
   min-height: 0;
-  aspect-ratio: 4.41 / 5.25;
+  aspect-ratio: auto;
   height: auto;
   display: grid;
   place-content: center;
