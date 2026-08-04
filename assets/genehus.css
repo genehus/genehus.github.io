@@ -887,15 +887,15 @@ ol {
 .founder-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 13px;
+  gap: 12px;
   margin-bottom: 48px;
-  max-width: 56%;
+  max-width: 53.2%;
 }
 
 .person-card {
   background: var(--white);
   border: 1px solid var(--line);
-  padding: 10px 13px 8px;
+  padding: 9px 12px 8px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -905,7 +905,7 @@ ol {
 
 .person-photo {
   width: 100%;
-  max-width: 224px;
+  max-width: 213px;
   aspect-ratio: 4 / 5;
   height: auto;
   border-radius: 0;
@@ -968,14 +968,14 @@ ol {
 .advisor-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 13px;
-  max-width: 80%;
+  gap: 12px;
+  max-width: 76%;
 }
 
 .advisor-card {
   background: var(--white);
   border: 1px solid var(--line);
-  padding: 10px 13px;
+  padding: 9px 12px;
   min-height: 0;
   aspect-ratio: 4 / 5;
   height: auto;
@@ -1647,11 +1647,11 @@ ol {
 
   .advisor-card {
     min-height: 0;
-    padding: 10px 11px;
+    padding: 9px 10px;
   }
 
   .person-card {
-    padding: 10px 13px 8px;
+    padding: 9px 12px 8px;
   }
 
   .site-footer .footer-top a,
