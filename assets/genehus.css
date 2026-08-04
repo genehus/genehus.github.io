@@ -940,11 +940,11 @@ ol {
 }
 
 .person-meta {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--muted);
-  margin-bottom: 14px;
+  margin: 2px 0 0;
   max-width: 28ch;
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .person-link {
