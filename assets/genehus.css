@@ -905,12 +905,12 @@ ol {
 
 .person-photo {
   width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1;
+  max-width: 280px;
+  aspect-ratio: 4 / 5;
   height: auto;
   border-radius: 0;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 18%;
   margin-bottom: 6px;
   border: 2px solid #000000;
   background: #ffffff;
