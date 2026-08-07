@@ -1404,6 +1404,29 @@ ol {
   line-height: 1.55;
 }
 
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-top: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  color: #0a66c2;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.footer-social:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(248, 136, 32, 0.08);
+  transform: translateY(-1px);
+}
+
+.footer-social svg {
+  display: block;
+}
+
 .site-footer h4 {
   font-family: var(--sans);
   font-size: 1.15rem;
