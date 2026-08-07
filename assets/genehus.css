@@ -1416,7 +1416,7 @@ ol {
 }
 
 .footer-follow:hover {
-  color: #0a66c2 !important;
+  color: var(--gold) !important;
   transform: translateY(-1px);
 }
 
@@ -1437,7 +1437,7 @@ ol {
 }
 
 .footer-follow:hover .li-bg {
-  fill: #004182;
+  fill: var(--gold);
 }
 
 .footer-follow-text {
