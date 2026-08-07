@@ -1404,48 +1404,30 @@ ol {
   line-height: 1.55;
 }
 
-.footer-follow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.footer-follow-label {
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #111111;
-}
-
 .footer-social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #111111;
+  width: 40px;
+  height: 40px;
+  margin-top: 18px;
+  border-radius: 4px;
+  background: #0a66c2;
   color: #ffffff;
   border: none;
-  overflow: hidden;
-  flex-shrink: 0;
   transition: background 0.2s, transform 0.2s;
 }
 
 .footer-social:hover {
-  background: var(--gold);
+  background: #004182;
   color: #ffffff;
   transform: translateY(-1px);
 }
 
 .footer-social svg {
   display: block;
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
 }
 
 .site-footer h4 {
