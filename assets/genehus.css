@@ -1422,18 +1422,18 @@ ol {
 
 .footer-social {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   line-height: 0;
-  border-radius: 3px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
 .footer-social svg {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
 }
 
 .footer-follow:hover .li-bg {
