@@ -1430,6 +1430,8 @@ ol {
   background: #111111;
   color: #ffffff;
   border: none;
+  overflow: hidden;
+  flex-shrink: 0;
   transition: background 0.2s, transform 0.2s;
 }
 
@@ -1441,6 +1443,9 @@ ol {
 
 .footer-social svg {
   display: block;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 .site-footer h4 {
