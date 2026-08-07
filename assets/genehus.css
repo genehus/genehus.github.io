@@ -1404,22 +1404,38 @@ ol {
   line-height: 1.55;
 }
 
+.footer-follow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.footer-follow-label {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
 .footer-social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  margin-top: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.18);
-  color: #0a66c2;
-  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .footer-social:hover {
-  color: var(--gold);
-  border-color: var(--gold);
-  background: rgba(248, 136, 32, 0.08);
+  background: var(--gold);
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
