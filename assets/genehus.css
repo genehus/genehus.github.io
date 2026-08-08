@@ -1113,6 +1113,55 @@ ol {
   margin-top: 3px;
 }
 
+/* Pitch-deck style advisor card (matches Advisors slide) */
+.advisor-card--deck {
+  background: #1b1e36;
+  border: none;
+  padding: 14px 12px 16px;
+  gap: 0;
+}
+
+.advisor-card--deck .person-photo {
+  aspect-ratio: 1;
+  width: 86%;
+  max-width: 220px;
+  margin: 0 auto 10px;
+  border: none;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.advisor-card--deck h3,
+.advisor-card--deck .advisor-creds,
+.advisor-card--deck .person-meta {
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 4px;
+}
+
+.advisor-card--deck h3 {
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.advisor-card--deck .advisor-creds {
+  font-size: 0.72rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.advisor-card--deck .person-meta {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
+}
+
 .advisor-card p {
   font-size: 1.05rem;
   font-weight: 500;
