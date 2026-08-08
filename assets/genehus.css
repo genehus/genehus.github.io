@@ -1114,8 +1114,11 @@ ol {
 }
 
 .advisor-card--filled .person-photo--square {
-  aspect-ratio: 1;
-  object-position: center 18%;
+  aspect-ratio: 4.41 / 5.25;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center 12%;
 }
 
 .advisor-card p {
