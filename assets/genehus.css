@@ -1113,35 +1113,9 @@ ol {
   margin-top: 3px;
 }
 
-/* James Azam advisor card — navy, square photo, centered cascade creds */
-.advisor-card--deck {
-  background: #1b1e36;
-  border: none;
-  padding: 16px 14px 18px;
-  gap: 0;
-  justify-content: flex-start;
-}
-
-.advisor-card--deck .person-photo {
+.advisor-card--filled .person-photo--square {
   aspect-ratio: 1;
-  width: 78%;
-  max-width: 200px;
-  margin: 8px auto 14px;
-  border: none;
-  object-fit: cover;
   object-position: center 18%;
-}
-
-.advisor-card--deck .advisor-azam-creds {
-  margin: 0;
-  padding: 0 6px;
-  color: #ffffff;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  line-height: 1.35;
-  text-align: center;
-  white-space: normal;
 }
 
 .advisor-card p {
