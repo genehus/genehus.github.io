@@ -1426,18 +1426,34 @@ ol {
   height: 20px;
   flex-shrink: 0;
   line-height: 0;
-  border-radius: 2px;
-  overflow: hidden;
+  border-radius: 3px;
+  overflow: visible;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35))
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 4px 6px rgba(0, 0, 0, 0.18));
+  transform: perspective(40px) rotateX(8deg) rotateY(-6deg);
+  transform-style: preserve-3d;
+  transition: filter 0.2s, transform 0.2s;
 }
 
 .footer-social svg {
   display: block;
   width: 20px;
   height: 20px;
+  border-radius: 3px;
+}
+
+.footer-follow:hover .footer-social {
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.4))
+    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 6px 10px rgba(248, 136, 32, 0.28));
+  transform: perspective(40px) rotateX(4deg) rotateY(-3deg) translateY(-1px);
 }
 
 .footer-follow:hover .li-bg {
-  fill: var(--gold);
+  fill: url(#li3d-hover);
 }
 
 .footer-follow-text {
