@@ -1111,6 +1111,13 @@ ol {
 
 .advisor-card--filled .person-role {
   margin-top: 3px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  line-height: 1.25;
+  padding: 0 2px;
 }
 
 .advisor-card--filled .person-photo--square {
