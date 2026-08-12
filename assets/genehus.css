@@ -67,7 +67,7 @@ ol {
 
 .section-title {
   font-family: var(--condensed);
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(1.8rem, 3.2vw, 2.5rem);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -316,7 +316,7 @@ ol {
 
 .hero h1 {
   font-family: var(--condensed);
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(2rem, 4vw, 3.19rem);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -419,7 +419,7 @@ ol {
 .intro-text h2 {
   font-family: var(--condensed);
   font-size: clamp(1.72rem, 2.89vw, 2.35rem);
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   line-height: 1.12;
