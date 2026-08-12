@@ -1838,7 +1838,7 @@ ol {
   }
 
   .about-brand {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: auto;
   }
 
   .footer-top {
