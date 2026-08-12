@@ -1656,7 +1656,7 @@ ol {
 
   /* Cofactor-style mobile hero: copy mid-frame, tabs one black row */
   .hero {
-    min-height: 100svh;
+    min-height: 75svh;
     justify-content: flex-start;
   }
 
