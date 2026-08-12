@@ -422,6 +422,7 @@ ol {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.15;
+  margin-top: -28px;
   margin-bottom: 20px;
   color: var(--ink);
 }
@@ -439,6 +440,7 @@ ol {
   background: var(--bg-soft);
   border-left: 4px solid var(--gold);
   padding: 26px 26px 26px 29px;
+  margin-top: 40px;
 }
 
 .intro-quote p {
@@ -1739,6 +1741,11 @@ ol {
 
   .intro-text h2 {
     text-align: center;
+    margin-top: 0;
+  }
+
+  .intro-quote {
+    margin-top: 0;
   }
 
   .intro-text {
