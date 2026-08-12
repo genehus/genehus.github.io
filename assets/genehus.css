@@ -1705,12 +1705,6 @@ ol {
     box-sizing: border-box;
   }
 
-  .person-link,
-  .person-link:visited {
-    color: var(--gold) !important;
-    border-bottom-color: var(--gold);
-  }
-
   .advisor-card:not(.advisor-card--filled) {
     display: none;
   }
