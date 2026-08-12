@@ -463,7 +463,7 @@ ol {
 /* ——— Interest links (Cofactor-style vertical list) ——— */
 .interest {
   padding: 65px 0 80px;
-  background: var(--white);
+  background: #2c3439;
 }
 
 .interest .section-title {
@@ -481,7 +481,7 @@ ol {
   margin: 0;
   padding: 8px 0 8px 22px;
   list-style: none;
-  border-left: 1px solid #c5d0db;
+  border-left: 1px solid #5a646b;
 }
 
 .interest-list li + li {
