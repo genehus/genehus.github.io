@@ -148,8 +148,6 @@ ol {
 }
 
 .logo img {
-  display: block;
-  width: auto;
   max-width: 210px;
   height: auto;
   max-height: calc(var(--header-h) * 0.78);
@@ -157,22 +155,22 @@ ol {
   object-position: left center;
 }
 
-/* White logo on dark bar; dark logo on white sticky bar */
-.logo-dark {
+/* Only one logo visible — .logo img {display} must not override these */
+.logo .logo-dark {
   display: none;
 }
 
-.logo-light {
+.logo .logo-light {
   display: block;
 }
 
-.site-header.is-scrolled .logo-dark,
-.site-header.is-open .logo-dark {
+.site-header.is-scrolled .logo .logo-dark,
+.site-header.is-open .logo .logo-dark {
   display: block;
 }
 
-.site-header.is-scrolled .logo-light,
-.site-header.is-open .logo-light {
+.site-header.is-scrolled .logo .logo-light,
+.site-header.is-open .logo .logo-light {
   display: none;
 }
 
