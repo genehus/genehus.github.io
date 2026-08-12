@@ -131,11 +131,6 @@ ol {
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
 }
 
-.site-header.is-scrolled .logo img,
-.site-header.is-open .logo img {
-  max-height: calc(var(--header-h-scrolled) * 0.82);
-}
-
 .header-inner {
   width: min(100% - 48px, 1200px);
   margin: 0 auto;
@@ -149,17 +144,32 @@ ol {
   position: relative;
   display: flex;
   align-items: center;
-  width: 200px;
-  max-width: 200px;
+  width: 250px;
+  max-width: 250px;
   flex-shrink: 0;
+  transition: width 0.28s ease, max-width 0.28s ease;
 }
 
 .logo img {
-  max-width: 200px;
+  max-width: 250px;
   height: auto;
-  max-height: calc(var(--header-h) * 0.88);
+  max-height: calc(var(--header-h) * 1.15);
   object-fit: contain;
   object-position: left center;
+  transition: max-width 0.28s ease, max-height 0.28s ease;
+}
+
+/* Slim scrolled bar: keep logo smaller to fit */
+.site-header.is-scrolled .logo,
+.site-header.is-open .logo {
+  width: 160px;
+  max-width: 160px;
+}
+
+.site-header.is-scrolled .logo img,
+.site-header.is-open .logo img {
+  max-width: 160px;
+  max-height: calc(var(--header-h-scrolled) * 0.82);
 }
 
 /* Only one logo visible */
@@ -1856,12 +1866,23 @@ ol {
   }
 
   .logo {
-    width: 150px;
-    max-width: 150px;
+    width: 190px;
+    max-width: 190px;
   }
 
   .logo img {
-    max-width: 150px;
+    max-width: 190px;
+  }
+
+  .site-header.is-scrolled .logo,
+  .site-header.is-open .logo {
+    width: 130px;
+    max-width: 130px;
+  }
+
+  .site-header.is-scrolled .logo img,
+  .site-header.is-open .logo img {
+    max-width: 130px;
   }
 
   .wrap {
