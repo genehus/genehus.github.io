@@ -5,7 +5,8 @@
   const navAnchors = document.querySelectorAll('.nav-main a');
 
   const onScroll = () => {
-    header?.classList.toggle('is-scrolled', window.scrollY > 24);
+    // Hide at page top (hero open); show white sticky bar once user scrolls
+    header?.classList.toggle('is-scrolled', window.scrollY > 48);
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
