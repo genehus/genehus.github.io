@@ -438,7 +438,7 @@ ol {
 }
 
 .intro-quote {
-  background: var(--bg-soft);
+  background: #2c3439;
   border-left: 4px solid var(--gold);
   padding: 26px 26px 26px 29px;
   margin-top: 40px;
@@ -446,7 +446,7 @@ ol {
 
 .intro-quote p {
   font-size: 0.95rem;
-  color: var(--ink-soft);
+  color: #ffffff;
   font-style: italic;
   margin-bottom: 14px;
 }
@@ -455,7 +455,7 @@ ol {
   font-style: normal;
   font-size: 0.77rem;
   font-weight: 700;
-  color: var(--muted);
+  color: #b8c0c6;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
