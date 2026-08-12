@@ -15,7 +15,7 @@
   --condensed: "Oswald", "Trade Gothic Next Condensed", "Arial Narrow", sans-serif;
   --sans: "Lato", "Open Sans", Helvetica, Arial, sans-serif;
   --wrap: 1140px;
-  --header-h: 78px;
+  --header-h: 88px;
 }
 
 *,
@@ -140,12 +140,12 @@ ol {
 .logo {
   position: relative;
   display: block;
-  width: 168px;
+  width: 210px;
   flex-shrink: 0;
 }
 
 .logo img {
-  width: 168px;
+  width: 210px;
   height: auto;
 }
 
@@ -1831,7 +1831,7 @@ ol {
 
 @media (max-width: 720px) {
   :root {
-    --header-h: 64px;
+    --header-h: 72px;
   }
 
   .header-inner {
@@ -1841,7 +1841,7 @@ ol {
 
   .logo,
   .logo img {
-    width: 132px;
+    width: 160px;
   }
 
   .wrap {
