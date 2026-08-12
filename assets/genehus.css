@@ -234,8 +234,8 @@ ol {
 /* ——— Hero ——— */
 .hero {
   position: relative;
-  min-height: 75vh;
-  min-height: 75dvh;
+  min-height: 90vh;
+  min-height: 90dvh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1658,7 +1658,7 @@ ol {
 
   /* Cofactor-style mobile hero: copy mid-frame, tabs one black row */
   .hero {
-    min-height: 75svh;
+    min-height: 90svh;
     justify-content: flex-start;
   }
 
