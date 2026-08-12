@@ -15,7 +15,7 @@
   --condensed: "Oswald", "Trade Gothic Next Condensed", "Arial Narrow", sans-serif;
   --sans: "Lato", "Open Sans", Helvetica, Arial, sans-serif;
   --wrap: 1140px;
-  --header-h: 52px;
+  --header-h: 70px;
 }
 
 *,
@@ -103,13 +103,14 @@ ol {
   transform: translateY(-1px);
 }
 
-/* ——— Header: transparent over hero at rest; white sticky on scroll ——— */
+/* ——— Header: slim bar (Cofactor). Logo fills ~75% of bar; nav right ——— */
 .site-header {
   position: fixed;
   inset: 0 0 auto;
   z-index: 200;
   height: var(--header-h);
-  background: transparent;
+  /* At rest: defined dark translucent strip (not open hero void) */
+  background: rgba(0, 0, 0, 0.55);
   border-bottom: 1px solid transparent;
   box-shadow: none;
   opacity: 1;
@@ -142,16 +143,21 @@ ol {
   display: flex;
   align-items: center;
   width: 210px;
+  max-width: 210px;
   flex-shrink: 0;
 }
 
 .logo img {
-  width: 210px;
+  display: block;
+  width: auto;
+  max-width: 210px;
   height: auto;
-  max-height: none;
+  max-height: calc(var(--header-h) * 0.78);
+  object-fit: contain;
+  object-position: left center;
 }
 
-/* White logo on dark hero bar; dark logo on white sticky bar */
+/* White logo on dark bar; dark logo on white sticky bar */
 .logo-dark {
   display: none;
 }
@@ -183,7 +189,7 @@ ol {
 
 .nav-main a {
   font-family: var(--condensed);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--white);
   text-transform: uppercase;
@@ -212,22 +218,27 @@ ol {
 .menu-toggle {
   display: none;
   margin-left: auto;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border: none;
   background: transparent;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
 }
 
 .menu-toggle span {
   display: block;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background: var(--white);
   transition: background 0.2s;
+}
+
+.site-header.is-scrolled .menu-toggle span,
+.site-header.is-open .menu-toggle span {
+  background: var(--ink);
 }
 
 .site-header.is-scrolled .menu-toggle span,
@@ -1833,7 +1844,7 @@ ol {
 
 @media (max-width: 720px) {
   :root {
-    --header-h: 43px;
+    --header-h: 58px;
   }
 
   .header-inner {
@@ -1841,9 +1852,13 @@ ol {
     gap: 12px;
   }
 
-  .logo,
-  .logo img {
+  .logo {
     width: 160px;
+    max-width: 160px;
+  }
+
+  .logo img {
+    max-width: 160px;
   }
 
   .wrap {
