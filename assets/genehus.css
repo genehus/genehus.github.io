@@ -15,7 +15,7 @@
   --condensed: "Oswald", "Trade Gothic Next Condensed", "Arial Narrow", sans-serif;
   --sans: "Lato", "Open Sans", Helvetica, Arial, sans-serif;
   --wrap: 1140px;
-  --header-h: 52px;
+  --header-h: 78px;
 }
 
 *,
@@ -129,23 +129,23 @@ ol {
 }
 
 .header-inner {
-  width: min(100% - 32px, 1200px);
+  width: min(100% - 48px, 1200px);
   margin: 0 auto;
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
 }
 
 .logo {
   position: relative;
   display: block;
-  width: 112px;
+  width: 168px;
   flex-shrink: 0;
 }
 
 .logo img {
-  width: 112px;
+  width: 168px;
   height: auto;
 }
 
@@ -171,7 +171,8 @@ ol {
 .nav-main {
   margin-left: auto;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 32px;
 }
 
 .nav-extra {
@@ -180,11 +181,12 @@ ol {
 
 .nav-main a {
   font-family: var(--condensed);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--white);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  line-height: 1;
   transition: color 0.2s;
 }
 
@@ -208,19 +210,19 @@ ol {
 .menu-toggle {
   display: none;
   margin-left: auto;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border: none;
   background: transparent;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
 }
 
 .menu-toggle span {
   display: block;
-  width: 20px;
+  width: 22px;
   height: 2px;
   background: var(--white);
   transition: background 0.2s;
@@ -1829,17 +1831,17 @@ ol {
 
 @media (max-width: 720px) {
   :root {
-    --header-h: 43px;
+    --header-h: 64px;
   }
 
   .header-inner {
-    width: calc(100% - 24px);
+    width: calc(100% - 28px);
     gap: 12px;
   }
 
   .logo,
   .logo img {
-    width: 85px;
+    width: 132px;
   }
 
   .wrap {
