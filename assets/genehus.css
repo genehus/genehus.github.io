@@ -367,9 +367,9 @@ ol {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 2.75rem;
-  min-height: 62px;
-  padding: 0 1.5rem;
+  gap: 2.5rem;
+  min-height: 0;
+  padding: 0.7rem 1.5rem;
   background: var(--black);
 }
 
@@ -378,8 +378,9 @@ ol {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  min-height: 62px;
+  min-height: 0;
   padding: 0;
+  line-height: 1;
   text-align: center;
   border-right: none;
   background: transparent;
@@ -396,9 +397,10 @@ ol {
 
 .hero-tabs span {
   font-family: var(--condensed);
-  font-size: 0.7rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  line-height: 1;
   text-transform: uppercase;
   color: var(--white);
   text-shadow: none;
@@ -1717,13 +1719,13 @@ ol {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1.35rem;
+    gap: 1.25rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     margin-top: auto;
-    min-height: 54px;
-    padding: 0 0.75rem;
+    min-height: 0;
+    padding: 0.65rem 0.75rem;
     background: var(--black);
   }
 
@@ -1734,7 +1736,7 @@ ol {
   .hero-tabs a {
     flex: 0 0 auto;
     min-width: 0;
-    min-height: 54px;
+    min-height: 0;
     padding: 0;
     border-right: none;
     border-top: none;
@@ -1747,9 +1749,10 @@ ol {
 
   .hero-tabs span {
     font-family: var(--condensed);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
+    line-height: 1;
     white-space: nowrap;
   }
 
@@ -1875,14 +1878,14 @@ ol {
   }
 
   .hero-tabs a {
-    min-height: 50px;
+    min-height: 0;
     padding: 0;
   }
 
   .hero-tabs span {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
   }
 
   .contact-form {
