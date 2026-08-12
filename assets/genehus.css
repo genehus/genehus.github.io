@@ -16,6 +16,7 @@
   --sans: "Lato", "Open Sans", Helvetica, Arial, sans-serif;
   --wrap: 1140px;
   --header-h: 56px;
+  --header-h-scrolled: 40px;
 }
 
 *,
@@ -124,9 +125,15 @@ ol {
 
 .site-header.is-scrolled,
 .site-header.is-open {
+  height: var(--header-h-scrolled);
   background: var(--white);
   border-bottom-color: var(--line);
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+}
+
+.site-header.is-scrolled .logo img,
+.site-header.is-open .logo img {
+  max-height: calc(var(--header-h-scrolled) * 0.82);
 }
 
 .header-inner {
@@ -1840,6 +1847,7 @@ ol {
 @media (max-width: 720px) {
   :root {
     --header-h: 48px;
+    --header-h-scrolled: 36px;
   }
 
   .header-inner {
