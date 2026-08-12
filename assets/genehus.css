@@ -6,8 +6,8 @@
   --ink-soft: #222222;
   --muted: #666666;
   --line: #e5e5e5;
-  --bg: #2c3439;
-  --bg-soft: #2c3439;
+  --bg: #e4ecf0;
+  --bg-soft: #dce6eb;
   --white: #ffffff;
   --gold: #f88820;
   --gold-dark: #d96f12;
@@ -438,7 +438,7 @@ ol {
 }
 
 .intro-quote {
-  background: #2c3439;
+  background: var(--bg-soft);
   border-left: 4px solid var(--gold);
   padding: 26px 26px 26px 29px;
   margin-top: 40px;
@@ -446,7 +446,7 @@ ol {
 
 .intro-quote p {
   font-size: 0.95rem;
-  color: #ffffff;
+  color: var(--ink-soft);
   font-style: italic;
   margin-bottom: 14px;
 }
@@ -455,7 +455,7 @@ ol {
   font-style: normal;
   font-size: 0.77rem;
   font-weight: 700;
-  color: #b8c0c6;
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -609,14 +609,6 @@ ol {
   background: var(--bg-soft);
 }
 
-.indications .section-title {
-  color: var(--white);
-}
-
-.indications .ind-lead {
-  color: #b8c0c6;
-}
-
 .ind-lead,
 .pipe-lead {
   max-width: 46rem;
@@ -740,19 +732,19 @@ ol {
 
 .pipe-stages li {
   background: var(--bg-soft);
-  border-top: 3px solid #5a646b;
+  border-top: 3px solid #ccc;
   padding: 22px 14px 24px;
   min-height: 100%;
 }
 
 .pipe-stages li.done {
-  border-top-color: #8a9399;
+  border-top-color: #444;
 }
 
 .pipe-stages li.current {
   border-top-color: var(--gold);
-  background: #3a4349;
-  box-shadow: 0 8px 24px rgba(248, 136, 32, 0.18);
+  background: #fff8f0;
+  box-shadow: 0 8px 24px rgba(248, 136, 32, 0.12);
 }
 
 .stage-num {
@@ -770,12 +762,12 @@ ol {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 8px;
-  color: var(--white);
+  color: var(--ink);
 }
 
 .pipe-stages p {
   font-size: 0.82rem;
-  color: #b8c0c6;
+  color: var(--muted);
   line-height: 1.45;
 }
 
@@ -833,7 +825,7 @@ ol {
 /* ——— About + banner ——— */
 .about {
   padding: 88px 0;
-  background: var(--bg-soft);
+  background: #2c3439;
 }
 
 .about .section-title {
