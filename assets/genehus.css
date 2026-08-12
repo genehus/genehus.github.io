@@ -15,7 +15,7 @@
   --condensed: "Oswald", "Trade Gothic Next Condensed", "Arial Narrow", sans-serif;
   --sans: "Lato", "Open Sans", Helvetica, Arial, sans-serif;
   --wrap: 1140px;
-  --header-h: 78px;
+  --header-h: 39px;
 }
 
 *,
@@ -145,12 +145,12 @@ ol {
 .logo {
   position: relative;
   display: block;
-  width: 168px;
+  width: 84px;
   flex-shrink: 0;
 }
 
 .logo img {
-  width: 168px;
+  width: 84px;
   height: auto;
 }
 
@@ -165,7 +165,7 @@ ol {
 .nav-main {
   margin-left: auto;
   display: flex;
-  gap: 28px;
+  gap: 18px;
 }
 
 .nav-extra {
@@ -174,7 +174,7 @@ ol {
 
 .nav-main a {
   font-family: var(--condensed);
-  font-size: 0.92rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--ink);
   text-transform: uppercase;
@@ -190,19 +190,19 @@ ol {
 .menu-toggle {
   display: none;
   margin-left: auto;
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   border: none;
   background: transparent;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   cursor: pointer;
 }
 
 .menu-toggle span {
   display: block;
-  width: 22px;
+  width: 18px;
   height: 2px;
   background: var(--ink);
 }
@@ -1800,7 +1800,7 @@ ol {
 
 @media (max-width: 720px) {
   :root {
-    --header-h: 64px;
+    --header-h: 32px;
   }
 
   .header-inner {
@@ -1810,7 +1810,7 @@ ol {
 
   .logo,
   .logo img {
-    width: 128px;
+    width: 64px;
   }
 
   .wrap {
