@@ -463,7 +463,7 @@ ol {
 /* ——— Interest links (Cofactor-style vertical list) ——— */
 .interest {
   padding: 65px 0 80px;
-  background: #2c3439;
+  background: var(--white);
 }
 
 .interest .section-title {
@@ -472,7 +472,7 @@ ol {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8a9aab;
+  color: #2c3439;
   margin-bottom: 26px;
 }
 
@@ -481,7 +481,7 @@ ol {
   margin: 0;
   padding: 8px 0 8px 22px;
   list-style: none;
-  border-left: 1px solid #5a646b;
+  border-left: 1px solid #c5d0db;
 }
 
 .interest-list li + li {
@@ -505,7 +505,7 @@ ol {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--white);
+  color: #2c3439;
   margin-bottom: 6px;
   transition: color 0.2s;
 }
@@ -514,7 +514,7 @@ ol {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.45;
-  color: #b8c0c6;
+  color: #2c3439;
   font-weight: 400;
 }
 
