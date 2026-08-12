@@ -15,7 +15,7 @@
   --condensed: "Oswald", "Trade Gothic Next Condensed", "Arial Narrow", sans-serif;
   --sans: "Lato", "Open Sans", Helvetica, Arial, sans-serif;
   --wrap: 1140px;
-  --header-h: 70px;
+  --header-h: 56px;
 }
 
 *,
@@ -103,14 +103,13 @@ ol {
   transform: translateY(-1px);
 }
 
-/* ——— Header: slim bar (Cofactor). Logo fills ~75% of bar; nav right ——— */
+/* ——— Header: transparent + big logo at rest; slim white bar on scroll ——— */
 .site-header {
   position: fixed;
   inset: 0 0 auto;
   z-index: 200;
   height: var(--header-h);
-  /* At rest: defined dark translucent strip (not open hero void) */
-  background: rgba(0, 0, 0, 0.55);
+  background: transparent;
   border-bottom: 1px solid transparent;
   box-shadow: none;
   opacity: 1;
@@ -119,7 +118,8 @@ ol {
   transition:
     background 0.28s ease,
     border-color 0.28s ease,
-    box-shadow 0.28s ease;
+    box-shadow 0.28s ease,
+    height 0.28s ease;
 }
 
 .site-header.is-scrolled,
@@ -142,20 +142,20 @@ ol {
   position: relative;
   display: flex;
   align-items: center;
-  width: 210px;
-  max-width: 210px;
+  width: 200px;
+  max-width: 200px;
   flex-shrink: 0;
 }
 
 .logo img {
-  max-width: 210px;
+  max-width: 200px;
   height: auto;
-  max-height: calc(var(--header-h) * 0.78);
+  max-height: calc(var(--header-h) * 0.88);
   object-fit: contain;
   object-position: left center;
 }
 
-/* Only one logo visible — .logo img {display} must not override these */
+/* Only one logo visible */
 .logo .logo-dark {
   display: none;
 }
@@ -193,7 +193,8 @@ ol {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   line-height: 1;
-  transition: color 0.2s;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
 .nav-main a:hover,
@@ -204,6 +205,7 @@ ol {
 .site-header.is-scrolled .nav-main a,
 .site-header.is-open .nav-main a {
   color: var(--ink);
+  text-shadow: none;
 }
 
 .site-header.is-scrolled .nav-main a:hover,
@@ -232,11 +234,6 @@ ol {
   height: 2px;
   background: var(--white);
   transition: background 0.2s;
-}
-
-.site-header.is-scrolled .menu-toggle span,
-.site-header.is-open .menu-toggle span {
-  background: var(--ink);
 }
 
 .site-header.is-scrolled .menu-toggle span,
@@ -1842,7 +1839,7 @@ ol {
 
 @media (max-width: 720px) {
   :root {
-    --header-h: 58px;
+    --header-h: 48px;
   }
 
   .header-inner {
@@ -1851,12 +1848,12 @@ ol {
   }
 
   .logo {
-    width: 160px;
-    max-width: 160px;
+    width: 150px;
+    max-width: 150px;
   }
 
   .logo img {
-    max-width: 160px;
+    max-width: 150px;
   }
 
   .wrap {
