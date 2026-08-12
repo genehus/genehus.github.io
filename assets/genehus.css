@@ -286,8 +286,6 @@ ol {
   height: 100%;
   object-fit: cover;
   object-position: center 28%;
-  transform: scale(1.06);
-  animation: hero-bg-settle 14s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .hero-copy {
@@ -334,17 +332,6 @@ ol {
 .hero-line1,
 .hero-line2 {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(1.15rem);
-  animation: hero-line-in 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.hero-line1 {
-  animation-delay: 0.18s;
-}
-
-.hero-line2 {
-  animation-delay: 0.48s;
 }
 
 @media (min-width: 900px) {
@@ -361,32 +348,7 @@ ol {
   color: #ffffff;
   max-width: 32rem;
   line-height: 1.55;
-  opacity: 0;
-  transform: translateY(0.85rem);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75), 0 0 1px rgba(0, 0, 0, 0.9);
-  animation: hero-line-in 1s 0.78s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes hero-line-in {
-  from {
-    opacity: 0;
-    transform: translateY(1.15rem);
-    filter: blur(2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-@keyframes hero-bg-settle {
-  from {
-    transform: scale(1.06);
-  }
-  to {
-    transform: scale(1);
-  }
 }
 
 .hero-tabs {
@@ -966,16 +928,6 @@ ol {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg img,
-  .hero-line1,
-  .hero-line2,
-  .hero-sub {
-    animation: none;
-    opacity: 1;
-    transform: none;
-    filter: none;
-  }
-
   .about-brand.is-animated .about-brand-logo {
     animation: none;
     opacity: 1;
