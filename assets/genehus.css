@@ -1018,7 +1018,7 @@ ol {
   place-content: unset;
   place-items: center;
   padding: 8px 10px 10px;
-  gap: 0;
+  gap: 4px;
   overflow: visible;
 }
 
@@ -1029,7 +1029,7 @@ ol {
   min-height: 0;
   height: auto;
   aspect-ratio: 4.41 / 5.25;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   border: none;
   object-fit: cover;
   object-position: center 18%;
@@ -1055,7 +1055,7 @@ ol {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--white);
-  line-height: 1.25;
+  line-height: 1.45;
   padding: 0 2px;
 }
 
@@ -1064,8 +1064,8 @@ ol {
   font-size: 0.72rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.25;
-  margin: 1px 0 0;
+  line-height: 1.45;
+  margin: 0;
   padding: 0 2px;
 }
 
@@ -1077,18 +1077,18 @@ ol {
   white-space: normal;
   max-width: 100%;
   margin-top: 2px;
-  line-height: 1.25;
+  line-height: 1.45;
   padding: 0 2px;
 }
 
 .advisor-card--filled .person-role {
-  margin-top: 3px;
+  margin-top: 2px;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
   color: rgba(255, 255, 255, 0.78);
-  line-height: 1.25;
+  line-height: 1.45;
   padding: 0 2px;
 }
 
