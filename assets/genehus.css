@@ -103,31 +103,26 @@ ol {
   transform: translateY(-1px);
 }
 
-/* ——— Header: fully hidden on open; white bar on scroll ——— */
+/* ——— Header: transparent over hero at rest; white sticky on scroll ——— */
 .site-header {
   position: fixed;
   inset: 0 0 auto;
   z-index: 200;
   height: var(--header-h);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.42);
   border-bottom: 1px solid transparent;
   box-shadow: none;
-  opacity: 0;
-  transform: translateY(-100%);
-  pointer-events: none;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
   transition:
     background 0.28s ease,
     border-color 0.28s ease,
-    box-shadow 0.28s ease,
-    transform 0.28s ease,
-    opacity 0.28s ease;
+    box-shadow 0.28s ease;
 }
 
 .site-header.is-scrolled,
 .site-header.is-open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
   background: var(--white);
   border-bottom-color: var(--line);
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
@@ -154,11 +149,22 @@ ol {
   height: auto;
 }
 
+/* White logo on dark hero bar; dark logo on white sticky bar */
 .logo-dark {
-  display: block;
+  display: none;
 }
 
 .logo-light {
+  display: block;
+}
+
+.site-header.is-scrolled .logo-dark,
+.site-header.is-open .logo-dark {
+  display: block;
+}
+
+.site-header.is-scrolled .logo-light,
+.site-header.is-open .logo-light {
   display: none;
 }
 
@@ -176,7 +182,7 @@ ol {
   font-family: var(--condensed);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   transition: color 0.2s;
@@ -184,6 +190,18 @@ ol {
 
 .nav-main a:hover,
 .nav-main a.active {
+  color: var(--gold);
+}
+
+.site-header.is-scrolled .nav-main a,
+.site-header.is-open .nav-main a {
+  color: var(--ink);
+}
+
+.site-header.is-scrolled .nav-main a:hover,
+.site-header.is-scrolled .nav-main a.active,
+.site-header.is-open .nav-main a:hover,
+.site-header.is-open .nav-main a.active {
   color: var(--gold);
 }
 
@@ -204,6 +222,12 @@ ol {
   display: block;
   width: 18px;
   height: 2px;
+  background: var(--white);
+  transition: background 0.2s;
+}
+
+.site-header.is-scrolled .menu-toggle span,
+.site-header.is-open .menu-toggle span {
   background: var(--ink);
 }
 
