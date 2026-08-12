@@ -144,16 +144,16 @@ ol {
   position: relative;
   display: flex;
   align-items: center;
-  width: 300px;
-  max-width: 300px;
+  width: 360px;
+  max-width: 360px;
   flex-shrink: 0;
   transition: width 0.28s ease, max-width 0.28s ease;
 }
 
 .logo img {
-  max-width: 300px;
+  max-width: 360px;
   height: auto;
-  max-height: calc(var(--header-h) * 1.35);
+  max-height: calc(var(--header-h) * 1.55);
   object-fit: contain;
   object-position: left center;
   transition: max-width 0.28s ease, max-height 0.28s ease;
@@ -1866,12 +1866,12 @@ ol {
   }
 
   .logo {
-    width: 230px;
-    max-width: 230px;
+    width: 270px;
+    max-width: 270px;
   }
 
   .logo img {
-    max-width: 230px;
+    max-width: 270px;
   }
 
   .site-header.is-scrolled .logo,
