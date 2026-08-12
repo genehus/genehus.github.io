@@ -430,7 +430,7 @@ ol {
 
 .intro-text p {
   margin-bottom: 16px;
-  color: var(--muted);
+  color: #333333;
 }
 
 .intro-text .btn {
