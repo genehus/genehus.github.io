@@ -822,7 +822,7 @@ ol {
   box-shadow: 0 0 0 3px rgba(248, 136, 32, 0.25);
 }
 
-/* ——— About + logo animation ——— */
+/* ——— About + banner ——— */
 .about {
   padding: 88px 0;
   background: var(--bg-soft);
@@ -830,7 +830,7 @@ ol {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 48px;
   align-items: center;
 }
@@ -846,103 +846,14 @@ ol {
 
 .about-brand {
   position: relative;
-  background: var(--black);
-  aspect-ratio: 8 / 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: transparent;
   overflow: hidden;
 }
 
-.about-brand-frame {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px;
-}
-
-.about-brand-frame::before,
-.about-brand-frame::after {
-  content: "";
-  position: absolute;
-  background: var(--gold);
-  opacity: 0;
-}
-
-.about-brand-frame::before {
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  transform: scaleY(0);
-  transform-origin: top;
-}
-
-.about-brand-frame::after {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-.about-brand-logo {
-  width: min(70%, 420px);
+.about-brand-banner {
+  display: block;
+  width: 100%;
   height: auto;
-  opacity: 1;
-  transform: scale(1) translateY(0);
-  filter: drop-shadow(0 0 24px rgba(248, 136, 32, 0.25));
-}
-
-.about-brand.is-animated .about-brand-frame::before {
-  animation: brand-rule-y 0.7s 0.1s ease forwards;
-}
-
-.about-brand.is-animated .about-brand-frame::after {
-  animation: brand-rule-x 0.7s 0.35s ease forwards;
-}
-
-.about-brand.is-animated .about-brand-logo {
-  animation: brand-logo-in 0.9s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes brand-rule-y {
-  to { opacity: 1; transform: scaleY(1); }
-}
-
-@keyframes brand-rule-x {
-  to { opacity: 1; transform: scaleX(1); }
-}
-
-@keyframes brand-logo-in {
-  from {
-    opacity: 0;
-    transform: scale(0.86) translateY(12px);
-    filter: none;
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: drop-shadow(0 0 24px rgba(248, 136, 32, 0.25));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-brand.is-animated .about-brand-logo {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .about-brand.is-animated .about-brand-frame::before,
-  .about-brand.is-animated .about-brand-frame::after {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
 }
 
 /* ——— Team ——— */
