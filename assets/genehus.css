@@ -843,11 +843,11 @@ ol {
 /* ——— About + banner ——— */
 .about {
   padding: 88px 0;
-  background: #2c3439;
+  background: var(--bg-soft);
 }
 
 .about .section-title {
-  color: var(--white);
+  color: var(--ink);
 }
 
 .about-grid {
@@ -858,7 +858,7 @@ ol {
 }
 
 .about-grid p {
-  color: #b8c0c6;
+  color: #333333;
   margin-bottom: 16px;
 }
 
