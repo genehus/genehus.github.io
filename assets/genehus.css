@@ -144,19 +144,20 @@ ol {
   position: relative;
   display: flex;
   align-items: center;
-  width: 360px;
-  max-width: 360px;
+  width: auto;
+  max-width: none;
   flex-shrink: 0;
-  transition: width 0.28s ease, max-width 0.28s ease;
+  transition: none;
 }
 
 .logo img {
-  max-width: 360px;
+  width: 320px;
+  max-width: none;
   height: auto;
-  max-height: calc(var(--header-h) * 1.55);
+  max-height: none;
   object-fit: contain;
   object-position: left center;
-  transition: max-width 0.28s ease, max-height 0.28s ease;
+  transition: width 0.28s ease, max-width 0.28s ease, max-height 0.28s ease;
 }
 
 /* Slim scrolled bar: keep logo smaller to fit */
@@ -168,6 +169,7 @@ ol {
 
 .site-header.is-scrolled .logo img,
 .site-header.is-open .logo img {
+  width: 160px;
   max-width: 160px;
   max-height: calc(var(--header-h-scrolled) * 0.82);
 }
@@ -1866,12 +1868,13 @@ ol {
   }
 
   .logo {
-    width: 270px;
-    max-width: 270px;
+    width: auto;
+    max-width: none;
   }
 
   .logo img {
-    max-width: 270px;
+    width: 240px;
+    max-width: none;
   }
 
   .site-header.is-scrolled .logo,
@@ -1882,6 +1885,7 @@ ol {
 
   .site-header.is-scrolled .logo img,
   .site-header.is-open .logo img {
+    width: 130px;
     max-width: 130px;
   }
 
