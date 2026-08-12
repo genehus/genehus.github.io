@@ -612,7 +612,7 @@ ol {
 .ind-lead,
 .pipe-lead {
   max-width: 46rem;
-  color: var(--muted);
+  color: #333333;
   margin-bottom: 36px;
 }
 
@@ -649,7 +649,7 @@ ol {
 }
 
 .ind-focus-main > p {
-  color: var(--muted);
+  color: #333333;
   margin-bottom: 22px;
   max-width: 38rem;
 }
@@ -731,7 +731,7 @@ ol {
 
 .pipe-lead {
   max-width: 46rem;
-  color: #666;
+  color: #333333;
   margin-bottom: 36px;
   font-size: 0.98rem;
 }
@@ -779,7 +779,7 @@ ol {
 
 .pipe-stages p {
   font-size: 0.8rem;
-  color: #555;
+  color: #333333;
   line-height: 1.5;
 }
 
