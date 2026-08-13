@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeneHus Clinician Demo — Sample cases only</title>
+  <meta name="description" content="Preview of the GeneHus hospital dashboard. Sample patients only. Not for clinical use. Working v1 is not built yet.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/favicon.ico?v=2" sizes="any">
+  <link rel="icon" href="../assets/favicon.png?v=2" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demo.css?v=20260813a">
+</head>
+<body>
+  <div class="banner" role="note">
+    Sample data. Preview only. Not for clinical use. Not validated. Not Ghana FDA approved. Working v1 is not built yet.
+  </div>
+
+  <div id="gate" class="gate">
+    <header class="topbar topbar--gate">
+      <a class="brand" href="https://genehus.bio/">
+        <img src="../assets/genehus-logo-b5.png" alt="GeneHus" width="180" height="46">
+      </a>
+      <span class="site-tag">Clinical Intelligence · Preview</span>
+    </header>
+    <div class="gate-card">
+      <p class="eyebrow">Hospital clinician preview</p>
+      <h1>See how a doctor would use GeneHus</h1>
+      <p class="lead">This is a clickable preview of the hospital screen. It uses fictional sample men only. It is not a working diagnostic tool and it does not use real patient or MADCaP data.</p>
+      <ul class="gate-points">
+        <li>Prostate cancer risk only</li>
+        <li>Doctor stays in charge — GeneHus suggests, the doctor decides</li>
+        <li>Sample list labelled as Korle Bu demo cases</li>
+      </ul>
+      <button class="btn" id="enter-btn" type="button">Enter demo</button>
+      <a class="gate-back" href="https://genehus.bio/">Back to genehus.bio</a>
+    </div>
+  </div>
+
+  <div id="app" class="app" hidden>
+    <header class="topbar">
+      <a class="brand" href="https://genehus.bio/">
+        <img src="../assets/genehus-logo-b5.png" alt="GeneHus" width="160" height="40">
+      </a>
+      <div class="topbar-mid">
+        <strong>Korle Bu Teaching Hospital</strong>
+        <span>Demo ward · sample cases only</span>
+      </div>
+      <div class="topbar-right">
+        <span class="role-pill">Clinician preview</span>
+        <a class="text-link" href="https://genehus.bio/">Company site</a>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="queue">
+        <div class="queue-head">
+          <h2>Who to see first</h2>
+          <p>Ranked sample list. Highest combined risk at the top.</p>
+        </div>
+        <ol id="queue-list" class="queue-list"></ol>
+        <button class="btn btn-ghost" id="new-case-btn" type="button">New sample case</button>
+      </aside>
+
+      <main class="case" id="case-panel">
+        <p class="empty-hint">Select a sample man on the left, or start a new sample case.</p>
+      </main>
+    </div>
+  </div>
+
+  <script src="demo.js?v=20260813a"></script>
+</body>
+</html>
