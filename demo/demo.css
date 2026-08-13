@@ -74,9 +74,25 @@ select {
   border: none;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
 .brand img {
   height: 40px;
   width: auto;
+}
+
+.brand-name {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .site-tag,
