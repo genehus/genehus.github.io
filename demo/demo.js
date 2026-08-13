@@ -266,33 +266,40 @@ function openCase(id) {
   if (patient) renderCase(patient, false);
 }
 
-function enterDemo() {
-  document.getElementById("gate").hidden = true;
-  document.getElementById("app").hidden = false;
-  renderQueue(CASES[0].id);
-  openCase(rankedCases()[0].id);
+function startApp() {
+  const list = document.getElementById("queue-list");
+  const newBtn = document.getElementById("new-case-btn");
+  if (!list || !newBtn) return;
+
+  const first = rankedCases()[0];
+  renderQueue(first.id);
+  openCase(first.id);
+
+  list.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-id]");
+    if (btn) openCase(btn.dataset.id);
+  });
+
+  newBtn.addEventListener("click", () => {
+    renderCase(
+      {
+        id: "custom",
+        name: "New sample case",
+        label: "Typed by you (still fictional)",
+        age: 60,
+        psa: 6,
+        gleason: 7,
+        stage: "T2",
+        family: false,
+        genomic: true
+      },
+      true
+    );
+  });
 }
 
-document.getElementById("enter-btn").addEventListener("click", enterDemo);
-
-document.getElementById("queue-list").addEventListener("click", (e) => {
-  const btn = e.target.closest("[data-id]");
-  if (btn) openCase(btn.dataset.id);
-});
-
-document.getElementById("new-case-btn").addEventListener("click", () => {
-  renderCase(
-    {
-      id: "custom",
-      name: "New sample case",
-      label: "Typed by you (still fictional)",
-      age: 60,
-      psa: 6,
-      gleason: 7,
-      stage: "T2",
-      family: false,
-      genomic: true
-    },
-    true
-  );
-});
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startApp);
+} else {
+  startApp();
+}

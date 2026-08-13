@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/demo/demo.css?v=20260813b">
+  <link rel="stylesheet" href="/demo/demo.css?v=20260813c">
 </head>
 <body>
   <div class="banner" role="note">
@@ -35,43 +35,10 @@
         <li>Doctor stays in charge — GeneHus suggests, the doctor decides</li>
         <li>Sample list labelled as Korle Bu demo cases</li>
       </ul>
-      <button class="btn" id="enter-btn" type="button">Enter demo</button>
+      <a class="btn" id="enter-btn" href="/demo/app.html">Enter demo</a>
       <a class="gate-back" href="https://genehus.bio/">Back to genehus.bio</a>
     </div>
   </div>
 
-  <div id="app" class="app" hidden>
-    <header class="topbar">
-      <a class="brand" href="https://genehus.bio/">
-        <img src="/assets/genehus-logo-b5.png" alt="GeneHus" width="160" height="40">
-        <span class="brand-name">GeneHus</span>
-      </a>
-      <div class="topbar-mid">
-        <strong>Korle Bu Teaching Hospital</strong>
-        <span>Demo ward · sample cases only</span>
-      </div>
-      <div class="topbar-right">
-        <span class="role-pill">Clinician preview</span>
-        <a class="text-link" href="https://genehus.bio/">Company site</a>
-      </div>
-    </header>
-
-    <div class="layout">
-      <aside class="queue">
-        <div class="queue-head">
-          <h2>Who to see first</h2>
-          <p>Ranked sample list. Highest combined risk at the top.</p>
-        </div>
-        <ol id="queue-list" class="queue-list"></ol>
-        <button class="btn btn-ghost" id="new-case-btn" type="button">New sample case</button>
-      </aside>
-
-      <main class="case" id="case-panel">
-        <p class="empty-hint">Select a sample man on the left, or start a new sample case.</p>
-      </main>
-    </div>
-  </div>
-
-  <script src="/demo/demo.js?v=20260813b"></script>
 </body>
 </html>
