@@ -956,8 +956,8 @@ ol {
 .person-role {
   font-size: 0.78rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: var(--white);
   margin-bottom: 2px;
   margin-top: 2px;
