@@ -913,7 +913,7 @@ ol {
 
 .person-card {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: 0.5px solid rgba(255, 255, 255, 0.38);
   padding: 8px 11px 8px;
   text-align: center;
   display: flex;
@@ -996,7 +996,7 @@ ol {
 
 .advisor-card {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: 0.5px solid rgba(255, 255, 255, 0.38);
   padding: 8px 11px;
   min-height: 0;
   aspect-ratio: auto;
