@@ -909,7 +909,7 @@ ol {
   justify-content: start;
   gap: 11px;
   margin-bottom: 48px;
-  max-width: 63.9%;
+  max-width: 100%;
 }
 
 .person-card {
@@ -921,7 +921,7 @@ ol {
   flex-direction: column;
   align-items: stretch;
   gap: 0;
-  width: 269px;
+  width: 23.75rem;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -971,7 +971,7 @@ ol {
   margin: 2px 0 0;
   max-width: 100%;
   line-height: 1.35;
-  white-space: normal;
+  white-space: nowrap;
   overflow: visible;
 }
 
