@@ -360,7 +360,7 @@ ol {
   align-items: center;
   gap: 3rem;
   min-height: 0;
-  padding: 0.92rem 1.8rem;
+  padding: 1.01rem 1.8rem;
   background: var(--black);
 }
 
@@ -1642,7 +1642,7 @@ ol {
     scrollbar-width: none;
     margin-top: auto;
     min-height: 0;
-    padding: 0.86rem 0.9rem;
+    padding: 0.95rem 0.9rem;
     background: var(--black);
   }
 
