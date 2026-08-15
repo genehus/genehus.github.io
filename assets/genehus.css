@@ -982,6 +982,8 @@ ol {
   text-transform: uppercase;
   color: var(--gold);
   border-bottom: 1px solid var(--gold);
+  width: fit-content;
+  align-self: center;
 }
 
 .person-link:hover {
