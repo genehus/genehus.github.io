@@ -1117,7 +1117,11 @@ ol {
 .advisor-card--filled .person-role--stack {
   white-space: normal;
   overflow: visible;
-  line-height: 1.4rem;
+  line-height: 1.12rem;
+}
+
+.advisor-card--filled .person-role strong {
+  font-weight: 700;
 }
 
 .advisor-card--filled .person-photo--square {
