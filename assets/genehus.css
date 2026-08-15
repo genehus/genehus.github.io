@@ -1057,6 +1057,7 @@ ol {
   color: var(--white);
   line-height: 1.45;
   padding: 0 2px;
+  white-space: nowrap;
 }
 
 .advisor-card--filled .advisor-creds {
@@ -1067,6 +1068,7 @@ ol {
   line-height: 1.45;
   margin: 0;
   padding: 0 2px;
+  white-space: nowrap;
 }
 
 .advisor-card--filled .person-meta {
