@@ -1000,7 +1000,7 @@ ol {
   grid-template-columns: repeat(4, max-content);
   gap: 11px;
   max-width: 100%;
-  align-items: start;
+  align-items: stretch;
   justify-content: start;
 }
 
@@ -1111,6 +1111,12 @@ ol {
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
+}
+
+.advisor-card--filled .person-role--stack {
+  white-space: normal;
+  overflow: visible;
+  line-height: 1.12;
 }
 
 .advisor-card--filled .person-photo--square {
