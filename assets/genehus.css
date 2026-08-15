@@ -389,7 +389,7 @@ ol {
 .hero-tabs span {
   font-family: var(--condensed);
   font-size: 1.14rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
@@ -1668,7 +1668,7 @@ ol {
   .hero-tabs span {
     font-family: var(--condensed);
     font-size: 1.02rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.06em;
     line-height: 1;
     white-space: nowrap;
@@ -1818,7 +1818,7 @@ ol {
 
   .hero-tabs span {
     font-size: 0.94rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.05em;
   }
 
