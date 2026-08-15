@@ -971,8 +971,8 @@ ol {
   margin: 2px 0 0;
   max-width: 100%;
   line-height: 1.35;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  overflow: visible;
 }
 
 .person-link {
