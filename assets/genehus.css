@@ -967,7 +967,7 @@ ol {
 .person-card .person-meta {
   font-size: 0.82rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--white);
   margin: 2px 0 0;
   max-width: 100%;
   line-height: 1.35;
