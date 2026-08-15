@@ -914,7 +914,7 @@ ol {
 
 .person-card {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   padding: 22px 22px 18px;
   text-align: center;
   display: flex;
@@ -1006,7 +1006,7 @@ ol {
 
 .advisor-card {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   padding: 22px 22px 18px;
   min-width: 0;
   width: 19.5rem;
@@ -1030,7 +1030,7 @@ ol {
   place-items: unset;
   padding: 22px 22px 18px;
   gap: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .advisor-card--filled .person-photo {
