@@ -358,9 +358,9 @@ ol {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3rem;
   min-height: 0;
-  padding: 0.7rem 1.5rem;
+  padding: 0.84rem 1.8rem;
   background: var(--black);
 }
 
@@ -388,7 +388,7 @@ ol {
 
 .hero-tabs span {
   font-family: var(--condensed);
-  font-size: 0.95rem;
+  font-size: 1.14rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -1636,13 +1636,13 @@ ol {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     margin-top: auto;
     min-height: 0;
-    padding: 0.65rem 0.75rem;
+    padding: 0.78rem 0.9rem;
     background: var(--black);
   }
 
@@ -1666,7 +1666,7 @@ ol {
 
   .hero-tabs span {
     font-family: var(--condensed);
-    font-size: 0.85rem;
+    font-size: 1.02rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     line-height: 1;
@@ -1816,7 +1816,7 @@ ol {
   }
 
   .hero-tabs span {
-    font-size: 0.78rem;
+    font-size: 0.94rem;
     font-weight: 700;
     letter-spacing: 0.05em;
   }
