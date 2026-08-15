@@ -915,13 +915,13 @@ ol {
 .person-card {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.42);
-  padding: 12px 12px 14px;
+  padding: 22px 22px 18px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 0;
-  width: 249px;
+  width: 269px;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -1909,7 +1909,7 @@ ol {
   }
 
   .person-card {
-    padding: 12px 12px 14px;
+    padding: 22px 22px 18px;
   }
 
   .site-footer .footer-top a,
