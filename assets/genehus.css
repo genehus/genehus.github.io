@@ -1077,7 +1077,7 @@ ol {
   flex: 0 0 auto;
   font-size: 0.85rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--white);
   line-height: 1.45;
   margin: 0;
   padding: 0 2px;
@@ -1090,7 +1090,7 @@ ol {
   flex: 0 0 auto;
   font-size: 0.85rem;
   font-weight: 400;
-  color: var(--gold);
+  color: var(--white);
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
