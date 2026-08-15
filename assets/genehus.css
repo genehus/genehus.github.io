@@ -1094,6 +1094,13 @@ ol {
   padding: 0 2px;
 }
 
+.advisor-card--filled .person-role--fit {
+  white-space: nowrap;
+  font-size: 0.52rem;
+  letter-spacing: 0.02em;
+  max-width: 100%;
+}
+
 .advisor-card--filled .person-photo--square {
   aspect-ratio: 4.41 / 5.25;
   width: 100%;
