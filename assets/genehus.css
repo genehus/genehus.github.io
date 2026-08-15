@@ -1052,7 +1052,7 @@ ol {
 
 .advisor-card--filled h3 {
   flex: 0 0 auto;
-  font-size: 0.82rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: var(--white);
   line-height: 1.45;
@@ -1062,7 +1062,7 @@ ol {
 
 .advisor-card--filled .advisor-creds {
   flex: 0 0 auto;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.45;
