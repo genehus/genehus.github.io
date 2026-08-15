@@ -1103,7 +1103,7 @@ ol {
 .advisor-card--filled .person-role {
   margin: 0;
   font-size: 0.64rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--gold);
