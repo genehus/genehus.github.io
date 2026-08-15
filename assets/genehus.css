@@ -913,13 +913,29 @@ ol {
 
 .person-card {
   background: transparent;
-  border: 0.5px solid rgba(255, 255, 255, 0.38);
+  border: none;
+  position: relative;
   padding: 8px 11px 8px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
+}
+
+.person-card::after,
+.advisor-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
 }
 
 .person-photo {
@@ -996,7 +1012,8 @@ ol {
 
 .advisor-card {
   background: transparent;
-  border: 0.5px solid rgba(255, 255, 255, 0.38);
+  border: none;
+  position: relative;
   padding: 8px 11px;
   min-height: 0;
   aspect-ratio: auto;
