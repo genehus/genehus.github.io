@@ -1074,7 +1074,7 @@ ol {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--gold);
-  white-space: normal;
+  white-space: nowrap;
   max-width: 100%;
   margin-top: 2px;
   line-height: 1.45;
