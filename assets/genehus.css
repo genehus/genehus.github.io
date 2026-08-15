@@ -931,7 +931,7 @@ ol {
   object-fit: cover;
   object-position: center 18%;
   margin-bottom: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: none;
   background: transparent;
   flex-shrink: 0;
   overflow: hidden;
@@ -1030,7 +1030,7 @@ ol {
   height: auto;
   aspect-ratio: 4.41 / 5.25;
   margin-bottom: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: none;
   object-fit: cover;
   object-position: center 18%;
   box-sizing: border-box;
