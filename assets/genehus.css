@@ -1089,7 +1089,7 @@ ol {
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--gold);
   line-height: 1.45;
   padding: 0 2px;
 }
