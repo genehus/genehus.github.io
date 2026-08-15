@@ -1101,9 +1101,9 @@ ol {
 
 .advisor-card--filled .person-role {
   margin-top: 2px;
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--gold);
   line-height: 1.45;
