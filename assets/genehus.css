@@ -905,7 +905,8 @@ ol {
 
 .founder-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: start;
   gap: 11px;
   margin-bottom: 48px;
   max-width: 63.9%;
@@ -914,17 +915,20 @@ ol {
 .person-card {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.42);
-  padding: 8px 11px 8px;
+  padding: 3px 3px 8px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 0;
+  width: 231px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .person-photo {
   width: 100%;
-  max-width: 223px;
+  max-width: none;
   aspect-ratio: 4.41 / 5.25;
   height: auto;
   border-radius: 0;
@@ -945,6 +949,8 @@ ol {
   color: var(--white);
   margin-bottom: 0;
   line-height: 1.2;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .person-role {
@@ -963,9 +969,10 @@ ol {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.88);
   margin: 2px 0 0;
-  max-width: none;
+  max-width: 100%;
   line-height: 1.35;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .person-link {
@@ -1902,7 +1909,7 @@ ol {
   }
 
   .person-card {
-    padding: 8px 11px 8px;
+    padding: 3px 3px 8px;
   }
 
   .site-footer .footer-top a,
