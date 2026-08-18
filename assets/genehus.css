@@ -1089,14 +1089,14 @@ ol {
 
 .advisor-card--filled .person-meta {
   flex: 0 0 auto;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 400;
   color: var(--white);
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  overflow: visible;
   max-width: 100%;
   margin: 0;
-  line-height: 1.4rem;
+  line-height: 1.15rem;
   padding: 0 2px;
 }
 
