@@ -1102,6 +1102,14 @@ ol {
   padding: 0 2px;
 }
 
+.advisor-card--filled .person-meta-oneline {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.68rem;
+  letter-spacing: -0.025em;
+  max-width: 100%;
+}
+
 .advisor-card--filled .person-role {
   margin: 0;
   font-size: 0.64rem;
