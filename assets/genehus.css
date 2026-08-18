@@ -1063,27 +1063,27 @@ ol {
 
 .advisor-card--filled h3 {
   flex: 0 0 auto;
-  font-size: 0.98rem;
+  font-size: 0.90rem;
   font-weight: 400;
   color: var(--white);
-  line-height: 1.4rem;
+  line-height: 1.2rem;
   margin: 0;
   padding: 0 2px;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  overflow: visible;
   max-width: 100%;
 }
 
 .advisor-card--filled .advisor-creds {
   flex: 0 0 auto;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 400;
   color: var(--white);
-  line-height: 1.4rem;
+  line-height: 1.15rem;
   margin: 0;
   padding: 0 2px;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  overflow: visible;
   max-width: 100%;
 }
 
@@ -1107,10 +1107,10 @@ ol {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--gold);
-  line-height: 1.4rem;
+  line-height: 1.12rem;
   padding: 0 2px;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  overflow: visible;
   max-width: 100%;
 }
 
@@ -1146,7 +1146,7 @@ ol {
   }
 
   .advisor-card--filled h3 {
-    font-size: 0.98rem;
+    font-size: 0.90rem;
   }
 }
 
@@ -1161,7 +1161,7 @@ ol {
   }
 
   .advisor-card--filled h3 {
-    font-size: 0.98rem;
+    font-size: 0.90rem;
   }
 
   .founder-grid {
@@ -1748,7 +1748,7 @@ ol {
   }
 
   .advisor-card--filled h3 {
-    font-size: 0.98rem !important;
+    font-size: 0.90rem !important;
   }
 
   .partner-row {
