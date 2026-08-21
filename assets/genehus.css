@@ -997,7 +997,7 @@ ol {
 
 .advisor-grid {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(3, max-content);
   gap: 11px;
   max-width: 100%;
   align-items: start;
