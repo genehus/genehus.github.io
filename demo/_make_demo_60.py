@@ -221,14 +221,11 @@ def media_duration(path: Path) -> float:
 
 
 def h264_args() -> list[str]:
-    """Solid 4K bitrate (~12 Mbps, under GitHub 100MB limit for 60s)."""
+    """Constant quantizer 4K — keeps detail on UI screens (bitrate mode under-fills static slides)."""
     return [
         "-c:v", "libx264",
         "-preset", "medium",
-        "-b:v", "12M",
-        "-minrate", "8M",
-        "-maxrate", "18M",
-        "-bufsize", "24M",
+        "-qp", "16",
         "-profile:v", "high",
         "-level", "5.1",
         "-pix_fmt", "yuv420p",
