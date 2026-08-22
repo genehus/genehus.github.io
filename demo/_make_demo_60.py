@@ -1,6 +1,8 @@
 """
-Build GeneHus clinician demo: exactly 60.00s, AM.png branding,
-single West-African English voiceover (no overlapping tracks).
+GeneHus clinician demo — 60.00s
+- Opening logo: transparent white (website style)
+- Closing logo: GeneHus_Logo_ (white-on-transparent)
+- Voice: British English neural (closer to Ghanaian Standard English than Nigerian)
 """
 from __future__ import annotations
 
@@ -22,14 +24,14 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(r"c:\Users\fresh\Desktop\GeneHus\genehus.github.io")
 OUT = ROOT / "demo" / "video"
 WORK = OUT / "_work"
-PORT = 8878
+PORT = 8879
 W, H = 1600, 900
 TARGET_SEC = 60.0
 
-# Closest available West African English neural voice (no en-GH in Edge TTS)
-VOICE = "en-NG-AbeoNeural"
-RATE = "-8%"
-PITCH = "+0Hz"
+# Ghanaian Standard English is closer to British than Nigerian; Edge TTS has no en-GH.
+VOICE = "en-GB-RyanNeural"
+RATE = "-12%"  # steadier, broadcast-like Ghanaian delivery
+PITCH = "-1Hz"
 
 NARRATION = (
     "This is GeneHus — a clinician preview for African-trained genomic and clinical "
@@ -49,8 +51,8 @@ NARRATION = (
 
 SCRIPT_MD = """# GeneHus Clinician Demo — Voiceover Script (60 seconds)
 
-**Voice:** West African English neural TTS (`en-NG-AbeoNeural`) — closest available Ghana/West Africa accent in Edge TTS.
-**Length:** exactly 60.00 seconds · single continuous track (no overlapping voices)
+**Voice:** `en-GB-RyanNeural` (British English neural) — chosen because Ghanaian Standard English is closer to British than Nigerian, and Edge TTS has no `en-GH` voice.
+**Length:** exactly 60.00 seconds · single continuous track
 
 ---
 
@@ -70,13 +72,18 @@ def serve() -> socketserver.TCPServer:
 
 
 def make_poster() -> None:
-    src = ROOT / "assets" / "AM.png"
-    im = Image.open(src).convert("RGBA")
+    """Dark poster with transparent white GeneHus logo (website style)."""
+    logo = Image.open(ROOT / "assets" / "GeneHus_Logo_white.png").convert("RGBA")
     canvas = Image.new("RGB", (W, H), (17, 17, 17))
-    fitted = ImageOps.contain(im, (W - 160, H - 160))
-    canvas.paste(fitted, ((W - fitted.width) // 2, (H - fitted.height) // 2), fitted)
-    canvas.save(ROOT / "assets" / "AM-poster.png")
+    # contain logo width
+    max_w, max_h = 900, 220
+    fitted = ImageOps.contain(logo, (max_w, max_h))
+    x = (W - fitted.width) // 2
+    y = (H - fitted.height) // 2
+    canvas.paste(fitted, (x, y), fitted)
+    canvas.save(ROOT / "assets" / "AM-poster.png")  # keep path used by video.html
     canvas.save(OUT / "poster.png")
+    print("poster updated")
 
 
 def record_demo() -> Path:
@@ -106,20 +113,23 @@ def record_demo() -> Path:
                   h1{{font-family:Oswald,sans-serif;font-weight:600;font-size:44px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 14px;line-height:1.15;max-width:1000px}}
                   p{{font-size:19px;color:#d8dee4;max-width:820px;line-height:1.45;margin:0}}
                   .fine{{margin-top:20px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
-                  .logo-frame{{width:min(720px,86vw);background:#ececec;padding:14px 18px;margin-bottom:18px;box-sizing:border-box}}
-                  .logo-frame img{{display:block;width:100%;height:auto;max-height:260px;object-fit:contain}}
+                  /* Transparent logo — no white banner plate */
+                  .logo-plain{{margin-bottom:22px}}
+                  .logo-plain img{{display:block;height:72px;width:auto;max-width:min(520px,86vw);object-fit:contain;background:transparent}}
+                  .logo-plain.logo-end img{{height:88px;max-width:min(640px,88vw)}}
                 </style></head><body><div class="wrap">{html}</div></body></html>""",
                 wait_until="networkidle",
             )
             page.wait_for_timeout(int(seconds * 1000))
 
-        logo = f"{base}/assets/AM.png"
-        logo_block = f'<div class="logo-frame"><img src="{logo}" alt="GeneHus"></div>'
+        # Website-style white transparent logo for open
+        open_logo = f"{base}/assets/genehus-logo-b5-white.png"
+        # GeneHus_Logo_ converted to white transparent for close
+        end_logo = f"{base}/assets/GeneHus_Logo_white.png"
 
-        # Timed for ~60s total including navigation overhead
         card(
-            logo_block
-            + '<div class="eyebrow">Product demo</div>'
+            f'<div class="logo-plain"><img src="{open_logo}" alt="GeneHus"></div>'
+            '<div class="eyebrow">Product demo</div>'
             "<h1>GeneHus clinician preview</h1>"
             "<p>African-trained genomic + clinical risk stratification for aggressive prostate cancer.</p>"
             '<div class="fine">Sample data only · Not for clinical use</div>',
@@ -142,7 +152,6 @@ def record_demo() -> Path:
 
         page.goto(f"{base}/demo/", wait_until="networkidle")
         page.wait_for_timeout(3000)
-
         page.click("#enter-btn")
         page.wait_for_url("**/demo/app.html")
         page.wait_for_selector("#queue-list .queue-item")
@@ -150,10 +159,8 @@ def record_demo() -> Path:
 
         page.locator('[data-id="benjamin"]').click()
         page.wait_for_timeout(4000)
-
         page.locator('[data-id="ibrahim"]').click()
         page.wait_for_timeout(3500)
-
         page.locator("#queue-list .queue-item").first.click()
         page.wait_for_timeout(3500)
 
@@ -172,9 +179,10 @@ def record_demo() -> Path:
             "<p>No real patients. Not validated. Not Ghana FDA approved. Next: MADCaP permission, then v1.</p>",
             4.5,
         )
+        # Last card: GeneHus_Logo_ (transparent white)
         card(
-            logo_block
-            + '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
+            f'<div class="logo-plain logo-end"><img src="{end_logo}" alt="GeneHus"></div>'
+            '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
             "<p>Try the clinician preview · safoduker@genehus.bio</p>",
             4.0,
@@ -206,121 +214,50 @@ def to_exact_silent_mp4(webm: Path) -> Path:
     ff = imageio_ffmpeg.get_ffmpeg_exe()
     raw = OUT / "_raw60.mp4"
     silent = OUT / "GeneHus_Clinician_Demo_silent.mp4"
-    # First encode, then force exact 60.00s (trim or pad last frame)
     subprocess.run(
         [
-            ff,
-            "-y",
-            "-i",
-            str(webm),
-            "-c:v",
-            "libx264",
-            "-preset",
-            "medium",
-            "-crf",
-            "20",
-            "-pix_fmt",
-            "yuv420p",
-            "-an",
-            str(raw),
+            ff, "-y", "-i", str(webm),
+            "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+            "-pix_fmt", "yuv420p", "-an", str(raw),
         ],
-        check=True,
-        capture_output=True,
+        check=True, capture_output=True,
     )
     dur = media_duration(raw)
     print(f"raw video {dur:.2f}s")
     if dur >= TARGET_SEC:
-        # trim to exactly 60s
-        subprocess.run(
-            [
-                ff,
-                "-y",
-                "-i",
-                str(raw),
-                "-t",
-                f"{TARGET_SEC:.2f}",
-                "-c:v",
-                "libx264",
-                "-preset",
-                "medium",
-                "-crf",
-                "20",
-                "-pix_fmt",
-                "yuv420p",
-                "-movflags",
-                "+faststart",
-                "-an",
-                str(silent),
-            ],
-            check=True,
-            capture_output=True,
-        )
+        vf_args = ["-t", f"{TARGET_SEC:.2f}"]
     else:
         pad = TARGET_SEC - dur
-        subprocess.run(
-            [
-                ff,
-                "-y",
-                "-i",
-                str(raw),
-                "-vf",
-                f"tpad=stop_mode=clone:stop_duration={pad:.3f}",
-                "-t",
-                f"{TARGET_SEC:.2f}",
-                "-c:v",
-                "libx264",
-                "-preset",
-                "medium",
-                "-crf",
-                "20",
-                "-pix_fmt",
-                "yuv420p",
-                "-movflags",
-                "+faststart",
-                "-an",
-                str(silent),
-            ],
-            check=True,
-            capture_output=True,
-        )
+        vf_args = ["-vf", f"tpad=stop_mode=clone:stop_duration={pad:.3f}", "-t", f"{TARGET_SEC:.2f}"]
+    subprocess.run(
+        [
+            ff, "-y", "-i", str(raw), *vf_args,
+            "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+            "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", str(silent),
+        ],
+        check=True, capture_output=True,
+    )
     print(f"silent exact {media_duration(silent):.2f}s")
     return silent
 
 
 async def make_voice(out_mp3: Path) -> None:
-    # One continuous track — never amix multiple overlapping clips
-    communicate = edge_tts.Communicate(NARRATION, VOICE, rate=RATE, pitch=PITCH)
     raw = OUT / "_vo_full.mp3"
-    await communicate.save(str(raw))
+    await edge_tts.Communicate(NARRATION, VOICE, rate=RATE, pitch=PITCH).save(str(raw))
     dur = media_duration(raw)
-    print(f"voice raw {dur:.2f}s")
+    print(f"voice raw {dur:.2f}s ({VOICE})")
     ff = imageio_ffmpeg.get_ffmpeg_exe()
-    if dur > TARGET_SEC - 0.3:
-        # slightly speed up to fit under 60s with a short tail
-        tempo = dur / (TARGET_SEC - 0.8)
-        # atempo only supports 0.5–2.0
-        tempo = max(0.5, min(2.0, tempo))
+    if dur > TARGET_SEC - 0.4:
+        tempo = max(0.5, min(2.0, dur / (TARGET_SEC - 0.6)))
         af = f"atempo={tempo:.4f},apad=whole_dur={TARGET_SEC:.2f}"
     else:
         af = f"apad=whole_dur={TARGET_SEC:.2f}"
     subprocess.run(
         [
-            ff,
-            "-y",
-            "-i",
-            str(raw),
-            "-af",
-            af,
-            "-t",
-            f"{TARGET_SEC:.2f}",
-            "-ar",
-            "44100",
-            "-ac",
-            "1",
-            str(out_mp3),
+            ff, "-y", "-i", str(raw), "-af", af, "-t", f"{TARGET_SEC:.2f}",
+            "-ar", "44100", "-ac", "1", str(out_mp3),
         ],
-        check=True,
-        capture_output=True,
+        check=True, capture_output=True,
     )
     print(f"voice exact {media_duration(out_mp3):.2f}s")
 
@@ -329,28 +266,13 @@ def mux(silent: Path, audio: Path, out: Path) -> None:
     ff = imageio_ffmpeg.get_ffmpeg_exe()
     subprocess.run(
         [
-            ff,
-            "-y",
-            "-i",
-            str(silent),
-            "-i",
-            str(audio),
-            "-c:v",
-            "copy",
-            "-c:a",
-            "aac",
-            "-b:a",
-            "192k",
-            "-t",
-            f"{TARGET_SEC:.2f}",
-            "-movflags",
-            "+faststart",
-            str(out),
+            ff, "-y", "-i", str(silent), "-i", str(audio),
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-t", f"{TARGET_SEC:.2f}", "-movflags", "+faststart", str(out),
         ],
-        check=True,
-        capture_output=True,
+        check=True, capture_output=True,
     )
-    print(f"final {out.name} {media_duration(out):.2f}s  mb={out.stat().st_size/1e6:.2f}")
+    print(f"final {out.name} {media_duration(out):.2f}s mb={out.stat().st_size/1e6:.2f}")
 
 
 def main() -> None:
@@ -368,16 +290,20 @@ def main() -> None:
         asyncio.run(make_voice(audio))
         final = OUT / "GeneHus_Clinician_Demo.mp4"
         mux(silent, audio, final)
-        # drop old webm source from page; keep a 60s webm optional
-        webm_out = OUT / "GeneHus_Clinician_Demo.webm"
-        if webm_out.exists():
-            webm_out.unlink()
-        root_copy = Path(r"c:\Users\fresh\Desktop\GeneHus\GeneHus_Clinician_Demo.mp4")
-        root_copy.write_bytes(final.read_bytes())
+        Path(r"c:\Users\fresh\Desktop\GeneHus\GeneHus_Clinician_Demo.mp4").write_bytes(final.read_bytes())
         Path(r"c:\Users\fresh\Desktop\GeneHus\GeneHus_Clinician_Demo_VOICEOVER_SCRIPT.md").write_text(
             SCRIPT_MD, encoding="utf-8"
         )
-        print("copied to Desktop GeneHus")
+        # cleanup local screenshots referenced by user
+        for name in (
+            "Screenshot 2026-08-22 062904.png",
+            "Screenshot 2026-08-22 063250.png",
+            "Screenshot 2026-08-22 063613.png",
+        ):
+            p = Path(r"c:\Users\fresh\Desktop\GeneHus") / name
+            if p.exists():
+                p.unlink()
+                print("deleted", name)
     finally:
         httpd.shutdown()
         if WORK.exists():

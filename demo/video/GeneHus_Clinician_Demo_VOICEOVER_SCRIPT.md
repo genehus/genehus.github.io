@@ -1,7 +1,7 @@
 # GeneHus Clinician Demo — Voiceover Script (60 seconds)
 
-**Voice:** West African English neural TTS (`en-NG-AbeoNeural`) — closest available Ghana/West Africa accent in Edge TTS (no `en-GH` voice published).
-**Length:** exactly 60.00 seconds · **single continuous track** (fixes prior overlapping multi-voice mix)
+**Voice:** `en-GB-RyanNeural` (British English neural) — chosen because Ghanaian Standard English is closer to British than Nigerian, and Edge TTS has no `en-GH` voice.
+**Length:** exactly 60.00 seconds · single continuous track
 
 ---
 
