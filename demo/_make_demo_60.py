@@ -115,12 +115,12 @@ def record_demo() -> Path:
                   .fine{{margin-top:14px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
                   .logo-plain{{margin-bottom:28px}}
                   .logo-plain img{{display:block;height:240px;width:auto;max-width:min(1400px,96vw);object-fit:contain;background:transparent}}
-                  /* Closing logo: dominate the frame */
-                  .wrap-end .logo-plain{{margin-bottom:28px}}
-                  .wrap-end .logo-plain img{{height:auto;width:min(1480px,96vw);max-height:520px;object-fit:contain}}
-                  .wrap-end h1{{font-size:28px;margin-bottom:8px}}
-                  .wrap-end p{{font-size:15px}}
-                  .wrap-end .eyebrow{{font-size:12px;margin-bottom:14px}}
+                  /* Closing logo: fill almost the full frame */
+                  .wrap-end .logo-plain{{margin-bottom:22px}}
+                  .wrap-end .logo-plain img{{height:auto;width:min(1520px,97vw);max-height:560px;object-fit:contain}}
+                  .wrap-end h1{{font-size:26px;margin-bottom:6px}}
+                  .wrap-end p{{font-size:14px}}
+                  .wrap-end .eyebrow{{font-size:11px;margin-bottom:12px}}
                 </style></head><body><div class="{wrap_cls}">{html}</div></body></html>""",
                 wait_until="networkidle",
             )
