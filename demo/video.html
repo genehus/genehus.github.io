@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeneHus Clinician Demo — Application video</title>
+  <meta name="description" content="Standard product demo video of the GeneHus clinician preview for applications. Sample data only. Not for clinical use.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon.ico?v=2" sizes="any">
+  <link rel="icon" href="/assets/favicon.png?v=2" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/demo/demo.css?v=20260822v">
+  <style>
+    .video-page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px 20px 72px;
+    }
+    .video-page h1 {
+      font-family: var(--condensed);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin: 8px 0 12px;
+    }
+    .video-lead {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 22px;
+    }
+    .player {
+      background: #111;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .player video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .video-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .video-meta {
+      margin-top: 28px;
+      padding: 18px 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+    .video-meta h2 {
+      font-family: var(--condensed);
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .video-meta ol {
+      margin: 0 0 0 18px;
+      color: #333;
+    }
+    .video-meta li {
+      margin-bottom: 6px;
+    }
+    .video-meta p {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="banner" role="note">
+    Sample data. Preview only. Not for clinical use. Not validated. Not Ghana FDA approved. Working v1 is not built yet.
+  </div>
+
+  <header class="topbar topbar--gate">
+    <a class="brand" href="https://genehus.bio/">
+      <img src="/assets/genehus-logo-b5.png" alt="GeneHus" width="160" height="40">
+      <span class="brand-name">GeneHus</span>
+    </a>
+    <span class="site-tag">Application package · Demo video</span>
+    <div class="topbar-right">
+      <a class="text-link" href="/demo/">Interactive demo</a>
+    </div>
+  </header>
+
+  <main class="video-page">
+    <p class="eyebrow">Standard product demo</p>
+    <h1>GeneHus clinician preview — application video</h1>
+    <p class="video-lead">
+      A short walkthrough of the hospital screen for applications and diligence.
+      Fictional sample cases only. This is not a working diagnostic tool.
+    </p>
+
+    <div class="player">
+      <video controls playsinline preload="metadata" poster="/assets/hero-dashboard.png">
+        <source src="/demo/video/GeneHus_Clinician_Demo.mp4" type="video/mp4">
+        <source src="/demo/video/GeneHus_Clinician_Demo.webm" type="video/webm">
+        Your browser does not support embedded video.
+      </video>
+    </div>
+
+    <div class="video-actions">
+      <a class="btn" href="/demo/video/GeneHus_Clinician_Demo.mp4" download>Download MP4</a>
+      <a class="btn btn-ghost" href="/demo/app.html" style="width:auto;margin:0">Open live demo</a>
+      <a class="btn btn-ghost" href="https://genehus.bio/" style="width:auto;margin:0">genehus.bio</a>
+    </div>
+
+    <section class="video-meta">
+      <h2>What this video shows</h2>
+      <ol>
+        <li>Problem: PSA-alone triage for African men with late presentation</li>
+        <li>Product: clinician-ranked list combining clinical inputs + African genomic signal</li>
+        <li>Demo: Korle Bu sample ward — priority queue and case risk preview</li>
+        <li>Status: sample preview only; working v1 waits on MADCaP permission</li>
+      </ol>
+      <p>
+        Runtime ~57 seconds · 1600×900 · Silent (no voiceover) ·
+        File: <code>GeneHus_Clinician_Demo.mp4</code> ·
+        Live interactive version: <a href="/demo/">genehus.bio/demo</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
