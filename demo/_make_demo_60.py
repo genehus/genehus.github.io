@@ -75,7 +75,7 @@ def make_poster() -> None:
     """Dark poster with large transparent white GeneHus logo."""
     logo = Image.open(ROOT / "assets" / "GeneHus_Logo_white.png").convert("RGBA")
     canvas = Image.new("RGB", (W, H), (17, 17, 17))
-    max_w, max_h = 1200, 320
+    max_w, max_h = 1400, 400
     fitted = ImageOps.contain(logo, (max_w, max_h))
     x = (W - fitted.width) // 2
     y = (H - fitted.height) // 2
@@ -113,9 +113,13 @@ def record_demo() -> Path:
                   p{{font-size:19px;color:#d8dee4;max-width:820px;line-height:1.45;margin:0}}
                   .fine{{margin-top:20px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
                   /* Transparent logo — no white banner plate */
-                  .logo-plain{{margin-bottom:28px}}
-                  .logo-plain img{{display:block;height:160px;width:auto;max-width:min(1100px,92vw);object-fit:contain;background:transparent}}
-                  .logo-plain.logo-end img{{height:180px;max-width:min(1200px,94vw)}}
+                  .logo-plain{{margin-bottom:32px}}
+                  .logo-plain img{{display:block;height:240px;width:auto;max-width:min(1400px,96vw);object-fit:contain;background:transparent}}
+                  .logo-plain.logo-end img{{height:260px;max-width:min(1450px,97vw)}}
+                  h1{{font-size:36px}}
+                  p{{font-size:17px}}
+                  .eyebrow{{margin-bottom:10px}}
+                  .fine{{margin-top:14px}}
                 </style></head><body><div class="wrap">{html}</div></body></html>""",
                 wait_until="networkidle",
             )
