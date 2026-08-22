@@ -68,9 +68,9 @@ def record_demo() -> Path:
             )
             page.wait_for_timeout(int(seconds * 1000))
 
-        logo = f"{base}/assets/genehus-logo-b5-white.png"
+        logo = f"{base}/assets/genehuslogo.png"
         card(
-            f'<img src="{logo}" alt="GeneHus">'
+            f'<img src="{logo}" alt="GeneHus" style="height:auto;width:min(720px,86vw);margin-bottom:22px">'
             '<div class="eyebrow">Product demo · Application package</div>'
             "<h1>GeneHus clinician preview</h1>"
             "<p>African-trained genomic + clinical risk stratification for aggressive prostate cancer.</p>"
@@ -139,7 +139,7 @@ def record_demo() -> Path:
             5.5,
         )
         card(
-            f'<img src="{logo}" alt="GeneHus">'
+            f'<img src="{logo}" alt="GeneHus" style="height:auto;width:min(720px,86vw);margin-bottom:22px">'
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
             "<p>Try the clinician preview · safoduker@genehus.bio</p>"
