@@ -221,14 +221,14 @@ def media_duration(path: Path) -> float:
 
 
 def h264_args() -> list[str]:
-    """High-quality 4K H.264 — target ~20 Mbps for application uploads."""
+    """Solid 4K bitrate (~12 Mbps, under GitHub 100MB limit for 60s)."""
     return [
         "-c:v", "libx264",
-        "-preset", "slow",
-        "-crf", "14",
-        "-b:v", "20M",
-        "-maxrate", "28M",
-        "-bufsize", "40M",
+        "-preset", "medium",
+        "-b:v", "12M",
+        "-minrate", "8M",
+        "-maxrate", "18M",
+        "-bufsize", "24M",
         "-profile:v", "high",
         "-level", "5.1",
         "-pix_fmt", "yuv420p",
