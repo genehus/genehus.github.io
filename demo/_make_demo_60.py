@@ -183,9 +183,12 @@ def record_demo() -> Path:
             "<p>No real patients. Not validated. Not Ghana FDA approved. Next: MADCaP permission, then v1.</p>",
             4.5,
         )
-        # Last card: GeneHus_Logo_ — very large, dominates the frame
+        # Last card: GeneHus_Logo_ — near full-bleed width via inline styles
         card(
-            f'<div class="logo-plain logo-end"><img src="{end_logo}" alt="GeneHus"></div>'
+            f'<div class="logo-plain logo-end">'
+            f'<img src="{end_logo}" alt="GeneHus" '
+            f'style="width:96vw;max-width:1540px;height:auto;max-height:62vh;object-fit:contain;display:block">'
+            f"</div>"
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
             "<p>Try the clinician preview · safoduker@genehus.bio</p>",
