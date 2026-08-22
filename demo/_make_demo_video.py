@@ -105,7 +105,7 @@ def record_demo() -> Path:
             '<div class="eyebrow">The problem</div>'
             "<h1>PSA alone misses who needs attention first</h1>"
             "<p>African men face among the highest prostate-cancer mortality and often present late. Hospitals still triage on PSA and clinical judgement.</p>"
-            '<div class="fine">Ghana beachhead · Korle Bu / KATH pathway</div>',
+            '<div class="fine">Ghana beachhead · tertiary hospitals</div>',
             6.0,
         )
         card(

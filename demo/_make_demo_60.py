@@ -24,7 +24,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(r"c:\Users\fresh\Desktop\GeneHus\genehus.github.io")
 OUT = ROOT / "demo" / "video"
 WORK = OUT / "_work"
-PORT = 8880
+PORT = 8882
 # Capture at full-bleed 1080p (record size MUST match viewport — larger = gray corner bug),
 # then lanczos-upscale to true 4K UHD so the player fills edge-to-edge.
 VW, VH = 1920, 1080
@@ -34,33 +34,39 @@ TARGET_SEC = 60.0
 
 # Ghanaian Standard English is closer to British than Nigerian; Edge TTS has no en-GH.
 VOICE = "en-GB-RyanNeural"
-RATE = "-12%"  # steadier, broadcast-like Ghanaian delivery
+RATE = "+12%"  # fit detailed 45s screen walkthrough into 60s without heavy atempo
 PITCH = "-1Hz"
 
 NARRATION = (
-    "This is GeneHus — a clinician preview for African-trained genomic and clinical "
-    "risk stratification in aggressive prostate cancer. "
-    "African men face high prostate-cancer mortality and often present late. "
-    "Hospitals still triage mainly on P-S-A. "
-    "GeneHus ranks who to see first using clinical inputs plus an African genomic signal — "
-    "while the doctor stays in the loop. "
-    "Sample cases only. Not for clinical use. "
-    "Late presentations rise to the top of the queue. "
-    "A modest P-S-A with a genomic flag shows why P-S-A alone is not enough. "
-    "Enter a new sample case and update the preview. "
-    "Honest status: working v-one is not built yet. Not validated. Not Ghana F-D-A approved. "
-    "Next: M-A-D-C-a-P permission, then v-one, then a hospital check versus P-S-A alone. "
-    "GeneHus — genehus.bio/demo — Kumasi, Ghana."
+    # ~10s open
+    "This is GeneHus — African-trained genomic and clinical risk for aggressive prostate cancer. "
+    "P-S-A alone often misses who needs attention first. "
+    "GeneHus ranks the hospital list; the doctor decides. "
+    # ~45s screen walkthrough
+    "Here is the clinician screen. "
+    "Top bar: GeneHus, a sample hospital ward, and clinician preview. "
+    "Left: Who to see first — a ranked queue tagged high, medium, or low. "
+    "Highest risk rises to the top, like Kwame A.: late presentation, "
+    "P-S-A eighty-seven, Gleason nine. "
+    "The centre panel holds age, P-S-A, Gleason, stage, family history, "
+    "and a sample African genomic switch — not a real gene file. "
+    "Right: GeneHus Combined Preview — the risk call, "
+    "P-S-A alone versus GeneHus combined, why he was flagged, "
+    "and a clinical suggestion only. The doctor stays in charge. "
+    "Sample data only. "
+    # ~4s close
+    "Try it at genehus.bio/demo. GeneHus — Kumasi, Ghana."
 )
 
 SCRIPT_MD = """# GeneHus Clinician Demo — Voiceover Script (60 seconds)
 
-**Voice:** `en-GB-RyanNeural` (British English neural) — chosen because Ghanaian Standard English is closer to British than Nigerian, and Edge TTS has no `en-GH` voice.
-**Length:** exactly 60.00 seconds · single continuous track
+**Voice:** `en-GB-RyanNeural` · rate `+12%` · **Length:** 60.00s  
+**Pacing:** ~10s open · ~45s hospital screen · ~4s close  
+**Removed:** honest-status / MADCaP / FDA / hospital-check block
 
 ---
 
-This is GeneHus — a clinician preview for African-trained genomic and clinical risk stratification in aggressive prostate cancer. African men face high prostate-cancer mortality and often present late. Hospitals still triage mainly on PSA. GeneHus ranks who to see first using clinical inputs plus an African genomic signal — while the doctor stays in the loop. Sample cases only. Not for clinical use. Late presentations rise to the top of the queue. A modest PSA with a genomic flag shows why PSA alone is not enough. Enter a new sample case and update the preview. Honest status: working v1 is not built yet. Not validated. Not Ghana FDA approved. Next: MADCaP permission, then v1, then a hospital check versus PSA alone. GeneHus — genehus.bio/demo — Kumasi, Ghana.
+This is GeneHus — African-trained genomic and clinical risk for aggressive prostate cancer. PSA alone often misses who needs attention first. GeneHus ranks the hospital list; the doctor decides. Here is the clinician screen. Top bar: GeneHus, a sample hospital ward, and clinician preview. Left: Who to see first — a ranked queue tagged high, medium, or low. Highest risk rises to the top, like Kwame A.: late presentation, PSA eighty-seven, Gleason nine. The centre panel holds age, PSA, Gleason, stage, family history, and a sample African genomic switch — not a real gene file. Right: GeneHus Combined Preview — the risk call, PSA alone versus GeneHus combined, why he was flagged, and a clinical suggestion only. The doctor stays in charge. Sample data only. Try it at genehus.bio/demo. GeneHus — Kumasi, Ghana.
 """
 
 
@@ -127,8 +133,9 @@ def record_demo() -> Path:
                   .wrap-end p{{font-size:20px}}
                   .wrap-end .eyebrow{{font-size:16px;margin-bottom:16px}}
                 </style></head><body><div class="{wrap_cls}">{html}</div></body></html>""",
-                wait_until="networkidle",
+                wait_until="domcontentloaded",
             )
+            page.wait_for_timeout(350)
             page.wait_for_timeout(int(seconds * 1000))
 
         # Website-style white transparent logo for open
@@ -142,53 +149,39 @@ def record_demo() -> Path:
             "<h1>GeneHus clinician preview</h1>"
             "<p>African-trained genomic + clinical risk stratification for aggressive prostate cancer.</p>"
             '<div class="fine">Sample data only · Not for clinical use</div>',
-            4.0,
+            2.0,
         )
         card(
             '<div class="eyebrow">The problem</div>'
             "<h1>PSA alone misses who needs attention first</h1>"
             "<p>African men face among the highest prostate-cancer mortality and often present late.</p>"
-            '<div class="fine">Ghana beachhead · Korle Bu / KATH</div>',
-            4.0,
+            '<div class="fine">Ghana beachhead · tertiary hospitals</div>',
+            2.0,
         )
         card(
             '<div class="eyebrow">The product</div>'
             "<h1>A ranked hospital list for the clinician</h1>"
             "<p>Combine clinical inputs with an African genomic signal. The doctor stays in the loop.</p>"
             '<div class="fine">Hospital or lab sequences · GeneHus analyses</div>',
-            4.0,
+            1.8,
         )
 
-        page.goto(f"{base}/demo/", wait_until="networkidle")
-        page.wait_for_timeout(3000)
-        page.click("#enter-btn")
-        page.wait_for_url("**/demo/app.html")
+        # Enter app — ~45s on hospital screen
+        page.goto(f"{base}/demo/app.html", wait_until="domcontentloaded")
         page.wait_for_selector("#queue-list .queue-item")
-        page.wait_for_timeout(4500)
+        page.wait_for_timeout(300)
+
+        page.locator("#queue-list .queue-item").first.click()
+        page.wait_for_timeout(16000)
 
         page.locator('[data-id="benjamin"]').click()
-        page.wait_for_timeout(4000)
+        page.wait_for_timeout(10000)
         page.locator('[data-id="ibrahim"]').click()
-        page.wait_for_timeout(3500)
+        page.wait_for_timeout(10000)
         page.locator("#queue-list .queue-item").first.click()
-        page.wait_for_timeout(3500)
+        page.wait_for_timeout(9000)
 
-        page.click("#new-case-btn")
-        page.wait_for_timeout(1500)
-        page.fill('input[name="psa"]', "18")
-        page.select_option('select[name="gleason"]', "8")
-        page.check('input[name="genomic"]')
-        page.wait_for_timeout(800)
-        page.click('button[type="submit"]')
-        page.wait_for_timeout(4000)
-
-        card(
-            '<div class="eyebrow">Honest status</div>'
-            "<h1>Preview only — working v1 is not built yet</h1>"
-            "<p>No real patients. Not validated. Not Ghana FDA approved. Next: MADCaP permission, then v1.</p>",
-            4.5,
-        )
-        # Last card: GeneHus_Logo_ — sharper mid size + 3D shadow (CSS)
+        # Brief close only — no honest-status card
         card(
             f'<div class="logo-plain logo-end">'
             f'<img src="{end_logo}" alt="GeneHus" '
@@ -196,12 +189,12 @@ def record_demo() -> Path:
             f"</div>"
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
-            "<p>Try the clinician preview · safoduker@genehus.bio</p>",
-            4.5,
+            "<p>Try the clinician preview</p>",
+            3.5,
             wrap_class="wrap-end",
         )
 
-        page.wait_for_timeout(800)
+        page.wait_for_timeout(200)
         page.close()
         context.close()
         browser.close()

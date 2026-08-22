@@ -1,8 +1,9 @@
 # GeneHus Clinician Demo — Voiceover Script (60 seconds)
 
-**Voice:** `en-GB-RyanNeural` (British English neural) — chosen because Ghanaian Standard English is closer to British than Nigerian, and Edge TTS has no `en-GH` voice.
-**Length:** exactly 60.00 seconds · single continuous track
+**Voice:** `en-GB-RyanNeural` · rate `+12%` · **Length:** 60.00s  
+**Pacing:** ~10s open · ~45s hospital screen · ~4s close  
+**Removed:** honest-status / MADCaP / FDA / hospital-check block
 
 ---
 
-This is GeneHus — a clinician preview for African-trained genomic and clinical risk stratification in aggressive prostate cancer. African men face high prostate-cancer mortality and often present late. Hospitals still triage mainly on PSA. GeneHus ranks who to see first using clinical inputs plus an African genomic signal — while the doctor stays in the loop. Sample cases only. Not for clinical use. Late presentations rise to the top of the queue. A modest PSA with a genomic flag shows why PSA alone is not enough. Enter a new sample case and update the preview. Honest status: working v1 is not built yet. Not validated. Not Ghana FDA approved. Next: MADCaP permission, then v1, then a hospital check versus PSA alone. GeneHus — genehus.bio/demo — Kumasi, Ghana.
+This is GeneHus — African-trained genomic and clinical risk for aggressive prostate cancer. PSA alone often misses who needs attention first. GeneHus ranks the hospital list; the doctor decides. Here is the clinician screen. Top bar: GeneHus, a sample hospital ward, and clinician preview. Left: Who to see first — a ranked queue tagged high, medium, or low. Highest risk rises to the top, like Kwame A.: late presentation, PSA eighty-seven, Gleason nine. The centre panel holds age, PSA, Gleason, stage, family history, and a sample African genomic switch — not a real gene file. Right: GeneHus Combined Preview — the risk call, PSA alone versus GeneHus combined, why he was flagged, and a clinical suggestion only. The doctor stays in charge. Sample data only. Try it at genehus.bio/demo. GeneHus — Kumasi, Ghana.
