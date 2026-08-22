@@ -25,7 +25,8 @@ ROOT = Path(r"c:\Users\fresh\Desktop\GeneHus\genehus.github.io")
 OUT = ROOT / "demo" / "video"
 WORK = OUT / "_work"
 PORT = 8880
-# Record 4K UHD: 1080p layout at 2x device scale → sharp 3840×2160 capture
+# Capture at full-bleed 1080p (record size MUST match viewport — larger = gray corner bug),
+# then lanczos-upscale to true 4K UHD so the player fills edge-to-edge.
 VW, VH = 1920, 1080
 RW, RH = 3840, 2160
 POSTER_W, POSTER_H = 1920, 1080
@@ -96,9 +97,11 @@ def record_demo() -> Path:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
             viewport={"width": VW, "height": VH},
-            device_scale_factor=2,
+            device_scale_factor=1,
             record_video_dir=str(WORK),
-            record_video_size={"width": RW, "height": RH},
+            # Must equal viewport. Playwright paints CSS pixels into this canvas;
+            # if larger (e.g. 4K with 1080p viewport), content sits top-left on gray.
+            record_video_size={"width": VW, "height": VH},
         )
         page = context.new_page()
 
@@ -240,7 +243,7 @@ def to_exact_silent_mp4(webm: Path) -> Path:
     subprocess.run(
         [
             ff, "-y", "-i", str(webm),
-            "-vf", f"scale={RW}:{RH}:flags=lanczos",
+            "-vf", f"scale={RW}:{RH}:flags=lanczos,setsar=1",
             *h264_args(),
             "-an", str(raw),
         ],
