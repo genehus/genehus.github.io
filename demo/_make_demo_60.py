@@ -72,16 +72,15 @@ def serve() -> socketserver.TCPServer:
 
 
 def make_poster() -> None:
-    """Dark poster with transparent white GeneHus logo (website style)."""
+    """Dark poster with large transparent white GeneHus logo."""
     logo = Image.open(ROOT / "assets" / "GeneHus_Logo_white.png").convert("RGBA")
     canvas = Image.new("RGB", (W, H), (17, 17, 17))
-    # contain logo width
-    max_w, max_h = 900, 220
+    max_w, max_h = 1200, 320
     fitted = ImageOps.contain(logo, (max_w, max_h))
     x = (W - fitted.width) // 2
     y = (H - fitted.height) // 2
     canvas.paste(fitted, (x, y), fitted)
-    canvas.save(ROOT / "assets" / "AM-poster.png")  # keep path used by video.html
+    canvas.save(ROOT / "assets" / "AM-poster.png")
     canvas.save(OUT / "poster.png")
     print("poster updated")
 
@@ -114,9 +113,9 @@ def record_demo() -> Path:
                   p{{font-size:19px;color:#d8dee4;max-width:820px;line-height:1.45;margin:0}}
                   .fine{{margin-top:20px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
                   /* Transparent logo — no white banner plate */
-                  .logo-plain{{margin-bottom:22px}}
-                  .logo-plain img{{display:block;height:72px;width:auto;max-width:min(520px,86vw);object-fit:contain;background:transparent}}
-                  .logo-plain.logo-end img{{height:88px;max-width:min(640px,88vw)}}
+                  .logo-plain{{margin-bottom:28px}}
+                  .logo-plain img{{display:block;height:160px;width:auto;max-width:min(1100px,92vw);object-fit:contain;background:transparent}}
+                  .logo-plain.logo-end img{{height:180px;max-width:min(1200px,94vw)}}
                 </style></head><body><div class="wrap">{html}</div></body></html>""",
                 wait_until="networkidle",
             )
