@@ -72,17 +72,15 @@ def serve() -> socketserver.TCPServer:
 
 
 def make_poster() -> None:
-    """Dark poster with large transparent white GeneHus logo."""
-    logo = Image.open(ROOT / "assets" / "GeneHus_Logo_white.png").convert("RGBA")
+    """16:9 preview poster from AM.png banner (page thumbnail only; video open card unchanged)."""
+    src = ROOT / "assets" / "AM.png"
+    im = Image.open(src).convert("RGBA")
     canvas = Image.new("RGB", (W, H), (17, 17, 17))
-    max_w, max_h = 1400, 400
-    fitted = ImageOps.contain(logo, (max_w, max_h))
-    x = (W - fitted.width) // 2
-    y = (H - fitted.height) // 2
-    canvas.paste(fitted, (x, y), fitted)
+    fitted = ImageOps.contain(im, (W - 40, H - 40))
+    canvas.paste(fitted, ((W - fitted.width) // 2, (H - fitted.height) // 2), fitted)
     canvas.save(ROOT / "assets" / "AM-poster.png")
     canvas.save(OUT / "poster.png")
-    print("poster updated")
+    print("poster updated from AM.png banner")
 
 
 def record_demo() -> Path:
