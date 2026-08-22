@@ -111,14 +111,16 @@ def record_demo() -> Path:
                   h1{{font-family:Oswald,sans-serif;font-weight:600;font-size:36px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 12px;line-height:1.15;max-width:1000px}}
                   p{{font-size:17px;color:#d8dee4;max-width:820px;line-height:1.45;margin:0}}
                   .fine{{margin-top:14px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
-                  .logo-plain{{margin-bottom:28px}}
-                  .logo-plain img{{display:block;height:240px;width:auto;max-width:min(1400px,96vw);object-fit:contain;background:transparent}}
-                  /* Closing logo: fill almost the full frame */
-                  .wrap-end .logo-plain{{margin-bottom:22px}}
-                  .wrap-end .logo-plain img{{height:auto;width:min(1520px,97vw);max-height:560px;object-fit:contain}}
-                  .wrap-end h1{{font-size:26px;margin-bottom:6px}}
-                  .wrap-end p{{font-size:14px}}
-                  .wrap-end .eyebrow{{font-size:11px;margin-bottom:12px}}
+                  .logo-plain{{margin-bottom:24px}}
+                  .logo-plain img{{display:block;height:140px;width:auto;max-width:min(720px,80vw);object-fit:contain;background:transparent;
+                    filter:drop-shadow(0 6px 14px rgba(0,0,0,.45)) drop-shadow(0 1px 0 rgba(255,255,255,.12))}}
+                  /* Closing logo: smaller = sharper (avoid upscale blur); light 3D lift */
+                  .wrap-end .logo-plain{{margin-bottom:26px}}
+                  .wrap-end .logo-plain img{{height:auto;width:min(980px,72vw);max-height:220px;object-fit:contain;
+                    filter:drop-shadow(0 10px 22px rgba(0,0,0,.55)) drop-shadow(0 2px 0 rgba(255,255,255,.14))}}
+                  .wrap-end h1{{font-size:28px;margin-bottom:8px}}
+                  .wrap-end p{{font-size:15px}}
+                  .wrap-end .eyebrow{{font-size:12px;margin-bottom:14px}}
                 </style></head><body><div class="{wrap_cls}">{html}</div></body></html>""",
                 wait_until="networkidle",
             )
@@ -181,11 +183,11 @@ def record_demo() -> Path:
             "<p>No real patients. Not validated. Not Ghana FDA approved. Next: MADCaP permission, then v1.</p>",
             4.5,
         )
-        # Last card: GeneHus_Logo_ — near full-bleed width via inline styles
+        # Last card: GeneHus_Logo_ — sharper mid size + 3D shadow (CSS)
         card(
             f'<div class="logo-plain logo-end">'
             f'<img src="{end_logo}" alt="GeneHus" '
-            f'style="width:96vw;max-width:1540px;height:auto;max-height:62vh;object-fit:contain;display:block">'
+            f'style="width:min(980px,72vw);height:auto;max-height:220px;object-fit:contain;display:block">'
             f"</div>"
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
