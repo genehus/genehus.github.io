@@ -24,8 +24,11 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(r"c:\Users\fresh\Desktop\GeneHus\genehus.github.io")
 OUT = ROOT / "demo" / "video"
 WORK = OUT / "_work"
-PORT = 8879
-W, H = 1600, 900
+PORT = 8880
+# Record 4K UHD: 1080p layout at 2x device scale → sharp 3840×2160 capture
+VW, VH = 1920, 1080
+RW, RH = 3840, 2160
+POSTER_W, POSTER_H = 1920, 1080
 TARGET_SEC = 60.0
 
 # Ghanaian Standard English is closer to British than Nigerian; Edge TTS has no en-GH.
@@ -75,9 +78,9 @@ def make_poster() -> None:
     """16:9 preview poster from AM.png banner (page thumbnail only; video open card unchanged)."""
     src = ROOT / "assets" / "AM.png"
     im = Image.open(src).convert("RGBA")
-    canvas = Image.new("RGB", (W, H), (17, 17, 17))
-    fitted = ImageOps.contain(im, (W - 40, H - 40))
-    canvas.paste(fitted, ((W - fitted.width) // 2, (H - fitted.height) // 2), fitted)
+    canvas = Image.new("RGB", (POSTER_W, POSTER_H), (17, 17, 17))
+    fitted = ImageOps.contain(im, (POSTER_W - 40, POSTER_H - 40))
+    canvas.paste(fitted, ((POSTER_W - fitted.width) // 2, (POSTER_H - fitted.height) // 2), fitted)
     canvas.save(ROOT / "assets" / "AM-poster.png")
     canvas.save(OUT / "poster.png")
     print("poster updated from AM.png banner")
@@ -92,10 +95,10 @@ def record_demo() -> Path:
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
-            viewport={"width": W, "height": H},
-            device_scale_factor=1,
+            viewport={"width": VW, "height": VH},
+            device_scale_factor=2,
             record_video_dir=str(WORK),
-            record_video_size={"width": W, "height": H},
+            record_video_size={"width": RW, "height": RH},
         )
         page = context.new_page()
 
@@ -106,21 +109,20 @@ def record_demo() -> Path:
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
                 <style>
                   html,body{{margin:0;height:100%;background:#111;color:#fff;font-family:Lato,Helvetica,sans-serif;overflow:hidden}}
-                  .wrap{{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px 40px;box-sizing:border-box;background:radial-gradient(ellipse at 50% 20%,#2c3439 0%,#111 70%)}}
-                  .eyebrow{{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#f88820;font-weight:700;margin-bottom:10px}}
-                  h1{{font-family:Oswald,sans-serif;font-weight:600;font-size:36px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 12px;line-height:1.15;max-width:1000px}}
-                  p{{font-size:17px;color:#d8dee4;max-width:820px;line-height:1.45;margin:0}}
-                  .fine{{margin-top:14px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
-                  .logo-plain{{margin-bottom:24px}}
-                  .logo-plain img{{display:block;height:140px;width:auto;max-width:min(720px,80vw);object-fit:contain;background:transparent;
-                    filter:drop-shadow(0 6px 14px rgba(0,0,0,.45)) drop-shadow(0 1px 0 rgba(255,255,255,.12))}}
-                  /* Closing logo: smaller = sharper (avoid upscale blur); light 3D lift */
-                  .wrap-end .logo-plain{{margin-bottom:26px}}
-                  .wrap-end .logo-plain img{{height:auto;width:min(980px,72vw);max-height:220px;object-fit:contain;
-                    filter:drop-shadow(0 10px 22px rgba(0,0,0,.55)) drop-shadow(0 2px 0 rgba(255,255,255,.14))}}
-                  .wrap-end h1{{font-size:28px;margin-bottom:8px}}
-                  .wrap-end p{{font-size:15px}}
-                  .wrap-end .eyebrow{{font-size:12px;margin-bottom:14px}}
+                  .wrap{{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:48px 72px;box-sizing:border-box;background:radial-gradient(ellipse at 50% 20%,#2c3439 0%,#111 70%)}}
+                  .eyebrow{{font-size:18px;letter-spacing:.18em;text-transform:uppercase;color:#f88820;font-weight:700;margin-bottom:14px}}
+                  h1{{font-family:Oswald,sans-serif;font-weight:600;font-size:52px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 16px;line-height:1.15;max-width:1400px}}
+                  p{{font-size:24px;color:#d8dee4;max-width:1100px;line-height:1.45;margin:0}}
+                  .fine{{margin-top:18px;font-size:16px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
+                  .logo-plain{{margin-bottom:28px}}
+                  .logo-plain img{{display:block;height:168px;width:auto;max-width:min(860px,78vw);object-fit:contain;background:transparent;
+                    filter:drop-shadow(0 8px 18px rgba(0,0,0,.45)) drop-shadow(0 1px 0 rgba(255,255,255,.12))}}
+                  .wrap-end .logo-plain{{margin-bottom:30px}}
+                  .wrap-end .logo-plain img{{height:auto;width:min(1180px,70vw);max-height:260px;object-fit:contain;
+                    filter:drop-shadow(0 12px 26px rgba(0,0,0,.55)) drop-shadow(0 2px 0 rgba(255,255,255,.14))}}
+                  .wrap-end h1{{font-size:40px;margin-bottom:10px}}
+                  .wrap-end p{{font-size:20px}}
+                  .wrap-end .eyebrow{{font-size:16px;margin-bottom:16px}}
                 </style></head><body><div class="{wrap_cls}">{html}</div></body></html>""",
                 wait_until="networkidle",
             )
@@ -187,7 +189,7 @@ def record_demo() -> Path:
         card(
             f'<div class="logo-plain logo-end">'
             f'<img src="{end_logo}" alt="GeneHus" '
-            f'style="width:min(980px,72vw);height:auto;max-height:220px;object-fit:contain;display:block">'
+            f'style="width:min(1180px,70vw);height:auto;max-height:260px;object-fit:contain;display:block">'
             f"</div>"
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
@@ -218,6 +220,22 @@ def media_duration(path: Path) -> float:
     raise SystemExit(f"No duration for {path}")
 
 
+def h264_args() -> list[str]:
+    """High-quality 4K H.264 — target ~20 Mbps for application uploads."""
+    return [
+        "-c:v", "libx264",
+        "-preset", "slow",
+        "-crf", "14",
+        "-b:v", "20M",
+        "-maxrate", "28M",
+        "-bufsize", "40M",
+        "-profile:v", "high",
+        "-level", "5.1",
+        "-pix_fmt", "yuv420p",
+        "-movflags", "+faststart",
+    ]
+
+
 def to_exact_silent_mp4(webm: Path) -> Path:
     ff = imageio_ffmpeg.get_ffmpeg_exe()
     raw = OUT / "_raw60.mp4"
@@ -225,27 +243,35 @@ def to_exact_silent_mp4(webm: Path) -> Path:
     subprocess.run(
         [
             ff, "-y", "-i", str(webm),
-            "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-            "-pix_fmt", "yuv420p", "-an", str(raw),
+            "-vf", f"scale={RW}:{RH}:flags=lanczos",
+            *h264_args(),
+            "-an", str(raw),
         ],
         check=True, capture_output=True,
     )
     dur = media_duration(raw)
     print(f"raw video {dur:.2f}s")
+    # Extend closing by cloning final frame to exact 60s (clean end hold)
     if dur >= TARGET_SEC:
-        vf_args = ["-t", f"{TARGET_SEC:.2f}"]
+        cmd = [
+            ff, "-y", "-i", str(raw), "-t", f"{TARGET_SEC:.2f}",
+            *h264_args(), "-an", str(silent),
+        ]
     else:
         pad = TARGET_SEC - dur
-        vf_args = ["-vf", f"tpad=stop_mode=clone:stop_duration={pad:.3f}", "-t", f"{TARGET_SEC:.2f}"]
-    subprocess.run(
-        [
-            ff, "-y", "-i", str(raw), *vf_args,
-            "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-            "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", str(silent),
-        ],
-        check=True, capture_output=True,
-    )
-    print(f"silent exact {media_duration(silent):.2f}s")
+        cmd = [
+            ff, "-y", "-i", str(raw),
+            "-vf", f"tpad=stop_mode=clone:stop_duration={pad:.3f}",
+            "-t", f"{TARGET_SEC:.2f}",
+            *h264_args(), "-an", str(silent),
+        ]
+    subprocess.run(cmd, check=True, capture_output=True)
+    # Probe bitrate
+    probe = subprocess.run([ff, "-i", str(silent)], capture_output=True, text=True)
+    for line in probe.stderr.splitlines():
+        if "bitrate:" in line or "Video:" in line:
+            print(" ", line.strip())
+    print(f"silent exact {media_duration(silent):.2f}s 4K")
     return silent
 
 
@@ -275,7 +301,7 @@ def mux(silent: Path, audio: Path, out: Path) -> None:
     subprocess.run(
         [
             ff, "-y", "-i", str(silent), "-i", str(audio),
-            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "256k",
             "-t", f"{TARGET_SEC:.2f}", "-movflags", "+faststart", str(out),
         ],
         check=True, capture_output=True,
