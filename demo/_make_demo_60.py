@@ -101,26 +101,27 @@ def record_demo() -> Path:
         )
         page = context.new_page()
 
-        def card(html: str, seconds: float) -> None:
+        def card(html: str, seconds: float, *, wrap_class: str = "") -> None:
+            wrap_cls = f"wrap {wrap_class}".strip()
             page.set_content(
                 f"""<!DOCTYPE html><html><head><meta charset="utf-8">
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
                 <style>
                   html,body{{margin:0;height:100%;background:#111;color:#fff;font-family:Lato,Helvetica,sans-serif;overflow:hidden}}
-                  .wrap{{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:36px 52px;box-sizing:border-box;background:radial-gradient(ellipse at 50% 20%,#2c3439 0%,#111 70%)}}
-                  .eyebrow{{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#f88820;font-weight:700;margin-bottom:14px}}
-                  h1{{font-family:Oswald,sans-serif;font-weight:600;font-size:44px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 14px;line-height:1.15;max-width:1000px}}
-                  p{{font-size:19px;color:#d8dee4;max-width:820px;line-height:1.45;margin:0}}
-                  .fine{{margin-top:20px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
-                  /* Transparent logo — no white banner plate */
-                  .logo-plain{{margin-bottom:32px}}
+                  .wrap{{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px 40px;box-sizing:border-box;background:radial-gradient(ellipse at 50% 20%,#2c3439 0%,#111 70%)}}
+                  .eyebrow{{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#f88820;font-weight:700;margin-bottom:10px}}
+                  h1{{font-family:Oswald,sans-serif;font-weight:600;font-size:36px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 12px;line-height:1.15;max-width:1000px}}
+                  p{{font-size:17px;color:#d8dee4;max-width:820px;line-height:1.45;margin:0}}
+                  .fine{{margin-top:14px;font-size:12px;color:#999;letter-spacing:.04em;text-transform:uppercase}}
+                  .logo-plain{{margin-bottom:28px}}
                   .logo-plain img{{display:block;height:240px;width:auto;max-width:min(1400px,96vw);object-fit:contain;background:transparent}}
-                  .logo-plain.logo-end img{{height:260px;max-width:min(1450px,97vw)}}
-                  h1{{font-size:36px}}
-                  p{{font-size:17px}}
-                  .eyebrow{{margin-bottom:10px}}
-                  .fine{{margin-top:14px}}
-                </style></head><body><div class="wrap">{html}</div></body></html>""",
+                  /* Closing logo: dominate the frame */
+                  .wrap-end .logo-plain{{margin-bottom:28px}}
+                  .wrap-end .logo-plain img{{height:auto;width:min(1480px,96vw);max-height:520px;object-fit:contain}}
+                  .wrap-end h1{{font-size:28px;margin-bottom:8px}}
+                  .wrap-end p{{font-size:15px}}
+                  .wrap-end .eyebrow{{font-size:12px;margin-bottom:14px}}
+                </style></head><body><div class="{wrap_cls}">{html}</div></body></html>""",
                 wait_until="networkidle",
             )
             page.wait_for_timeout(int(seconds * 1000))
@@ -182,13 +183,14 @@ def record_demo() -> Path:
             "<p>No real patients. Not validated. Not Ghana FDA approved. Next: MADCaP permission, then v1.</p>",
             4.5,
         )
-        # Last card: GeneHus_Logo_ (transparent white)
+        # Last card: GeneHus_Logo_ — very large, dominates the frame
         card(
             f'<div class="logo-plain logo-end"><img src="{end_logo}" alt="GeneHus"></div>'
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
             "<p>Try the clinician preview · safoduker@genehus.bio</p>",
-            4.0,
+            4.5,
+            wrap_class="wrap-end",
         )
 
         page.wait_for_timeout(800)
