@@ -1814,8 +1814,8 @@ ol {
 
   .site-header.is-scrolled .logo img,
   .site-header.is-open .logo img {
-    width: 130px;
-    max-width: 130px;
+    width: 90px;
+    max-width: 90px;
   }
 
   .wrap {
