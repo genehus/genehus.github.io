@@ -57,6 +57,9 @@ select {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 8px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .topbar {
@@ -67,11 +70,14 @@ select {
   border-bottom: 1px solid var(--line);
   padding: 10px 20px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 2.15rem;
+  z-index: 40;
 }
 
 .topbar--gate {
-  background: transparent;
-  border: none;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .topbar--gate .brand,
@@ -81,6 +87,10 @@ select {
 
 .topbar--gate .site-tag {
   color: #a8b0b6;
+}
+
+.topbar--gate .text-link {
+  color: #f0a04a;
 }
 
 .brand {
@@ -173,6 +183,20 @@ select {
 
 .btn-ghost:hover {
   background: #f4f7f9;
+}
+
+/* Ghost buttons on deep charcoal (video page actions, etc.) */
+.video-actions .btn-ghost {
+  color: #f2f4f5;
+  border-color: rgba(242, 244, 245, 0.55);
+  width: auto;
+  margin: 0;
+}
+
+.video-actions .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: #fff;
 }
 
 .gate {
