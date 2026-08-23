@@ -1,12 +1,11 @@
 """
-GeneHus clinician demo — 60.00s
+GeneHus clinician demo — 90.00s (silent)
+- ~15s open cards · ~67.5s hospital screen · ~6s close (same ratios as prior 60s cut)
 - Opening logo: transparent white (website style)
 - Closing logo: GeneHus_Logo_ (white-on-transparent)
-- Voice: British English neural (closer to Ghanaian Standard English than Nigerian)
 """
 from __future__ import annotations
 
-import asyncio
 import http.server
 import os
 import shutil
@@ -16,7 +15,6 @@ import threading
 import time
 from pathlib import Path
 
-import edge_tts
 import imageio_ffmpeg
 from PIL import Image, ImageOps
 from playwright.sync_api import sync_playwright
@@ -30,43 +28,12 @@ PORT = 8882
 VW, VH = 1920, 1080
 RW, RH = 3840, 2160
 POSTER_W, POSTER_H = 1920, 1080
-TARGET_SEC = 60.0
+TARGET_SEC = 90.0
 
-# Ghanaian Standard English is closer to British than Nigerian; Edge TTS has no en-GH.
-VOICE = "en-GB-RyanNeural"
-RATE = "+12%"  # fit detailed 45s screen walkthrough into 60s without heavy atempo
-PITCH = "-1Hz"
+SCRIPT_MD = """# GeneHus Clinician Demo — silent (no voiceover)
 
-NARRATION = (
-    # ~10s open
-    "This is GeneHus — African-trained genomic and clinical risk for aggressive prostate cancer. "
-    "P-S-A alone often misses who needs attention first. "
-    "GeneHus ranks the hospital list; the doctor decides. "
-    # ~45s screen walkthrough
-    "Here is the clinician screen. "
-    "Top bar: GeneHus, a sample hospital ward, and clinician preview. "
-    "Left: Who to see first — a ranked queue tagged high, medium, or low. "
-    "Highest risk rises to the top, like Kwame A.: late presentation, "
-    "P-S-A eighty-seven, Gleason nine. "
-    "The centre panel holds age, P-S-A, Gleason, stage, family history, "
-    "and a sample African genomic switch — not a real gene file. "
-    "Right: GeneHus Combined Preview — the risk call, "
-    "P-S-A alone versus GeneHus combined, why he was flagged, "
-    "and a clinical suggestion only. The doctor stays in charge. "
-    "Sample data only. "
-    # ~4s close
-    "Try it at genehus.bio/demo. GeneHus — Kumasi, Ghana."
-)
-
-SCRIPT_MD = """# GeneHus Clinician Demo — Voiceover Script (60 seconds)
-
-**Voice:** `en-GB-RyanNeural` · rate `+12%` · **Length:** 60.00s  
-**Pacing:** ~10s open · ~45s hospital screen · ~4s close  
-**Removed:** honest-status / MADCaP / FDA / hospital-check block
-
----
-
-This is GeneHus — African-trained genomic and clinical risk for aggressive prostate cancer. PSA alone often misses who needs attention first. GeneHus ranks the hospital list; the doctor decides. Here is the clinician screen. Top bar: GeneHus, a sample hospital ward, and clinician preview. Left: Who to see first — a ranked queue tagged high, medium, or low. Highest risk rises to the top, like Kwame A.: late presentation, PSA eighty-seven, Gleason nine. The centre panel holds age, PSA, Gleason, stage, family history, and a sample African genomic switch — not a real gene file. Right: GeneHus Combined Preview — the risk call, PSA alone versus GeneHus combined, why he was flagged, and a clinical suggestion only. The doctor stays in charge. Sample data only. Try it at genehus.bio/demo. GeneHus — Kumasi, Ghana.
+**Length:** exactly 90.00 seconds · 4K · no audio track  
+**Pacing:** ~15s open · ~67.5s hospital screen · ~6s close (scaled from the prior 60s proportions)
 """
 
 
@@ -149,39 +116,39 @@ def record_demo() -> Path:
             "<h1>GeneHus clinician preview</h1>"
             "<p>African-trained genomic + clinical risk stratification for aggressive prostate cancer.</p>"
             '<div class="fine">Sample data only · Not for clinical use</div>',
-            2.0,
+            3.0,
         )
         card(
             '<div class="eyebrow">The problem</div>'
             "<h1>PSA alone misses who needs attention first</h1>"
             "<p>African men face among the highest prostate-cancer mortality and often present late.</p>"
             '<div class="fine">Ghana beachhead · tertiary hospitals</div>',
-            2.0,
+            3.0,
         )
         card(
             '<div class="eyebrow">The product</div>'
             "<h1>A ranked hospital list for the clinician</h1>"
             "<p>Combine clinical inputs with an African genomic signal. The doctor stays in the loop.</p>"
             '<div class="fine">Hospital or lab sequences · GeneHus analyses</div>',
-            1.8,
+            2.7,
         )
 
-        # Enter app — ~45s on hospital screen
+        # Enter app — ~67.5s on hospital screen (75% of 90s)
         page.goto(f"{base}/demo/app.html", wait_until="domcontentloaded")
         page.wait_for_selector("#queue-list .queue-item")
-        page.wait_for_timeout(300)
+        page.wait_for_timeout(400)
 
         page.locator("#queue-list .queue-item").first.click()
-        page.wait_for_timeout(16000)
+        page.wait_for_timeout(24000)
 
         page.locator('[data-id="benjamin"]').click()
-        page.wait_for_timeout(10000)
+        page.wait_for_timeout(15000)
         page.locator('[data-id="ibrahim"]').click()
-        page.wait_for_timeout(10000)
+        page.wait_for_timeout(15000)
         page.locator("#queue-list .queue-item").first.click()
-        page.wait_for_timeout(9000)
+        page.wait_for_timeout(13500)
 
-        # Brief close only — no honest-status card
+        # ~6s close (scaled from prior ~4s)
         card(
             f'<div class="logo-plain logo-end">'
             f'<img src="{end_logo}" alt="GeneHus" '
@@ -190,7 +157,7 @@ def record_demo() -> Path:
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
             "<p>Try the clinician preview</p>",
-            3.5,
+            5.5,
             wrap_class="wrap-end",
         )
 
@@ -268,46 +235,9 @@ def to_exact_silent_mp4(webm: Path) -> Path:
     return silent
 
 
-async def make_voice(out_mp3: Path) -> None:
-    raw = OUT / "_vo_full.mp3"
-    await edge_tts.Communicate(NARRATION, VOICE, rate=RATE, pitch=PITCH).save(str(raw))
-    dur = media_duration(raw)
-    print(f"voice raw {dur:.2f}s ({VOICE})")
-    ff = imageio_ffmpeg.get_ffmpeg_exe()
-    if dur > TARGET_SEC - 0.4:
-        tempo = max(0.5, min(2.0, dur / (TARGET_SEC - 0.6)))
-        af = f"atempo={tempo:.4f},apad=whole_dur={TARGET_SEC:.2f}"
-    else:
-        af = f"apad=whole_dur={TARGET_SEC:.2f}"
-    subprocess.run(
-        [
-            ff, "-y", "-i", str(raw), "-af", af, "-t", f"{TARGET_SEC:.2f}",
-            "-ar", "44100", "-ac", "1", str(out_mp3),
-        ],
-        check=True, capture_output=True,
-    )
-    print(f"voice exact {media_duration(out_mp3):.2f}s")
-
-
-def mux(silent: Path, audio: Path, out: Path) -> None:
-    ff = imageio_ffmpeg.get_ffmpeg_exe()
-    subprocess.run(
-        [
-            ff, "-y", "-i", str(silent), "-i", str(audio),
-            "-c:v", "copy", "-c:a", "aac", "-b:a", "256k",
-            "-t", f"{TARGET_SEC:.2f}", "-movflags", "+faststart", str(out),
-        ],
-        check=True, capture_output=True,
-    )
-    print(f"final {out.name} {media_duration(out):.2f}s mb={out.stat().st_size/1e6:.2f}")
-
-
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "GeneHus_Clinician_Demo_VOICEOVER_SCRIPT.md").write_text(
-        "# GeneHus Clinician Demo — silent (no voiceover)\n\n60.00s · 4K · no audio track.\n",
-        encoding="utf-8",
-    )
+    (OUT / "GeneHus_Clinician_Demo_VOICEOVER_SCRIPT.md").write_text(SCRIPT_MD, encoding="utf-8")
     make_poster()
     os.chdir(ROOT)
     httpd = serve()
@@ -321,8 +251,7 @@ def main() -> None:
         print(f"final {final.name} {media_duration(final):.2f}s mb={final.stat().st_size/1e6:.2f} (silent)")
         Path(r"c:\Users\fresh\Desktop\GeneHus\GeneHus_Clinician_Demo.mp4").write_bytes(final.read_bytes())
         Path(r"c:\Users\fresh\Desktop\GeneHus\GeneHus_Clinician_Demo_VOICEOVER_SCRIPT.md").write_text(
-            "# GeneHus Clinician Demo — silent (no voiceover)\n\n60.00s · 4K · no audio track.\n",
-            encoding="utf-8",
+            SCRIPT_MD, encoding="utf-8"
         )
     finally:
         httpd.shutdown()

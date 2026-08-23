@@ -75,6 +75,24 @@ select {
   z-index: 40;
 }
 
+/* App header: logo + ward title centered; actions stay right */
+#app .topbar {
+  justify-content: center;
+  position: sticky;
+}
+
+#app .topbar-right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0;
+}
+
+#app .topbar-mid {
+  text-align: left;
+}
+
 .topbar--gate {
   background: var(--bg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -503,5 +521,17 @@ body:has(#app) {
   .queue {
     border-right: none;
     border-bottom: 1px solid var(--line);
+  }
+
+  #app .topbar {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 12px;
+  }
+
+  #app .topbar-right {
+    position: static;
+    transform: none;
+    margin-top: 8px;
   }
 }
