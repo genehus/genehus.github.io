@@ -1,6 +1,6 @@
 """
-GeneHus clinician demo — 90.00s (silent)
-- ~15s open cards · ~67.5s hospital screen · ~6s close (same ratios as prior 60s cut)
+GeneHus clinician demo — 70.00s (silent)
+- ~12s open cards · ~52.5s hospital screen · ~5s close (same ratios as prior 60s/90s cuts)
 - Opening logo: transparent white (website style)
 - Closing logo: GeneHus_Logo_ (white-on-transparent)
 """
@@ -28,12 +28,12 @@ PORT = 8882
 VW, VH = 1920, 1080
 RW, RH = 3840, 2160
 POSTER_W, POSTER_H = 1920, 1080
-TARGET_SEC = 90.0
+TARGET_SEC = 70.0
 
 SCRIPT_MD = """# GeneHus Clinician Demo — silent (no voiceover)
 
-**Length:** exactly 90.00 seconds · 4K · no audio track  
-**Pacing:** ~15s open · ~67.5s hospital screen · ~6s close (scaled from the prior 60s proportions)
+**Length:** exactly 70.00 seconds · 4K · no audio track  
+**Pacing:** ~12s open · ~52.5s hospital screen · ~5s close (scaled from the prior 60s proportions)
 """
 
 
@@ -116,39 +116,39 @@ def record_demo() -> Path:
             "<h1>GeneHus clinician preview</h1>"
             "<p>African-trained genomic + clinical risk stratification for aggressive prostate cancer.</p>"
             '<div class="fine">Sample data only · Not for clinical use</div>',
-            3.0,
+            2.3,
         )
         card(
             '<div class="eyebrow">The problem</div>'
             "<h1>PSA alone misses who needs attention first</h1>"
             "<p>African men face among the highest prostate-cancer mortality and often present late.</p>"
             '<div class="fine">Ghana beachhead · tertiary hospitals</div>',
-            3.0,
+            2.3,
         )
         card(
             '<div class="eyebrow">The product</div>'
             "<h1>A ranked hospital list for the clinician</h1>"
             "<p>Combine clinical inputs with an African genomic signal. The doctor stays in the loop.</p>"
             '<div class="fine">Hospital or lab sequences · GeneHus analyses</div>',
-            2.7,
+            2.1,
         )
 
-        # Enter app — ~67.5s on hospital screen (75% of 90s)
+        # Enter app — ~52.5s on hospital screen (75% of 70s)
         page.goto(f"{base}/demo/app.html", wait_until="domcontentloaded")
         page.wait_for_selector("#queue-list .queue-item")
-        page.wait_for_timeout(400)
+        page.wait_for_timeout(300)
 
         page.locator("#queue-list .queue-item").first.click()
-        page.wait_for_timeout(24000)
+        page.wait_for_timeout(19000)
 
         page.locator('[data-id="benjamin"]').click()
-        page.wait_for_timeout(15000)
+        page.wait_for_timeout(11500)
         page.locator('[data-id="ibrahim"]').click()
-        page.wait_for_timeout(15000)
+        page.wait_for_timeout(11500)
         page.locator("#queue-list .queue-item").first.click()
-        page.wait_for_timeout(13500)
+        page.wait_for_timeout(10500)
 
-        # ~6s close (scaled from prior ~4s)
+        # ~5s close
         card(
             f'<div class="logo-plain logo-end">'
             f'<img src="{end_logo}" alt="GeneHus" '
@@ -157,7 +157,7 @@ def record_demo() -> Path:
             '<div class="eyebrow">GeneHus · Kumasi, Ghana</div>'
             "<h1>genehus.bio/demo</h1>"
             "<p>Try the clinician preview</p>",
-            5.5,
+            4.3,
             wrap_class="wrap-end",
         )
 
