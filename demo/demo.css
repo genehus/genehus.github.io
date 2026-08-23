@@ -65,7 +65,7 @@ select {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #000;
+  background: #fff;
 }
 
 .topbar {
@@ -85,10 +85,10 @@ select {
 #app .topbar {
   justify-content: flex-start;
   position: relative;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 #app .brand {
@@ -99,7 +99,7 @@ select {
 
 #app .brand,
 #app .brand-name {
-  color: #f2f4f5;
+  color: var(--ink);
 }
 
 #app .topbar-mid {
@@ -111,11 +111,11 @@ select {
 }
 
 #app .topbar-mid strong {
-  color: #f2f4f5;
+  color: var(--ink);
 }
 
 #app .topbar-mid span {
-  color: #a8b0b6;
+  color: var(--muted);
 }
 
 #app .topbar-right {
@@ -128,25 +128,25 @@ select {
 }
 
 #app .text-link {
-  color: #f0a04a;
+  color: var(--gold-dark);
 }
 
 .topbar--gate {
-  background: var(--bg);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #fff;
+  border-bottom: 1px solid var(--line);
 }
 
 .topbar--gate .brand,
 .topbar--gate .brand-name {
-  color: #f2f4f5;
+  color: var(--ink);
 }
 
 .topbar--gate .site-tag {
-  color: #a8b0b6;
+  color: var(--muted);
 }
 
 .topbar--gate .text-link {
-  color: #f0a04a;
+  color: var(--gold-dark);
 }
 
 .brand {
