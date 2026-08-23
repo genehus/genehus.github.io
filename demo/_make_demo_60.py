@@ -304,7 +304,10 @@ def mux(silent: Path, audio: Path, out: Path) -> None:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "GeneHus_Clinician_Demo_VOICEOVER_SCRIPT.md").write_text(SCRIPT_MD, encoding="utf-8")
+    (OUT / "GeneHus_Clinician_Demo_VOICEOVER_SCRIPT.md").write_text(
+        "# GeneHus Clinician Demo — silent (no voiceover)\n\n60.00s · 4K · no audio track.\n",
+        encoding="utf-8",
+    )
     make_poster()
     os.chdir(ROOT)
     httpd = serve()
@@ -313,24 +316,14 @@ def main() -> None:
         webm = record_demo()
         print("recorded", webm)
         silent = to_exact_silent_mp4(webm)
-        audio = OUT / "GeneHus_Clinician_Demo_voiceover.mp3"
-        asyncio.run(make_voice(audio))
         final = OUT / "GeneHus_Clinician_Demo.mp4"
-        mux(silent, audio, final)
+        shutil.copy2(silent, final)
+        print(f"final {final.name} {media_duration(final):.2f}s mb={final.stat().st_size/1e6:.2f} (silent)")
         Path(r"c:\Users\fresh\Desktop\GeneHus\GeneHus_Clinician_Demo.mp4").write_bytes(final.read_bytes())
         Path(r"c:\Users\fresh\Desktop\GeneHus\GeneHus_Clinician_Demo_VOICEOVER_SCRIPT.md").write_text(
-            SCRIPT_MD, encoding="utf-8"
+            "# GeneHus Clinician Demo — silent (no voiceover)\n\n60.00s · 4K · no audio track.\n",
+            encoding="utf-8",
         )
-        # cleanup local screenshots referenced by user
-        for name in (
-            "Screenshot 2026-08-22 062904.png",
-            "Screenshot 2026-08-22 063250.png",
-            "Screenshot 2026-08-22 063613.png",
-        ):
-            p = Path(r"c:\Users\fresh\Desktop\GeneHus") / name
-            if p.exists():
-                p.unlink()
-                print("deleted", name)
     finally:
         httpd.shutdown()
         if WORK.exists():

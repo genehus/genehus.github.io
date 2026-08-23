@@ -2,7 +2,7 @@
   --ink: #111111;
   --muted: #555555;
   --line: #d8dee4;
-  --bg: #c5c9ce;
+  --bg: #1a1f24;
   --panel: #ffffff;
   --gold: #f88820;
   --gold-dark: #d96f12;
@@ -72,6 +72,15 @@ select {
 .topbar--gate {
   background: transparent;
   border: none;
+}
+
+.topbar--gate .brand,
+.topbar--gate .brand-name {
+  color: #f2f4f5;
+}
+
+.topbar--gate .site-tag {
+  color: #a8b0b6;
 }
 
 .brand {
