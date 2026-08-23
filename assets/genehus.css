@@ -15,8 +15,8 @@
   --condensed: "Oswald", "Trade Gothic Next Condensed", "Arial Narrow", sans-serif;
   --sans: "Lato", "Open Sans", Helvetica, Arial, sans-serif;
   --wrap: 1140px;
-  --header-h: 40px;
-  --header-h-scrolled: 36px;
+  --header-h: 56px;
+  --header-h-scrolled: 40px;
 }
 
 *,
@@ -151,7 +151,7 @@ ol {
 }
 
 .logo img {
-  width: 120px;
+  width: 250px;
   max-width: none;
   height: auto;
   max-height: none;
@@ -163,15 +163,15 @@ ol {
 /* Slim scrolled bar: keep logo smaller to fit */
 .site-header.is-scrolled .logo,
 .site-header.is-open .logo {
-  width: 100px;
-  max-width: 100px;
+  width: 160px;
+  max-width: 160px;
 }
 
 .site-header.is-scrolled .logo img,
 .site-header.is-open .logo img {
-  width: 100px;
-  max-width: 100px;
-  max-height: calc(var(--header-h-scrolled) * 0.75);
+  width: 160px;
+  max-width: 160px;
+  max-height: calc(var(--header-h-scrolled) * 0.82);
 }
 
 /* Only one logo visible */
@@ -1787,8 +1787,8 @@ ol {
 
 @media (max-width: 720px) {
   :root {
-    --header-h: 36px;
-    --header-h-scrolled: 34px;
+    --header-h: 48px;
+    --header-h-scrolled: 36px;
   }
 
   .header-inner {
@@ -1802,20 +1802,20 @@ ol {
   }
 
   .logo img {
-    width: 100px;
+    width: 190px;
     max-width: none;
   }
 
   .site-header.is-scrolled .logo,
   .site-header.is-open .logo {
-    width: 90px;
-    max-width: 90px;
+    width: 130px;
+    max-width: 130px;
   }
 
   .site-header.is-scrolled .logo img,
   .site-header.is-open .logo img {
-    width: 90px;
-    max-width: 90px;
+    width: 130px;
+    max-width: 130px;
   }
 
   .wrap {
