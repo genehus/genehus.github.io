@@ -11,12 +11,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/demo/demo.css?v=20260823sticky">
+  <link rel="stylesheet" href="/demo/demo.css?v=20260823blk">
   <style>
+    body.page-video {
+      background: #000;
+    }
+    body.page-video .topbar--gate {
+      background: #000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    body.page-video .brand img {
+      height: 72px;
+      width: auto;
+      max-width: min(420px, 70vw);
+    }
+    body.page-video .topbar {
+      padding: 14px 24px;
+      top: 2.15rem;
+    }
     .video-page {
       max-width: 1080px;
       margin: 0 auto;
       padding: 36px 20px 72px;
+      background: #000;
     }
     .video-page h1 {
       font-family: var(--condensed);
@@ -33,7 +50,7 @@
     }
     .player {
       background: #111;
-      border: 1px solid var(--line);
+      border: 1px solid #333;
       overflow: hidden;
     }
     .player video {
@@ -71,14 +88,14 @@
     }
   </style>
 </head>
-<body>
+<body class="page-video">
   <div class="banner" role="note">
     Sample data. Preview only. Not for clinical use. Not validated. Not Ghana FDA approved. Working v1 is not built yet.
   </div>
 
   <header class="topbar topbar--gate">
     <a class="brand" href="https://genehus.bio/">
-      <img src="/assets/GeneHus_Logo_white.png" alt="GeneHus" width="200" height="49" style="height:44px;width:auto;background:transparent">
+      <img src="/assets/GeneHus_Logo_white.png" alt="GeneHus" width="360" height="88">
     </a>
     <div class="topbar-right">
       <a class="text-link" href="/demo/">Interactive demo</a>
