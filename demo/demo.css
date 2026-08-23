@@ -75,27 +75,41 @@ select {
   z-index: 40;
 }
 
-/* App header: dark logo + ward title centered as a group; actions stay right */
+/* App header: logo left, ward title centered, actions right — nearly transparent */
 #app .topbar {
-  justify-content: center;
+  justify-content: flex-start;
   position: sticky;
-  background: #fff;
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+#app .brand {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
 }
 
 #app .brand,
 #app .brand-name {
-  color: var(--ink);
+  color: #f2f4f5;
+}
+
+#app .topbar-mid {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
 }
 
 #app .topbar-mid strong {
-  color: var(--ink);
+  color: #f2f4f5;
 }
 
 #app .topbar-mid span {
-  color: var(--muted);
+  color: #a8b0b6;
 }
 
 #app .topbar-right {
@@ -104,14 +118,11 @@ select {
   top: 50%;
   transform: translateY(-50%);
   margin-left: 0;
-}
-
-#app .topbar-mid {
-  text-align: left;
+  z-index: 2;
 }
 
 #app .text-link {
-  color: var(--gold-dark);
+  color: #f0a04a;
 }
 
 .topbar--gate {
@@ -548,6 +559,13 @@ body:has(#app) {
     flex-direction: column;
     justify-content: center;
     padding-bottom: 12px;
+  }
+
+  #app .topbar-mid {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 6px;
   }
 
   #app .topbar-right {
