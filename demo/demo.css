@@ -75,27 +75,27 @@ select {
   z-index: 40;
 }
 
-/* App header: logo + ward title centered; actions stay right */
+/* App header: dark logo + ward title centered as a group; actions stay right */
 #app .topbar {
   justify-content: center;
   position: sticky;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 #app .brand,
 #app .brand-name {
-  color: #f2f4f5;
+  color: var(--ink);
 }
 
 #app .topbar-mid strong {
-  color: #f2f4f5;
+  color: var(--ink);
 }
 
 #app .topbar-mid span {
-  color: #a8b0b6;
+  color: var(--muted);
 }
 
 #app .topbar-right {
@@ -111,7 +111,7 @@ select {
 }
 
 #app .text-link {
-  color: #f0a04a;
+  color: var(--gold-dark);
 }
 
 .topbar--gate {
