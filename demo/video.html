@@ -11,31 +11,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/demo/demo.css?v=20260823blk">
+  <link rel="stylesheet" href="/demo/demo.css?v=20260823cut">
   <style>
+    /* Page stays deep charcoal — only the screenshot strip is black */
     body.page-video {
+      background: #1a1f24;
+    }
+    .video-chrome {
       background: #000;
     }
-    body.page-video .topbar--gate {
+    .video-chrome .topbar--gate {
       background: #000;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 2.15rem;
+      z-index: 40;
     }
-    body.page-video .brand img {
+    .video-chrome .brand img {
       height: 72px;
       width: auto;
       max-width: min(420px, 70vw);
     }
-    body.page-video .topbar {
+    .video-chrome .topbar {
       padding: 14px 24px;
-      top: 2.15rem;
     }
-    .video-page {
+    .video-intro {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 36px 20px 72px;
-      background: #000;
+      padding: 28px 20px 32px;
     }
-    .video-page h1 {
+    .video-intro h1 {
       font-family: var(--condensed);
       text-transform: uppercase;
       letter-spacing: 0.03em;
@@ -43,10 +48,15 @@
       margin: 8px 0 12px;
       color: #f2f4f5;
     }
-    .video-lead {
+    .video-intro .video-lead {
       color: #a8b0b6;
       max-width: 640px;
-      margin-bottom: 22px;
+      margin: 0;
+    }
+    .video-page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 20px 72px;
     }
     .player {
       background: #111;
@@ -93,22 +103,25 @@
     Sample data. Preview only. Not for clinical use. Not validated. Not Ghana FDA approved. Working v1 is not built yet.
   </div>
 
-  <header class="topbar topbar--gate">
-    <a class="brand" href="https://genehus.bio/">
-      <img src="/assets/GeneHus_Logo_white.png" alt="GeneHus" width="360" height="88">
-    </a>
-    <div class="topbar-right">
-      <a class="text-link" href="/demo/">Interactive demo</a>
+  <div class="video-chrome">
+    <header class="topbar topbar--gate">
+      <a class="brand" href="https://genehus.bio/">
+        <img src="/assets/GeneHus_Logo_white.png" alt="GeneHus" width="360" height="88">
+      </a>
+      <div class="topbar-right">
+        <a class="text-link" href="/demo/">Interactive demo</a>
+      </div>
+    </header>
+    <div class="video-intro">
+      <h1>GeneHus clinician preview</h1>
+      <p class="video-lead">
+        A short walkthrough of the hospital screen for applications and diligence.
+        This is not a working diagnostic tool.
+      </p>
     </div>
-  </header>
+  </div>
 
   <main class="video-page">
-    <h1>GeneHus clinician preview</h1>
-    <p class="video-lead">
-      A short walkthrough of the hospital screen for applications and diligence.
-      This is not a working diagnostic tool.
-    </p>
-
     <div class="player">
       <video controls playsinline preload="metadata" poster="/assets/AM-poster.png?v=8">
         <source src="/demo/video/GeneHus_Clinician_Demo.mp4?v=20260823silent" type="video/mp4">
