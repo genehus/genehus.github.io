@@ -52,11 +52,11 @@ select {
   background: #000;
   color: #fff;
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 8px 16px;
+  padding: 6px 14px;
   position: static;
   z-index: auto;
   border-top: 1px solid #1a1a1a;
@@ -178,12 +178,12 @@ select {
 }
 
 .topbar-mid strong {
-  font-size: 0.92rem;
+  font-size: 0.82rem;
 }
 
 .topbar-mid span,
 .site-tag {
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   color: var(--muted);
 }
 
@@ -197,11 +197,11 @@ select {
 .role-pill {
   background: #fff6ee;
   color: var(--gold-dark);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 3px 8px;
   border: 1px solid #f3d2b0;
 }
 
