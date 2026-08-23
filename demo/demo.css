@@ -345,10 +345,22 @@ select {
 
 .case {
   padding: 24px 28px 48px;
+  background: #000;
 }
 
 .empty-hint {
   margin-top: 40px;
+  color: #a8b0b6;
+}
+
+/* Clinician app page: black canvas behind white panels */
+body:has(#app) {
+  background: #000;
+}
+
+#app {
+  background: #000;
+  min-height: 100vh;
 }
 
 .case-grid {
