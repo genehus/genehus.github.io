@@ -39,12 +39,12 @@ OPEN_HOLDS = (2.3, 2.3, 2.1)
 
 SCRIPT_MD = """# GeneHus Clinician Demo — timing
 
-1. **0:00** voice starts with the normal start cards
-2. **0:00–1:12** voice continues through start cards + clinician dashboard
-3. **1:12** voice ends; dashboard ends at the same moment
+1. **0:00** voice starts with the normal start cards (full voice, nothing cut)
+2. **0:00–1:12** full voice plays through start cards + clinician dashboard (tempo-fitted to end at 1:12)
+3. **1:12** voice finishes; dashboard ends at the same moment
 4. **1:12–1:14** end card only — 2 seconds, no voice
 
-**Audio:** `Demo/real_voice.ogg` trimmed to exactly 72.00s
+**Audio:** full `Demo/real_voice.ogg` content, time-stretched to exactly 72.00s (not truncated)
 """
 
 
@@ -273,14 +273,44 @@ def make_end_card(out: Path, seconds: float) -> None:
     shutil.rmtree(WORK, ignore_errors=True)
 
 
-def trim_voice(src: Path, out: Path, seconds: float) -> None:
+def fit_voice_full(src: Path, out: Path, seconds: float) -> None:
+    """Keep every word of the voice; tempo-fit so it fully elapses at `seconds` (1:12)."""
+    src_dur = media_duration(src)
+    tempo = src_dur / seconds
+    # atempo only allows 0.5–2.0; chain if needed
+    filters: list[str] = []
+    t = tempo
+    while t > 2.0:
+        filters.append("atempo=2.0")
+        t /= 2.0
+    while t < 0.5:
+        filters.append("atempo=0.5")
+        t /= 0.5
+    filters.append(f"atempo={t:.6f}")
+    af = ",".join(filters)
+    print(f"  voice source {src_dur:.2f}s -> fit {seconds:.2f}s (tempo {tempo:.4f}, af={af})")
     run([
         ff(), "-y", "-i", str(src),
+        "-af", af,
         "-t", f"{seconds:.2f}",
         "-ar", "48000", "-ac", "1",
         str(out),
     ])
-    print(f"  voice trimmed {media_duration(out):.2f}s (want {seconds:.2f}s)")
+    # If atempo undershoots slightly, pad with silence to exact length
+    got = media_duration(out)
+    if got + 0.05 < seconds:
+        padded = OUT / "_voice_pad.ogg"
+        run([
+            ff(), "-y", "-i", str(out),
+            "-af", f"apad=whole_dur={seconds:.2f}",
+            "-t", f"{seconds:.2f}",
+            "-ar", "48000", "-ac", "1",
+            str(padded),
+        ])
+        out.write_bytes(padded.read_bytes())
+        padded.unlink(missing_ok=True)
+        got = media_duration(out)
+    print(f"  voice fitted {got:.2f}s (full content, ends at 1:12)")
 
 
 def mux_voiced(video: Path, audio: Path, out: Path, seconds: float) -> None:
@@ -345,9 +375,9 @@ def main() -> None:
         body_silent = OUT / "_body72.mp4"
         webm_to_exact(webm, body_silent, VOICE_END)
 
-        print("2) Trim voice to 1:12...")
+        print("2) Fit full voice to end at 1:12 (no cut)...")
         voice72 = OUT / "_voice72.ogg"
-        trim_voice(VOICE_SRC, voice72, VOICE_END)
+        fit_voice_full(VOICE_SRC, voice72, VOICE_END)
 
         print("3) Mux voice from start through 1:12...")
         body_voiced = OUT / "_body72_voiced.mp4"
